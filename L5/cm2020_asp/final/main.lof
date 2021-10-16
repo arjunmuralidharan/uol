@@ -1,0 +1,45 @@
+\babel@toc {british}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Illustration of the cycle-based project plan\relax }}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Python Calculator Sample Output\relax }}{11}{figure.caption.11}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Google Sheets Degree Planner Excerpt\relax }}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Landing Page Form on gpacalculator.io\relax }}{12}{figure.caption.19}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Path to find grade download links on University portal\relax }}{13}{figure.caption.23}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Students sharing midterm results on Slack\relax }}{14}{figure.caption.27}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Example of data and graph shown on glassdoor\relax }}{14}{figure.caption.31}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Initial storyboard for the persona ``Competitive Topper''\relax }}{23}{figure.caption.44}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Initial storyboard for the persona ``Casual Checker''\relax }}{23}{figure.caption.45}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Early wireframe sketch\relax }}{24}{figure.caption.46}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Wireframe after group iteration\relax }}{25}{figure.caption.47}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Initial signin page wireframe\relax }}{25}{figure.caption.48}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Early collaboration on report wireframe\relax }}{26}{figure.caption.49}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Early leaderboard wireframe\relax }}{26}{figure.caption.50}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Double Diamond Design Approach\relax }}{27}{figure.caption.51}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Illustration of initial discovery exercise\relax }}{28}{figure.caption.52}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Mindmap for the winning idea\relax }}{29}{figure.caption.53}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Successful Gauge Test Log\relax }}{34}{figure.caption.64}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Failed Gauge Test Log\relax }}{35}{figure.caption.65}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Automated Browser Testing\relax }}{36}{figure.caption.66}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Successful Gauge Testing Report\relax }}{38}{figure.caption.67}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Failed Gauge Testing Report\relax }}{40}{figure.caption.68}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Failed Gauge Testing Report - Detailed View\relax }}{41}{figure.caption.69}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Burndown chart - Sprint 1\relax }}{45}{figure.caption.70}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Burndown chart - Sprint 2\relax }}{45}{figure.caption.71}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Burndown chart - Sprint 3\relax }}{46}{figure.caption.72}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Module Overview\relax }}{47}{figure.caption.73}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Single Module\relax }}{48}{figure.caption.74}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Personal Grades\relax }}{48}{figure.caption.75}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Adding Grades\relax }}{49}{figure.caption.76}%
+\contentsline {figure}{\numberline {31}{\ignorespaces To sign in as a validated student, click the "Sign in with Slack" button under the "Kickstart your study motivation" card in the homepage. There is more information available by clicking on the info icon in the upper-right of the card, which is depicted in \cref {fig:slacksignin1a}\relax }}{51}{figure.caption.79}%
+\contentsline {figure}{\numberline {32}{\ignorespaces This information box explains what credentials you need to provide in the event that they are not saved in your browser. Slack saves these credentials in your browser by default. Typically you do not need to provide this information. If your information is saved you will be directed to the screen in \cref {fig:slacksignin4}, otherwise you will need to start the input more information as shown in \cref {fig:slacksignin2} and \cref {fig:slacksignin3}\relax }}{52}{figure.caption.80}%
+\contentsline {figure}{\numberline {33}{\ignorespaces If slack credentials are not saved in your browser, enter 'londoncs' as the slack workspace and click "Continue"\relax }}{52}{figure.caption.81}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Enter the email address associated with your londoncs slack account and slack password and click "Sign in"\relax }}{53}{figure.caption.82}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Click "Allow" to authenticate and sign in with Slack. This is all the input required if Slack credentials are saved in your browser. You will be redirected to Gradez.\relax }}{53}{figure.caption.83}%
+\contentsline {figure}{\numberline {36}{\ignorespaces You are now signed in and can see your slack avatar in the upper-right of the navigation bar.\relax }}{54}{figure.caption.84}%
+\contentsline {figure}{\numberline {37}{\ignorespaces To use the application without a slack account, you can use the Demo sign in feature. To sign in as the demo user, click "Demo Sign-in" in the navigation bar at the top of the page\relax }}{54}{figure.caption.85}%
+\contentsline {figure}{\numberline {38}{\ignorespaces This will return you to the homepage signed in as the demo user, indicated by the avatar in the upper-right of the navigation bar. You can now use the application as if you were a student validated via the slack workspace.\relax }}{55}{figure.caption.86}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Click "Add Grade" in the navigation bar to access the Add Grade form. Select a course and a study session. Courses that you have already submitted grades for are excluded. Click "Next Step" to continue.\relax }}{55}{figure.caption.87}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Enter the grade and whether or not you want to keep this grade anonymous. Click the info icon for more information on the anonymity feature. Click "Next Step" to continue.\relax }}{56}{figure.caption.88}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Review the information you provided and click "Submit" to add the grade. You can validate this submission in "My Grades" or entering the leaderboard for the course you submitted a grade for.\relax }}{56}{figure.caption.89}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Click "My Grades" in the navigation bar to access your grades. Here you can click "Edit" next to grades as depicted above for "Intro to Programming I" to bring up the edit form.\relax }}{57}{figure.caption.90}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Here you can change the study session, grade, and anonymity for the course. Grades are only editable for 6 months after their original submission. In this example we are changing the Intro to Programming I grade from 55, as shown in \cref {fig:editgrade1}, to 86. Click "Submit" to finish editing.\relax }}{57}{figure.caption.91}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Your updated information will be shown in "My Grades", as shown above, as well as the leaderboard for the class.\relax }}{58}{figure.caption.92}%

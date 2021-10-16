@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT} \PYG{n}{name}\PYG{p}{,} \PYG{n}{price}
+\PYG{k}{FROM} \PYG{n}{dishes}
+\PYG{k}{WHERE} \PYG{n}{price} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1}\PYG{p}{;}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Using wildcards and limits}
+\PYG{k}{SELECT} \PYG{o}{*}
+\PYG{k}{FROM} \PYG{n}{dishes}
+\PYG{k}{LIMIT} \PYG{l+m+mi}{2}\PYG{p}{;}
+\end{Verbatim}

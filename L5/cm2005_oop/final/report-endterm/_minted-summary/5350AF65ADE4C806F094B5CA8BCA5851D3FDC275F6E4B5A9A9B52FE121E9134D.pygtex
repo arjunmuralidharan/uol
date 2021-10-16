@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n}{MerkleBot}\PYG{o}{::}\PYG{n}{executeTrades}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+\PYG{c+c1}{//...}
+	\PYG{k}{for} \PYG{p}{(}\PYG{n}{OrderBookEntry}\PYG{o}{\PYGZam{}} \PYG{n+nl}{sale} \PYG{p}{:} \PYG{n}{sales}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{sale}\PYG{p}{.}\PYG{n}{username} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}simuser\PYGZdq{}} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{wallet}\PYG{p}{.}\PYG{n}{canFulfillOrder}\PYG{p}{(}\PYG{n}{sale}\PYG{p}{))}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{wallet}\PYG{p}{.}\PYG{n}{processSale}\PYG{p}{(}\PYG{n}{sale}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// ...}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

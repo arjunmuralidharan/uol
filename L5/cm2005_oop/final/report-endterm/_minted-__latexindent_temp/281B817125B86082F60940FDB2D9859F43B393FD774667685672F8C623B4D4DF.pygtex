@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{OrderBook}\PYG{o}{::}\PYG{n}{OrderBook}\PYG{p}{(}\PYG{k}{const} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZam{}} \PYG{n}{filename}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Loading market data...\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+	\PYG{n}{orders} \PYG{o}{=} \PYG{n}{CSVReader}\PYG{o}{::}\PYG{n}{readCSV}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{);}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}Read \PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{orders}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{} timestamps.\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+	\PYG{n}{products} \PYG{o}{=} \PYG{n}{getKnownProducts}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{std}\PYG{o}{::}\PYG{n}{unordered\PYGZus{}set}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}} \PYG{n}{OrderBook}\PYG{o}{::}\PYG{n}{getKnownProducts}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{unordered\PYGZus{}set}\PYG{o}{\PYGZlt{}}\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZgt{}} \PYG{n}{products}\PYG{p}{;}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k}{auto} \PYG{k}{const}\PYG{o}{\PYGZam{}} \PYG{p}{[}\PYG{n}{key}\PYG{p}{,} \PYG{n}{val}\PYG{p}{]} \PYG{o}{:} \PYG{n}{orders}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k}{const} \PYG{n}{OrderBookEntry} \PYG{n+nl}{obe} \PYG{p}{:} \PYG{n}{val}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{products}\PYG{p}{.}\PYG{n}{insert}\PYG{p}{(}\PYG{n}{obe}\PYG{p}{.}\PYG{n}{product}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{return} \PYG{n}{products}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

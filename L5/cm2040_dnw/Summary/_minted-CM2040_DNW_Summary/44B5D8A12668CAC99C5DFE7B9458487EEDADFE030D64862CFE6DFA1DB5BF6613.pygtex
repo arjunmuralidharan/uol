@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{get}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/search\PYGZhy{}result\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function} \PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{//searching in the database}
+		\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{send}\PYG{p}{(}
+			\PYG{l+s+s2}{\PYGZdq{}This is the keyword you entered: \PYGZdq{}} \PYG{o}{+}
+				\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{query}\PYG{p}{.}\PYG{n+nx}{keyword} \PYG{o}{+}
+				\PYG{l+s+s2}{\PYGZdq{}\PYGZlt{}br /\PYGZgt{}\PYGZdq{}} \PYG{o}{+}
+				\PYG{l+s+s2}{\PYGZdq{}This is the result of the search:\PYGZdq{}}
+		\PYG{p}{);}
+	\PYG{p}{\PYGZcb{});}
+\end{Verbatim}

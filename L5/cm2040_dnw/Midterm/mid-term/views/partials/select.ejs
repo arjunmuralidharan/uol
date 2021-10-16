@@ -1,0 +1,14 @@
+<select
+	class="form-control"
+	name="unit"
+	id="inputUnit"
+	required>
+	<option value="g" <%=availableFoods[0].typicalUnit == "g" ? "selected" : "" %>>g</option>
+	
+	<option value="ml"
+		<%= availableFoods[0].typicalUnit == "ml" ? 'selected' : ''%>
+		>ml</option>
+	<option value="pcs"
+		<%= availableFoods[0].typicalUnit == "pcs" ? 'selected' : ''%>
+		>pcs</option>
+</select>

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{SELECT} \PYG{o}{*} \PYG{k}{FROM} \PYG{n}{table1}
+	\PYG{k}{JOIN} \PYG{n}{table2}
+	\PYG{k}{ON} \PYG{n}{table1}\PYG{p}{.}\PYG{n}{attribute} \PYG{o}{=} \PYG{n}{table2}\PYG{p}{.}\PYG{n}{attribute}
+	\PYG{k}{WHERE} \PYG{n}{table1}\PYG{p}{.}\PYG{n}{anotherAttribute} \PYG{o}{=} \PYG{n}{criterion}\PYG{p}{;}
+\end{Verbatim}

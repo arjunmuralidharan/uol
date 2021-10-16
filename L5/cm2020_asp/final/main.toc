@@ -1,0 +1,97 @@
+\babel@toc {british}{}
+\contentsline {section}{\numberline {1}Background, Aims and Objectives}{7}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction and Literature}{7}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Context and Problem Statement}{7}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Opportunity}{8}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Goals}{8}{subsection.1.4}%
+\contentsline {paragraph}{Business Goals}{8}{section*.6}%
+\contentsline {paragraph}{Usability Goals}{8}{section*.7}%
+\contentsline {paragraph}{Technical Goals}{8}{section*.8}%
+\contentsline {section}{\numberline {2}Planning and Research}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Planning}{8}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}[BRAD] Milestones and Plan Updates}{9}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Team Roles}{9}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Market Benchmarking}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Grade Tracking}{10}{subsubsection.2.3.1}%
+\contentsline {paragraph}{Peer student's Python command line grade calculator}{10}{section*.10}%
+\contentsline {subparagraph}{Notable Features}{11}{section*.12}%
+\contentsline {subparagraph}{Notable Design Choices}{11}{section*.13}%
+\contentsline {paragraph}{Peer's Google Sheets Degree Planner}{11}{section*.14}%
+\contentsline {subparagraph}{Notable Features}{11}{section*.16}%
+\contentsline {subparagraph}{Notable Design Choices}{11}{section*.17}%
+\contentsline {paragraph}{gpacalculator.io}{12}{section*.18}%
+\contentsline {subparagraph}{Notable Features}{12}{section*.20}%
+\contentsline {subparagraph}{Notable Design Choices}{12}{section*.21}%
+\contentsline {paragraph}{University of London Portal}{12}{section*.22}%
+\contentsline {subparagraph}{Notable Features}{13}{section*.24}%
+\contentsline {subparagraph}{Notable Design Choices}{13}{section*.25}%
+\contentsline {subsubsection}{\numberline {2.3.2}Grade Sharing}{13}{subsubsection.2.3.2}%
+\contentsline {paragraph}{University of London Slack workspace}{13}{section*.26}%
+\contentsline {subparagraph}{Notable Features}{14}{section*.28}%
+\contentsline {subparagraph}{Notable Design Choices}{14}{section*.29}%
+\contentsline {paragraph}{glassdoor.com}{14}{section*.30}%
+\contentsline {subparagraph}{Notable Features}{15}{section*.32}%
+\contentsline {subparagraph}{Notable Design Choices}{15}{section*.33}%
+\contentsline {subsubsection}{\numberline {2.3.3}Summary of Market Benchmarks}{15}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Market Positioning}{15}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}STEEPLE Analysis}{16}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}SWOT Analysis}{17}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Customer Survey}{18}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Online Survey - Design Choices}{19}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Online Survey - Questions and Results}{19}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Online Survey Insights}{22}{subsubsection.2.5.3}%
+\contentsline {section}{\numberline {3}Prototyping and Iteration}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Techniques}{22}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Storyboards \& Sketching}{23}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Wireframes}{24}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Design}{27}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Iterative Design}{27}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Discovery}{27}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}High-Level Requirements Funnel}{29}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Initial Epics}{30}{subsection.4.4}%
+\contentsline {paragraph}{Capture Grades}{30}{section*.54}%
+\contentsline {subparagraph}{Acceptance Criteria}{30}{section*.55}%
+\contentsline {paragraph}{View Grades}{30}{section*.56}%
+\contentsline {subparagraph}{Acceptance Criteria}{30}{section*.57}%
+\contentsline {paragraph}{Manage Personal Grades}{30}{section*.58}%
+\contentsline {subparagraph}{Acceptance Criteria}{30}{section*.59}%
+\contentsline {paragraph}{Submit Module Retrospectives}{30}{section*.60}%
+\contentsline {subparagraph}{Acceptance Criteria}{31}{section*.61}%
+\contentsline {paragraph}{View Module Retrospectives}{31}{section*.62}%
+\contentsline {subparagraph}{Acceptance Criteria}{31}{section*.63}%
+\contentsline {subsection}{\numberline {4.5}[ARJUN] Justification of Design Decisions}{31}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Testing}{31}{section.5}%
+\contentsline {subsection}{\numberline {5.1}General methodology}{31}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Formative Testing}{32}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Identifying Users}{32}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Results}{32}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Summative Testing}{32}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}[BRAD] Automated acceptance testing}{32}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}User Feedback}{42}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}Error Handling}{42}{subsection.5.4}%
+\contentsline {section}{\numberline {6}System Development}{43}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Technical Approach}{43}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Relevant Code Extracts}{43}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}File Structure}{43}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Difficulty and novelty of technical challenge}{44}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Cycle 1 (Sprints 1-3)}{44}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Sprints}{44}{subsubsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.6}Shipped Product Increment}{46}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Cycle 2 (Sprints 4-6)}{49}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Cycle 3 (Sprints 7 - 9)}{49}{subsection.6.8}%
+\contentsline {section}{\numberline {7}Analysis and Evaluation}{49}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Critical Success Factors}{49}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Measurement of Success \& Failure}{50}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}UI Evaluation}{50}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Accessibility Audit}{50}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}User Safety \& Security}{50}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Individual Reflection}{50}{section.8}%
+\contentsline {section}{Appendices}{51}{section*.78}%
+\contentsline {section}{\numberline {A}User Guide}{51}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Slack sign-in}{51}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Demo sign-in}{54}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Add grade}{55}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Edit grade}{57}{subsection.A.4}%
+\contentsline {section}{\numberline {B}User Stories}{58}{appendix.B}%
+\contentsline {section}{\numberline {C}User Feedback}{58}{appendix.C}%
+\contentsline {section}{\numberline {D}Git History}{58}{appendix.D}%

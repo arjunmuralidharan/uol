@@ -1,0 +1,67 @@
+# 1
+*Write your own description of what a truth table is and what it can be used for.*
+A truth table is a visualisation, in the form of a table with rows and columns, that shows the truth or falsity of a logical (compound) proposition. It’s a way of organising information to list out all possible truth values from a given set of premises. A simple example would be a truth table depicting a single premise manipulation: a negation of a logical proposition p.
+
+Such a table would list the possible truth values for p in the first column, and the possible truth values for the negation of p (~p) in the second column. The truth values for p would be T and F, respectively, representing True and False. These are noted on separate rows. The corresponding truth values for ~p would be listed alongside, in this case being F and T.
+
+To analyse more complex compound propositions, these are first split up into atomic propositions, which are then evaluated against the original possible values of the primitive premises (e.g., p).
+
+# 2
+*Write your own definition of contrapositive and contradiction, giving an example of each that can be understood by a layperson.*
+
+Given an if-then statement "if p , then q ," we can create the two mentioned related statements, the contrapositive and the contradiction. 
+
+A conditional statement consists of two parts, a hypothesis in the “if” clause and a conclusion in the “then” clause.  For instance, “If it rains, then they lose the match.”
+
+* "It rains" is the hypothesis.
+* "They lose the match" is the conclusion.
+
+The contrapositive of the conditional statement swaps the hypothesis and the conclusion Arjun Muralidharan negates both.
+
+The contrapositive of "If it rains, then lose the match" is "If they do not lose the match, then it does not rain."
+
+The contrapositive always holds the same truth value as the original statement. They are equivalent.
+
+To form the converse of the conditional statement, interchange the hypothesis and the conclusion.
+
+The converse of "If it rains, then they lose the match" is "If they lose the match, then it rains."
+
+The converse is not always equivalent to the original statement. If the hypothesis and conclusion differ in truth values, the truth value of the converse is the opposite of the truth value of the original statement. A statement's converse corresponds to the logical fallacy of affirming the consequent.
+
+*Consider the following examples of passwords: 1) guitarcheesefruit 2) hunter12 Which of these passwords would be more difficult to bruteforce, assuming that the length is unknown and that case sensitive, alphanumeric (a-z, 0-9) characters are permitted? What suggestions might you make when proposing strategies for designing passwords that are difficult to bruteforce?*
+
+Given that both passwords have the same available language to choose characters from, the first password ("guitarcheesefruit") is more difficult to brute-force as it is a longer permutation of symbols from the language.
+
+The most relevant and impactful strategies to create stronger passwords include:
+1. Enlarging the language used by including symbols
+2. Using longer passwords to increase the number of bits and bit entropy
+
+
+*Describe an automaton as if you were explaining the concept to a layperson. What is the purpose of a ‘state’ in this context? What is a transition?*
+
+An automaton is a model of a computational machine that can be implemented with hardware or software. It can be used to simulate sequential logic and some computer programs. They can be used to model a range of problems by taking a string of inputs and producing an output.
+
+They do this by transitioning between states. A state is a stable condition that is the result of processing one bit of input. States have the purpose of describing the condition of the system and the possible ways in which the machine can transition from the state to a different state based on the next bit of input.
+
+Transitions then decide which next state will be reached depending on the given input.
+
+
+*If A={rock, paper, scissors} and
+
+B={metal, plastic, wood}.
+
+What is A \times BA×B?
+
+What is B \times AB×A?
+
+What is the language of aΣ^*∪Σ^* a? Describe this language.*
+
+A x B = {(rock, metal), (rock, plastic), (rock, wood), (paper, metal), (paper, plastic), (paper, wood)
+scissors, metal), (scissors, plastic), (scissors, wood)}
+
+B x A = {(metal, rock), (metal, paper), (metal, scissors), (plastic, rock), (plastic, paper), (plastic, scissors),
+(wood, rock), (wood, paper), (wood, scissors)}
+
+The language describes the union of the language of all possible strings composed of symbols from the language beginning with an "a", with the language of all possible strings composed of symbols from the language ending with an "a". In short, it is the language of all words that either begin or end with an "a".
+
+

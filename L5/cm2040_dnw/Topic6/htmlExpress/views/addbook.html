@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>This is the add book page title!</title>
+	</head>
+
+	<body>
+		<h1>This is the add book page</h1>
+		<p>This is an example of a paragraph inside the search page</p>
+
+		<form action="/bookadded" method="POST">
+			<input
+				id="name"
+				type="text"
+				name="name"
+				value="Book Name"
+			/>
+			<input
+				id="price"
+				type="text"
+				name="price"
+				value="Book Price"
+			/>
+			<input type="submit" value="OK" />
+		</form>
+		<a href="/list">View all the books</a>
+	</body>
+</html>

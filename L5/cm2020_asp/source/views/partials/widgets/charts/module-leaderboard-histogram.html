@@ -1,0 +1,21 @@
+<script>
+	var bins = <%- histogramBins %>;
+</script>
+
+<div class="col-12">
+	<div class="card card-custom card-stretch mx-auto mb-5 mb-xxl-8">
+	<div class="card-header border-0 pt-5 mb-7">
+		<h3 class="card-title align-items-start flex-column">
+			<span class="card-label fw-bold text-muted fs-2">Grade Distribution</span>
+			<span class="text-dark mt-2 fw-bolder fs-2"><%= moduleStats.avgGrade %> Average</span>
+		</h3>
+	</div>
+	<div class="px-0 px-md-7">
+		<div id="module-grades-histogram"></div>
+	</div>
+	<div class="card-footer border-0 pt-3">
+		<div class="selection fw-bold fs-5">
+			Percent Selected: <span id="selected-count">0</span>%
+		</div>
+	</div>
+</div>

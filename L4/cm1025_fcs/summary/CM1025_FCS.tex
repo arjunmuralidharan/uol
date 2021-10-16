@@ -1,0 +1,544 @@
+\input{../../Templates/preamble}
+\title{CM1025: Fundamentals of Computer Science \\ Summary}
+\author{Arjun Muralidharan}
+
+\begin{document}
+\input{../../Templates/cover}
+\input{CM1025_CM1020_Logic.tex}
+\input{proofs.tex}
+
+\input{combinatorics}
+
+\section{Automata Theory}
+\subsection{Letters and Strings}
+\paragraph{Alphabet} An alphabet \( \Sigma \)  is a non-empty set of symbols. \( \Sigma = \{ 0,1 \} \) is the binary alphabet.
+\paragraph{Strings \& Lengths} A string \( w = w_1 w_2 \ldots w_i\) is a finite sequence of letters drawn from an alphabet where each \( w_i \) is an element of \( \Sigma \). An empty string is denoted by \( \epsilon \). The \textbf{length of a string} \( w \) is denoted by \( |w| \). 
+
+\begin{itemize}
+	\item The set of \textbf{all strings} composed from letters in \( \Sigma \) is \( \Sigma^* \).
+	\item The set of all \textbf{non-empty strings} composed from letters in \( \Sigma \) is \( \Sigma^+ \).
+	\item The set of \textbf{all strings of length \( k \) }composed from letters in \( Sigma \) is \( \Sigma^k \).
+	\item The \textbf{size} of \( \Sigma^k \) is given as \( |\Sigma^k| \) = \( |\Sigma|^k \).
+	\item A \textbf{language} is a collection of strings \( w \) drawn from \( \Sigma \).
+\end{itemize}
+Note that \( \Sigma^1 \) is not the same as \( \Sigma \). The former is the \emph{set of strings} of length one, while the latter is only the \emph{set of symbols} in the alphabet. \( \Sigma^1 \) just happens to be a set of strings of length 1.
+
+\subsection{Deterministic Finite Automata}
+A \emph{finite automaton} or \emph{state machine} is a simple mathematical machine. It is a representation of how computations are performed with limited memory space. \autoref{fig:automaton} shows an example of an automaton using a \emph{state diagram}. The \textbf{start state} is shown with an incoming arrow, while transitions are shown as further arrows with their respective input symbols leading to the next state. The \textbf{accept state} is denoted by a double ring.
+
+When an automaton processes an input string \( w \), it outputs either \emph{accept} or \emph{reject}.
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+
+		\node[state,initial] (q_1)   {$q_1$}; 
+		\node[state, accepting] (q_2) [right=of q_1] {$q_2$}; 
+		 \path[->] 
+		 (q_1) edge [bend left] node  {1} (q_2)
+			   edge [loop above] node {0} ()
+		 (q_2) edge [bend left] node {0} (q_1) 
+			   edge [loop above] node {1} ();
+	 \end{tikzpicture}
+	\caption{State diagram of a finite automaton}\label{fig:automaton}
+\end{figure}
+
+\paragraph{Definition} A \textbf{\emph{deterministic finite automaton}} \( M \)  is a 5-tuple \( (Q, \Sigma, \delta, q_0, F) \), where
+
+\begin{enumerate}
+	\item \( Q \) is a finite set called the \textbf{states},
+	\item \( \Sigma \) is a finite set called the \textbf{alphabet},
+	\item \( \delta: Q \times \Sigma \rightarrow Q \) is the \textbf{transition function},
+	\item \( q_0 \in Q \) is the \textbf{start state}, and
+	\item \( F \subseteq Q \) is the \textbf{set of accept states}.    
+\end{enumerate}
+
+The set \( A \)  of all strings that a machine \( M \) accepts is the \textbf{language} \( L(M) = A \)  of the machine. We say that \( M \) \emph{recognises} or \emph{accepts}  \( A \). If a machine accepts no strings, it still accepts one language --- the empty language \( \emptyset \).
+
+The transition function can be mapped using a two-dimensional table as shown for the function \( Q \times \Sigma \rightarrow Q \) where \( Q = \{q_1, q_2 \} \)  in \autoref{tab:transitionfunc}.
+
+\begin{table}
+	% \renewcommand{\arraystretch}{2}
+	\centering
+
+	\begin{tabular}{@{}lll@{}}
+	\toprule
+				& \texttt{0} & \texttt{1} \\ \midrule
+	\( \mathbf{q_1}  \)	& \( q_1 \) & \( q_2 \) \\
+	\( \mathbf{q_2}  \)	& \( q_1 \) & \( q_2 \) \\ \bottomrule
+	\end{tabular}
+	\caption{Mapping a transition function}\label{tab:transitionfunc}
+\end{table}
+
+If a machine \( M \) has a start state that is also an accept state, the machine will accept the empty string \( \epsilon \).
+
+\subsection{Non-deterministic Finite Automata}
+A deterministic finite automaton (DFA) has key differences from a non-deterministic finite automaton (NFA):
+
+\begin{enumerate}
+	\item In a \textbf{DFA}, \emph{every state} has exactly \emph{one exiting transition} for \emph{each symbol} in the alphabet.
+	\item In an \textbf{NFA}, states may have \emph{none, one or more exiting transitions} for some or all symbols of the alphabet, including the empty string \( \epsilon\). 
+\end{enumerate}
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+
+		\node[state,initial] (q_1)   {$q_1$}; 
+		\node[state, accepting] (q_2) [right=of q_1] {$q_2$}; 
+		 \path[->] 
+		 (q_1) edge [bend left] node  {1} (q_2)
+			   edge [loop above] node {0, 1} ()
+		 (q_2) edge [bend left] node {0} (q_1) 
+			   edge [loop above] node {1} ();
+	 \end{tikzpicture}
+	\caption{Example of a non-deterministic finite automaton}\label{fig:nfa}
+\end{figure}
+
+An example for an NFA is shown in \autoref{fig:nfa}.
+
+An NFA computes by making copies of itself to pursue every possible option in parallel. Therefore, if a state has two transitions for a given symbol, the machine copies itself and follows both routes. If a transition is not possible, the machine dies and returns a reject state.
+
+\paragraph{Definition} A \textbf{\emph{non-deterministic finite automaton} }  is a 5-tuple \( (Q, \Sigma, \delta, q_0, F) \), where
+
+\begin{enumerate}
+	\item \( Q \) is a finite set called the \textbf{states},
+	\item \( \Sigma \) is a finite set called the \textbf{alphabet},
+	\item \( \delta: Q \times \Sigma_\epsilon \rightarrow \mathcal{P}(Q) \) is the \textbf{transition function},
+	\item \( q_0 \in Q \) is the \textbf{start state}, and
+	\item \( F \subseteq Q \) is the \textbf{set of accept states}.    
+\end{enumerate}
+
+The \textbf{key difference} is the transition function, which maps the cross product of states and the alphabet, including the empty string \( \epsilon \), to a set of all possible next states, written as the power set of Q.
+
+\section{Regular Languages}
+A language is called a \textbf{regular language} if some finite automaton recognises it.
+
+\subsection{Regular Operations}
+Let \( A \) and \( B \) be languages. We define the regular operations \textbf{union}, \textbf{concatenation}, and \textbf{star} as follows:
+\begin{enumerate}
+	\item \textbf{Union}: \( A \cup B = \{x \mid x \in A \textrm{ or } x \in B \} \)
+	\item \textbf{Concatenation}: \( A \circ B = \{xy \mid x \in A \textrm{ and } y \in B \} \)
+	\item \textbf{Star}: \( A^{\star} = \{ x_1 x_2 \ldots x_k \mid k \geq 0 \textrm{ and each } x_i \in A\} \)  
+\end{enumerate}
+
+The \textbf{star} operation is a \textbf{unary} operator, in that it only operates on one alphabet. It takes all symbols from the alphabet and generates all possible  strings from language \( A \)  to form a new language \( A^* \). The empty string \( \epsilon \) is always a member of \( A^* \), as no string may be generated as one of the options.
+
+Every NFA has an equivalent DFA in the sense that they both can recognise (accept) the same language.
+
+A language is considered \emph{regular} if and only if at least one NFA accepts it. If two languages are \emph{regular}, then their \textbf{union}, \textbf{concatenation} and \textbf{star} are regular.
+
+\subsection{Regular Expressions}
+
+A \emph{regular expression} is a way to describe a language in a concise, general notation using regular operations.
+
+The following is an example of a regular expression in shorthand notation and it's more expanded form.
+ \[
+(0 \cup 1)0^* = (\{0\} \cup \{1\})\circ \{0\}^*	
+\]
+In regular expressions, the order of precedence is given by \emph{star} \( \rightarrow \) \emph{concatenation} \( \rightarrow \) \emph{union}. Concatenation is implicit, meaning that is is assumed when no operator is given between two terms (as in the example above).
+
+Say that \( R \) is a \textbf{regular expression} if \( R \) is
+
+\begin{enumerate}
+	\item \( a \) for some \( a \) in alphabet \( \Sigma \),
+	\item \( \epsilon \),
+	\item \( \emptyset \),
+	\item (\( R_1 \cup R_2 \)), where \( R_1 \) and \( R_2 \) are regular expressions,
+	\item (\( R_1 \circ R_2 \)), where \( R_1 \) where \( R_1 \) and \( R_2 \) are regular expressions, or
+	\item (\( R_1^* \)), where \( R_1 \) is a regular expression.
+\end{enumerate}
+
+Don't confuse the regular expressions \( \epsilon \)  and \( \emptyset \). The expression \( \epsilon \)  represents the language containing a single string, the empty string. \( \emptyset \) describes the language that doesn't contain any strings.
+
+\paragraph{Kleene's Theorem} A language is regular if and only if some regular expression describes it.
+
+\subsection{Pumping Lemma}
+
+If a language is not regular, then there is no DFA that recognises it. To prove that a language \( L \) is not regular, we can use a property of regular languages and prove non-regularity by contradiction.
+
+A regular language can be \emph{pumped}, which means that with a sufficiently long input string, it cycles at least once. That means that a state in the automaton is visited twice (based on the pigeonhole principle). The \textbf{pumping lemma} states that such a string, while cycling one or more times, will still remain in the language.
+
+\paragraph{Pumping Lemma} If \( A \) is a regular language, then there is a number \( p \) where if \( s \) is any string in \( A \) and \( s \leq p \) then \( s \) may be divided into three pieces \( s = xyz \) such that
+
+\begin{enumerate}
+	\item for each \( i \geq 0, xy^iz \in A \),
+	\item \( |y| > 0 \), and
+	\item \( |xy| \leq p \). 
+\end{enumerate}
+
+The first condition states that a string that has a cycling part remains in the language. The second part states that the cycling part may not be empty, it has to have at least one edge (meaning a node cycling onto itself). The this part states that the automaton needs to reach the start of the cycle before reaching the pumping length \(p\). 
+
+The pumping lemma is only concerned with languages that generate very long (i.e.\ infinite strings).
+
+\section{Context-Free Languages}
+
+A grammar consists of \textbf{substitution rules} and describes how strings in a language are generated using such rules.
+
+\paragraph{Definition} A \textbf{context-free grammar} is a 4-tuple \( (V, \Sigma, R, S) \) where
+
+\begin{enumerate}
+	\item \( V \) is a finite set called the \emph{\textbf{variables} },
+	\item \( \Sigma \) is a finite set, disjoint from V, called the \textbf{\emph{terminals} },
+	\item \( R \) is a finite set of \textbf{\emph{rules} }, with each rule being a variable and a string of variables and terminals, and
+	\item	\( S \in V \) is the start variable.
+
+	\paragraph{Example} The language \( L = \{o^n1^n\} \) can be described by the grammar \[
+	S \rightarrow 0S1 \mid \epsilon	
+	\]
+	where \( S \) is the start variable, 0 and 1 are terminals and the entire statement is a substitution rule.
+\end{enumerate}
+
+\subsection{Chomsky Normal Form}
+Any context-free grammar has an equivalent grammar in \textbf{Chomsky normal form} which is a simplified version that removes ambiguity from the grammar.
+
+A context-free grammar is in \textbf{Chomsky normal form} if every production is of the form 
+\begin{align*}
+	A &\rightarrow BC \\
+	A &\rightarrow a
+\end{align*}
+where \( a \) is any terminal and \( A, B, \) and \( C \) are any variables---except that \( B  \) and \( C \) may not be the start variable. In addition, we permit the rule \( S \rightarrow \epsilon \), where \( S \) is the start variable.
+
+\paragraph{Converting to Chomsky normal form} The steps to convert a grammar to Chomsky normal form are given as follows.
+
+\begin{enumerate}
+	\item \textbf{Add a new start variable}  \( S_0 \) and the rule \( S_0 \rightarrow S \). This guarantees that the start variable occurs only on the left-hand side.
+	\item \textbf{Remove all \( \epsilon \) rules \( A \rightarrow \epsilon \).}  For each occurrence of \( A \) on the right-hand side, add a new rule with that occurrence deleted.
+	\item \textbf{Remove all unit rules}  of the form \( A \rightarrow B \). Replace all occurrences of \( B \) on the right-hand side with the terminal that is produced by \( A \). Eliminate the original unit rule.
+	\item \textbf{Reduce any rules with more than two variables or more than one terminal}  to correct form. Replace variable pairs inside of n-tuples with new single variables and add corresponding rules. Replace any combinations of terminals and variables with variable pairs and add the corresponding rules.
+\end{enumerate}
+
+
+
+
+\section{Turing Machines}
+
+A Turing machine is a more powerful model of a computer, similar to a finite automaton but with unlimited and unrestricted memory.
+
+It consists of a control unit with a read/write head that moves along a tape which is divided into cells. The machine can move along the tape and read from or write to cells. The tape contains the input string at the beginning, followed by a space \( \sqcup \)  and an infinite amount of empty tape following it. Cells can be overwritten.
+
+\paragraph{Definition} A \textbf{\emph{Turing machine} } is a 7-tuple \( (Q, \Sigma, \Gamma, \delta, q_0, q_{accept}, q_{reject}) \), where
+
+\begin{enumerate}
+	\item \( Q \) is a set of states,
+	\item \( \Sigma \) is the input alphabet not containing the \textbf{blank symbol} \( \sqcup \) , 
+	\item \( \Gamma  \) is the tape alphabet, where  \( \sqcup \in \Gamma \) and \( \Sigma \subseteq \Gamma \) 
+	\item \( \delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L, R\} \) is the transition function,
+	\item \( q_0 \in Q \) is the start state,
+	\item \( q_{accept} \in Q \) is the accept state, and
+	\item \( q_{reject} \in Q\) is the reject state, where \( q_{reject} \neq q_{accept} \).     
+\end{enumerate}
+
+\paragraph{Configuration} A \emph{configuration} of a Turing machine describes it's current state, the current tape contents and the current head location. For a state \( q \) and two strings \( u\) and \( v \) over the tape alphabet \( \Gamma \), we write \( uqv \) for the configuration where the currents state is \( q \), the tape contents are \( uv \) and the head location is at the first symbol of \( v \). For example, \( \texttt{1011}q_7\texttt{01111} \) is the configuration where the current state is \( q_7 \), the tape contents are \texttt{101101111} and the current head location is at the second \texttt{0}. The \textbf{start configuration} of \( M \) on input \( w \) is the configuration \( q_0w \) which indicates the machine is in the start state \( q_0 \) and the head is at the leftmost position.
+
+A Turing machine \( M \) \textbf{\emph{accepts} } input \( w \) if a sequence of configurations \( C_1, C_2, \ldots, C_k \) exists, where
+
+\begin{enumerate}
+	\item \( C_1 \) is the start configuration of \( M \) on input \( w \)
+	\item each \( C_i \) yields \( C_{i+1} \), and
+	\item \( C_k \) is an accepting configuration.
+\end{enumerate}
+
+The collection of strings that \( M \) accepts is the \textbf{language of} \( \mathbf{M} \). The language is \textbf{Turing-recognisable} if some Turing machine \emph{recognises} it. A Turing machine has three possible outcomes
+	\begin{itemize}
+		\item \emph{accept} 
+		\item \emph{reject} 
+		\item \emph{loop} 
+	\end{itemize}
+A Turing machine that never loops is called a \textbf{decider}. A language is \textbf{Turing-decidable} if some Turing machine \emph{decides} it.
+
+\subsection{Halting Problem}
+The \textbf{Halting Problem} is a kind of problem that cannot be solved by a Turing machine. Say we want to find out if a program \( P \) halts or loops for ever. No procedure exists to determine this, because if a program is still running after a fixed length of time, we do not know if it is still running or is looping forever. Hence we cannot computationally determine if the program will halt unless we let the program itself run to completion (or loop forever).
+\section{Algorithms}
+
+\subsection{Bubble Sort}
+Bubble sort is popular, but inefficient, sorting algorithm. It works by repeatedly swapping adjacent elements that are out of order.
+
+It starts at the head of a vector, compares the element to the adjacent elements, and swaps the elements if the first element is larger than the second element.
+
+\paragraph{Passes} The Bubble sort algorithm may need multiple passes to sort the entire vector. The maximum number of passes is given by the most difficult vectors to solve - such that are completely in reverse order. In this case, the number of required passes is \( n-1 \) where \( n \) is the number of elements. Therefore, \textbf{the maximum number of passes required} is always \( n-1 \).  
+
+\begin{algorithm}[H]
+	\caption{Bubble Sort}\label{alg:bubble}
+	\begin{algorithmic}
+		\Function{Bubblesort}{\emph{vector}}
+		\State{\( n \leftarrow\) LENGTH[\( vector \)] }
+		\For{\( 1 \leq i \leq n-1 \) }
+		\State{\( count \leftarrow 0\) }
+		\For{\( 1 \leq j \leq n-1 \)}
+		\If{\( vector[j+1] < vector[j] \) }
+		\State{Swap(\(vector,j,j+1\))}
+		\State{\( count \leftarrow count +1 \) }
+		\EndIf{}
+		\EndFor{}
+		\If{\( count = 0 \) }
+		\State{\textbf{break} }
+		\EndIf{}
+		\EndFor{}
+		\State{\textbf{return} \emph{vector} }
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Insertion Sort}
+Insertion sort works from the left of a vector, starting with the second element. It compares the element to the element on the left. If it needs to move, the element is moved along to the left as far as needed.
+
+As an algorithm, we can store the current element in a temporary variable, while we ``move'' elements to the right by overwriting the slots to the right and then restoring the original values from the temporary variable.
+
+\begin{algorithm}[H]
+	\caption{Insertion Sort}\label{alg:insert}
+	\begin{algorithmic}
+		\Function{InsertionSort}{\emph{v}}
+		\State{\( j \leftarrow 2 \) }
+		\For{\( j \leq \) LENGTH[v]}
+		\State{\( key \leftarrow v[j] \) }
+		\State{\( i \leftarrow j - 1 \) }
+		\While{\( i > 0 \wedge v[i] > key \) }
+		\State{\( v[i+1] \leftarrow v[i] \) }
+		\State{\( i \leftarrow i-1 \) }
+		\EndWhile{}
+		\State{\( v[i+1] \leftarrow key \) }
+		\State{\( j \leftarrow j + 1 \) }
+		\EndFor{}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Binary Search}
+Binary Search is a more efficient way of searching an item in a list. It proceeds by halving the list and comparing the middle element to the searched term. If the middle element is smaller than the term, the search continues on the right sublist, and if larger, on the left sublist. Then the procedure is repeated.
+
+Binary search runs in logarithmic time \( O(log_{n}) \).
+
+\begin{algorithm}[H]
+	\caption{Binary Search}\label{alg:binary}
+	\begin{algorithmic}
+		\Function{BinarySearch}{\emph{v, item}}
+
+		\State{\( L \leftarrow 1\) }
+		\State{\( R \leftarrow\) LENGTH\([v]\)}
+		\While{\( L \leq R \) }
+		\State{\( M \leftarrow \lfloor{\frac{L+R}{2}}\rfloor{} \) }
+		\If{\( v[M] < item \) }
+		\State{\( L \leftarrow M+1 \) }
+		\ElsIf{\( v[M] > item \) }
+		\State{\( R \leftarrow M-1 \) }
+		\Else{}
+		\State{\textbf{return} \( M \) }
+		\EndIf{}
+		\EndWhile{}
+		\State{\textbf{return} false}
+
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+Binary search is faster than linear search because each additional search step works on a smaller input (half of the previous input). Hence the time to complete one additional step decreases by half with each step. Hence the algorithm is logarithmic.
+
+\subsection{Recursion}
+Recursion is the concept of a procedure referring to itself recursively. The main applications for using recursion are
+\begin{itemize}
+	\item \textbf{Decrease and conquer}: Decreasing the problem to a \emph{base case} and calling a procedure recursively on every decreasing inputs until the base case is reached. 
+	\item \textbf{Divide and conquer}: Split the problem into smaller partial problems and sort those first. 
+\end{itemize}
+
+\begin{algorithm}[H]
+	\caption{Recursive decrease-and-conquer procedure}\label{alg:fact}
+	\begin{algorithmic}
+		\Function{Factorial}{\emph{n}}
+		\If{\( n=0 \) }
+		\State{\textbf{return} 1}
+		\EndIf{}
+		\State{\textbf{return} \textsc{Factorial}\(( n-1 )\)  }
+
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Quicksort}
+Quicksort is a recursive algorithm to sort a vector. It partitions the vector into sub-vectors at an arbitrary pivot, and then moves the elements smaller than the pivot to the left of it and elements larger to the right, and then moves the pivot element to the correct location in the partition. It then repeats this process recursively on the sub-vectors.
+
+While Quicksort has a worst-case time-complexity of \( \mathcal{O}(n^2) \), this case is unlikely to occur among possible inputs. The typical time complexity, or average-case complexity, is \( \mathcal{O}(n \log(n)) \)
+
+\begin{algorithm}[H]
+	\caption{Quicksort --- \( \mathcal{O}(n^2) \) }\label{alg:quick}
+	\begin{algorithmic}
+		\Function{Quicksort}{\emph{A, p, r}}
+		\If{\( p < r \) }
+		\State{\( q = \) \textsc{Partition}\( (A,p,r) \)  }
+		\State{\textsc{Quicksort}\( (A,p,q-1) \) }
+		\State{\textsc{Quicksort}\( (A,q+1,r) \) }
+		\EndIf{}	
+		\EndFunction{} \\
+		\Function{Partition}{\emph{A,p,r}}
+		\State{\( x \leftarrow A[r] \) } \Comment{Set the pivot to be the last element}
+		\State{\( i \leftarrow p-1 \) } \Comment{Set \( i \) as the divider between elements smaller or bigger than \( x \) }
+		\For{j = p \textbf{to} \( r-1 \) } \Comment{Loop through the vector}
+		\If{\( A[j] \leq x\) }
+		\State{\( i \leftarrow i+1 \) } \Comment{Move  divider to the right to include an element bigger than \( x \) }
+		\State{exchange \( A[i] \)  with \( A[j] \) }  \Comment{Move the \( j \)th element to the left partition}
+		\EndIf{}
+		\EndFor{}
+		\State{exchange \( A[i+1] \) with \( A[r] \)  } \Comment{Move the pivot to the right of the divider}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Merge Sort}
+
+Merge sort is another recursive algorithm that divides an array into subarrays, sorts them recursively and merges the resulting subarrays into an end result. This procedure relies on a \textsc{Merge} function that compares two stacks element-by-element and merges them by placing the smaller of two elements into the result stack first. This comparison is then done recursively on ever-smaller subarrays, until the subarray length is one. In order to simplify code, the version below places \emph{Sentinels} at the end of subarrays to terminate the comparison process and not have to track how many elements have been compared.
+
+\begin{algorithm}
+	\caption{Merge Sort --- \( \mathcal{O}(n \log n) \) }\label{alg:merge}
+	\begin{algorithmic}
+		\Function{Merge-Sort}{\emph{A,p,r} }
+		\If{\( p < r \) }\Comment{Check if the array is longer than 1}
+		\State{\( q \leftarrow \lfloor\frac{p+r}{2}\rfloor \) }
+		\State{\textsc{Merge-Sort}\( (A,p,q) \) }
+		\State{\textsc{Merge-Sort}\( (A,q+1,r) \) }
+		\State{\textsc{Merge}\( (A,p,q,r) \) }
+		\EndIf{}
+		\EndFunction{}
+		\\
+		\Function{Merge}{\emph{A,p,q,r} }
+		\State{\( n_1 \leftarrow q-p+1 \) } \Comment{Length of left subarray}
+		\State{\( n_2 \leftarrow r-q \) } \Comment{Length of right subarray}
+		\State{let \( L[1 \ldots n_1 + 1] \) and \( R[1 \ldots n_2 + 1] \) be new arrays  } \Comment{Extend length by 1 for sentinels}
+		\For{\( i = 1 \)  \textbf{ to } \( n_1 \) } \Comment{Copy left subarray}
+		\State{\( L[i] \leftarrow A[p+i-1]\) }
+		\EndFor{}
+		\For{\( j = 1 \)  \textbf{ to } \( n_2 \) } \Comment{Copy right subarray}
+		\State{\( R[j] \leftarrow A[q+j]\) }
+		\EndFor{}	
+		\State{\( L[n_1 + 1] \leftarrow \infty \) } \Comment{Insert sentinels}
+		\State{\( R[n_2 + 1] \leftarrow \infty\) }
+		\State{\( i \leftarrow 1 \) }
+		\State{\( j \leftarrow 1 \) }
+		\For{\( k = p \) \textbf{ to } r }
+		\If{\( L[i] \leq R[j]\) } \Comment{Pick left element}
+		\State{\( A[k] \leftarrow L[i]\) }
+		\State{\( i \leftarrow i + 1 \) }
+		\Else{ \( A[k] \leftarrow R[j] \)} \Comment{Pick right element}
+		\State{\( j \leftarrow j+1 \) }
+		\EndIf{}
+		\EndFor{}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+\subsection{Gale-Shapley Algorithm}
+
+The idea is to iterate through all free men while there is any free man available. Every free man goes to all women in his preference list according to the order. For every woman he goes to, he checks if the woman is free, if yes, they both become engaged. If the woman is not free, then the woman chooses either says no to him or dumps her current engagement according to her preference list. So an engagement done once can be broken if a woman gets better option.
+
+
+\begin{algorithm}[H]
+	\caption{Gale-Shapley Algorithm for Stable Matching --- \( \mathcal{O}(n^2) \) }\label{alg:gale}
+	\begin{algorithmic}
+		\Function{Gale-Shapley}{\emph{m,w,}, lists of preferences for each \emph{m, w}}
+		\State{Initialize all women \( w \) and all men \( m \) to free}
+		\While{\( \exists \) a free man \( m \) who still has a woman \( w \) to propose to}
+		\State{ \( w \leftarrow m \)'s highest-ranked woman to whom he has not yet proposed }
+		\If{\( w \) is free}
+		\State{\( m,w \) become engaged}
+		\Else{}
+		\If{\( w \) prefers \( m \) to \( m' \) }
+		\State{\( m, w \) become engaged}
+		\State{\( m' \) becomes free}
+		\Else{}
+		\State{\( m',w \) remain engaged}
+		\EndIf{}
+		\EndIf{}
+		\EndWhile{}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+\section{Complexity Theory}
+
+\subsection{Worst-Case Time Complexity}
+
+Let \( M \) be a RAM machine that halts on all inputs. The \textbf{running time} or \textbf{time complexity} of \( M \) is the function \( f: N \rightarrow N \), where \( f(n) \) is the maximum number of steps that \( M \) uses on any input of length \( n \) . If \( f(n) \) is the running time of \( M \) , we say that \( M \) runs in time \( f(n) \) and that \( M \) is an \( f(n) \) time random access machine. Customarily we use \( n \) to represent the length of the input.
+
+\subsubsection{Big-O Notation}
+The \textbf{running time} of an algorithm on a particular input is the number of steps executed. Machine-independently, we define ``time-steps''. The total running time of an algorithm is defined as
+\[
+	\textrm{time cost per statement} \times \textrm{no. of executions per statement} = \textrm{total running time}
+\]
+
+Function growth can be described and compared using \textbf{Big-O Notation}. In \emph{asymptotic analysis}, we can consider only the highest order terms of a function and ignore the constants. For example, given the function \[
+f(n) = 6n^3 + 2n^2 + 20n +45	
+\]  
+
+then the \emph{asymptotic} or \emph{Big-O} notation is given as 
+
+\[
+	f(n) = \mathcal{O}(n^3)
+		\]  
+	
+A table of common functions and their respective Big-O notation is shown in \autoref{tab:bigo} and sorted by growth rate from slowest to fastest.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{ll}
+	\toprule
+	\textbf{Type}  & \textbf{Notation} \\ \midrule
+	Constant & \( \mathcal{O}(1) \) \\
+	Logarithmic &  \(\mathcal{O}(\log(n)) =\mathcal{O}(\log(n^c))\) \\
+	Polylogarithmic & \(\mathcal{O}((\log(n))^c) \) \\
+	Linear & \(\mathcal{O}(n) \) \\
+	Quadratic & \(\mathcal{O}(n^2) \)  \\
+	Polynomial & \(\mathcal{O}(n^c) \) \\
+	Exponential & \(\mathcal{O}(c^n) \) \\
+	\bottomrule
+	\end{tabular}
+	\caption{Notation in Pseudocode}\label{tab:bigo}
+	\end{table}
+
+Formally, this means that any function is asymptotically \emph{upper-bounded} by its respective Big-O class.
+
+Let \( f \) and \( g \) be functions. It holds that
+
+\[
+	\exists k \exists n_0 \forall n \{|f(n)| \leq k \cdot g(n) \mid k > 0, n > n_0  \} \implies f(n) \in \mathcal{O}(g(n))
+\]
+stating that the size of the function \( f(n) \) will eventually be overtaken by the Big-O class \( g(n) \) multiplied by a constant \( k \). It is an upper bound.
+
+Because Big-O classes live inside each other, we always seek to ascertain the \emph{smallest} Big-O class in which a function exists.
+
+\subsection{Summary of Sorting and Search Algorithms}
+The worst-case and average-case time complexities are shown in 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{@{}lll@{}}
+	\toprule
+	\textbf{Algorithm}  & \textbf{Worst Case}  & \textbf{Average Case} \\ \midrule
+	Bubble Sort & \( \mathcal{O}(n^2) \) & \( \Theta(n^2) \) \\
+	Insertion Sort & \( \mathcal{O}(n^2) \) & \( \Theta(n^2) \) \\
+	Quick Sort & \( \mathcal{O}(n^2) \) & \( \Theta(n \log(n)) \) \\
+	Merge Sort & \( \mathcal{O}(n \log(n)) \) & \( \Theta(n \log(n)) \) \\
+	Linear Search & \( \mathcal{O}(n) \) & \( \Theta(n) \) \\
+	Binary Search &\( \mathcal{O}(\log(n)) \) & \( \Theta(\log(n)) \) \\
+	\bottomrule
+	\end{tabular}
+	\end{table}
+
+\subsection{Master Theorem}
+In \emph{divide-and-conquer} problems, a recurrence relation can be used to state the problem. Suppose a problem of size \( n \) is divided into \( a \) subproblems each of size \( n/b \) where \( b \) is some integer greater than 1. Additionally, there is some additional work \( g(n) \) to be done in the \emph{combine} phase at the end of a divide-and-conquer routine (see CLRS). The recurrence relation can be then stated as \[
+f(n) = af\big(\frac{n}{b}\big)+ g(n)
+\]
+
+where \( f(n) \) is the number of operations required to solve the problem of size \( n \).
+
+The \textbf{master theorem} allows estimation of the size of functions that satisfy divide-and-conquer relations easily.
+
+\begin{equation*}
+	f(n) \text{ is } \begin{cases}
+		\mathcal{O}(n^d) & \text{ if } a < b^d \text{,} \\
+		\mathcal{O}(n^d \log n) & \text{ if } a = b^d \text{,} \\
+		\mathcal{O}(n^{ \log_b a}) & \text{ if } a > b^d \\
+	\end{cases}
+\end{equation*}
+\end{document}

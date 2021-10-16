@@ -1,0 +1,131 @@
+\input{../templates/preamble} %Adjust this based on where your Summary is stored
+\title{CM2025: Computer Security \\ Midterm Assignment Part 2}
+\author{Arjun Muralidharan}
+\begin{document}
+\input{../templates/cover}
+
+\section{Search the internet and learn about the Trifid Cypher}
+\subsection{Make the appropriate grids using the key phrase}
+
+The $3 \times 3$ grids using the phrase ``Baseball is my favourite sport'' are shown below. These are constructed by filling in the grids with the unique letters of the key, and completing the grids with the rest of the alphabet.
+
+\begin{table}[H]
+	\caption{Encryption Grids for Key Phrase}
+	\centering
+	\begin{tabular}{cccccccccccccc}
+	\multicolumn{1}{l}{} & \multicolumn{3}{c}{\textit{Layer 1}} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{3}{c}{\textit{Layer 2}}          & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{3}{c}{\textit{Layer 1}}          \\
+						 & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{}            & \textbf{}            & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{}            & \textbf{}            & \textbf{1} & \textbf{2} & \textbf{3} \\
+	\textbf{1}           & B          & A          & S          &                      & \textbf{1}           & V          & O          & U          &                      & \textbf{1}           & H          & J          & K          \\
+	\textbf{2}           & E          & L          & I          &                      & \textbf{2}           & R          & T          & P          &                      & \textbf{2}           & N          & Q          & W          \\
+	\textbf{3}           & M          & Y          & F          &                      & \textbf{3}           & C          & D          & G          &                      & \textbf{3}           & X          & Z          & +         
+	\end{tabular}
+	\end{table}
+
+\subsubsection{Encrypt your name using those grid and block size 5. Show your work}
+
+Using the previous grids, the encryption is done by assembling the trigrams accordingly.
+
+\begin{table}[H]
+	\centering
+	\caption{Trigrams based on encryption tables}
+	\begin{tabular}{lccccc}
+					& \textit{A} & \textit{R} & \textit{J} & \textit{U} & \textit{N} \\
+	\textit{Layer}   & \textbf{1} & \textbf{2} & \textbf{3} & 2          & 3          \\
+	\textit{Row}    & 1          & \textbf{2} & \textbf{1} & \textbf{1} & 2          \\
+	\textit{Column} & 2          & 1          & \textbf{2} & \textbf{3} & \textbf{1}
+	\end{tabular}
+	\end{table}
+
+The new trigrams are read horizontally (and bolded in the table), resulting in the encrypted ciphertext
+\[ \mathtt{ICVRC} \]
+
+\subsection{Decrypt the string: RLQREERRLVVTV}
+
+This time, we apply the process in reverse by inserting the trigrams horizontally instead of vertically, and then reading them vertically to arrive at the plaintext.
+
+\begin{table}[H]
+	\centering
+	\caption{Decrypted Message}
+	\begin{tabular}{ccccccccccccc}
+	\textit{R} & \textit{L} & \textit{Q} & \textit{R} & \textit{E} & \textit{E} & \textit{R} & \textit{R} & \textit{L} & \textit{V} & \textit{V} & \textit{T} & \textit{V} \\
+	2          & 2          & 1          & 1          & 2          & 2          & 3          & 2          & 2          & 2          & 2          & 1          & 1          \\
+	2          & 1          & 1          & 2          & 1          & 2          & 2          & 1          & 2          & 2          & 1          & 1          & 2          \\
+	2          & 2          & 1          & 1          & 2          & 1          & 1          & 2          & 2          & 2          & 2          & 1          & 1          \\
+	\textbf{T} & \textbf{O} & \textbf{B} & \textbf{E} & \textbf{O} & \textbf{R} & \textbf{N} & \textbf{O} & \textbf{T} & \textbf{T} & \textbf{O} & \textbf{B} & \textbf{E}
+	\end{tabular}
+	\end{table}
+
+\section{We wish to use the RSA to encode the message: 20.}
+
+\subsection{Explain why \texorpdfstring{$N$}{N}  cannot be \texorpdfstring{$3 \cdot 7$}{3 * 7} }
+
+If $N = 3 \cdot 7 = 21$, then
+
+\begin{align*}
+	\Phi(21) &= \Phi(3) \cdot \Phi(7) \\
+\Phi(21) &= (3-1) \cdot (7-1) \\
+\Phi(21) &= 2 \cdot 6 \\
+\Phi(N) &= \Phi(21) &= 12 \\
+\Phi(p) &= (p-1) \qquad \text{if p is prime}
+\end{align*}
+
+We now need $e$ and $d$ as keys. In order to get $e$, it holds that
+
+\begin{enumerate}
+	\item $e$ must be prime
+	\item $1< e < \Phi(N)$
+	\item $e$ is co-prime with $N$ and $\Phi(N)$
+\end{enumerate}
+
+Therefore, $e \in {5, 7, 11}$.
+
+We then need to find a number where $d$ is the modular inverse of $e \bmod \Phi(N)$. The inverses of the candidates $5, 7$ and $11$ are identical, i.e. they are also $5, 7, 11$. Therefore, this is not suitable for encryption as the public keys cannot be published without compromising security. Of course, they are also small enough and therefore easy to brute force.
+
+\subsection{Let \texorpdfstring{$N$}{N}  be \texorpdfstring{$5 \cdot 7$}{5 * 7}, compute \texorpdfstring{$\Phi(N)$}{Phi(N)}}
+
+If $N = 5 \cdot 7 = 35$, then we know, based on Euler's totient function, that \[gcd(N,k)=1 \qquad \text{ for } 1 \leq k \leq N\]
+
+Since $35 = 5 \cdot 7$,
+
+\begin{align*}
+\Phi(35) &= \Phi(5) \cdot \Phi(7) \\
+\Phi(35) &= (5-1) \cdot (7-1)\\
+\Phi(p) &= (p-1) \\
+\Phi(35) &= 4 \cdot 6\\
+\Phi(N) &= \Phi(35) = 24\\
+\end{align*}
+
+\subsection{Compute an approximate value for \texorpdfstring{$e$}{e}. Explain the answer.}
+
+$e$ must be co-prime to $\Phi(N)$. We can pick 13 as $e$, $gcd(13,24) = 1$ so it is suitable as $e$ in a public key-pair.
+
+\subsection{Compute an approximate value for \texorpdfstring{$d$}{d}. Explain the answer.}
+
+$d$ will be part of the private key, to ensure that decryption happens correctly we need to ensure that $e \cdot d=1 \bmod \Phi(N)$
+
+Let’s take $e=37$ as $37 \cdot 13=481$ and $481=1 \bmod 24$ (calculated by trying all values up to $37$).
+
+\subsection{Encode the message ``20''. Explain your answer.}
+We can encrypt the message like so:
+
+\begin{align*}
+	E &= M^e \bmod N\\
+	E &= 20^{13} \bmod 35 \\
+	E &= 20\\
+\end{align*}
+
+Here, the cipher matches the plaintext exactly. However, with long enough prime numbers, this is unlikely to apply in a real scenario.
+
+\subsection{Decode the encoded message. Explain your answer.}
+
+The same process can be used to decode the message.
+
+\begin{align*}
+	M &= E^d \bmod N \\
+	M &= 20^{37} \bmod 35 \\
+	M &= 20 \\
+\end{align*}
+
+Again, the plaintext matches the cipher.
+
+\end{document}

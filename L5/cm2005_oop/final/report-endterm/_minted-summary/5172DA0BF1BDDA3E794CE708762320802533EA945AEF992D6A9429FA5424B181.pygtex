@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{c+c1}{// Toggle the reverb audio effect}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{button} \PYG{o}{==} \PYG{o}{\PYGZam{}}\PYG{n}{reverbButton}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{player}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{toggleReverb}\PYG{p}{();}
+			\PYG{n}{reverbButton}\PYG{p}{.}\PYG{n}{toggle} \PYG{o}{=} \PYG{o}{!}\PYG{n}{reverbButton}\PYG{p}{.}\PYG{n}{toggle}\PYG{p}{;}
+		\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

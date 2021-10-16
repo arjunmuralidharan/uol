@@ -1,0 +1,23 @@
+{
+  "name": "cm1010_itp2",
+  "version": "1.0.0",
+  "description": "ITP2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjunwritescode/CM1010.git"
+  },
+  "author": "Arjun Muralidharan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjunwritescode/CM1010/issues"
+  },
+  "homepage": "https://github.com/arjunwritescode/CM1010#readme",
+  "devDependencies": {
+    "canvas": "^2.6.1",
+    "eslint-config-p5js": "^1.0.1"
+  }
+}

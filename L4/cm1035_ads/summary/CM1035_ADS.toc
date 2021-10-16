@@ -1,0 +1,47 @@
+\babel@toc {british}{}
+\contentsline {section}{\numberline {1}Problems, algorithms and flowcharts}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Problems}{4}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Heron's Method}{4}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Euclid's Algorithm}{5}{subsubsection.1.1.2}%
+\contentsline {section}{\numberline {2}Pseudocode}{5}{section.2}%
+\contentsline {paragraph}{Example}{6}{section*.8}%
+\contentsline {subsection}{\numberline {2.1}Functions}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Loops}{6}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Abstract Data Types \& Structures}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Booleans and Integers}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Vectors}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Queues}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Stacks}{8}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Data Structures \& Searching Data I}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Arrays}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Dynamic Arrays}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Linear Search}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Linked Lists}{12}{subsection.4.4}%
+\contentsline {paragraph}{Pointers}{12}{section*.13}%
+\contentsline {paragraph}{Nodes}{12}{section*.14}%
+\contentsline {paragraph}{Singly and Doubly Linked}{12}{section*.15}%
+\contentsline {paragraph}{Head}{12}{section*.16}%
+\contentsline {paragraph}{Tail}{12}{section*.17}%
+\contentsline {paragraph}{Searching a Linked List}{12}{section*.18}%
+\contentsline {section}{\numberline {5}Sorting Data I}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Bubble Sort}{17}{subsection.5.1}%
+\contentsline {paragraph}{Passes}{17}{section*.19}%
+\contentsline {subsection}{\numberline {5.2}Insertion Sort}{17}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Random-Access Machines, Growth of Functions and Time Complexity}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Random Access Machines}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Worst-Case Time Complexity}{19}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Big-O Notation}{19}{subsubsection.6.2.1}%
+\contentsline {section}{\numberline {7}Searching Data II}{20}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Binary Search}{20}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Recursion}{25}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Call Stack}{25}{subsection.8.1}%
+\contentsline {section}{\numberline {9}Sorting Data II}{25}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Quicksort}{25}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Merge Sort}{26}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Summary of Sorting and Search Algorithms}{28}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Computational Complexity}{28}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Complexity Classes}{28}{subsection.10.1}%
+\contentsline {paragraph}{P}{28}{section*.23}%
+\contentsline {paragraph}{NP}{28}{section*.24}%
+\contentsline {paragraph}{NP-hard}{28}{section*.25}%
+\contentsline {paragraph}{NP-complete}{28}{section*.26}%

@@ -1,0 +1,113 @@
+<!--begin::Modules table-->
+<div class="card card-custom card-stretch mb-5 mb-xxl-8">
+	<!--begin::Header-->
+	<div class="card-header border-0 pt-5">
+		<h3 class="card-title align-items-start flex-column">
+			<span class="card-label fw-bolder text-dark fs-3">Modules</span>
+			<span class="text-muted mt-2 fw-bold fs-6"><%= programStats.grades%> Grades Submitted</span>
+		</h3>
+		<div class="card-toolbar">
+			<ul class="nav nav-pills nav-pills-sm nav-light">
+			</ul>
+		</div>
+		<div class="card-toolbar">
+			<ul class="nav nav-pills nav-pills-sm nav-light">
+				<li class="nav-item">
+					<span class="d-inline-block py-2 px-4 fw-bolder me-2">
+						Level:
+					</span>
+				</li>
+				<li class="nav-item">
+					<a id="level-all" class="nav-link btn btn-active-light-primary btn-color-muted py-2 px-4 active fw-bolder me-2" data-bs-toggle="tab">
+						All
+					</a>
+				</li>
+				<li id="level-4" class="nav-item">
+					<a class="nav-link btn btn-active-light-primary btn-color-muted py-2 px-4 fw-bolder me-2" data-bs-toggle="tab">
+						4
+					</a>
+				</li>
+				<li id="level-5" class="nav-item">
+					<a class="nav-link btn btn-active-light-primary btn-color-muted py-2 px-4 fw-bolder me-2" data-bs-toggle="tab">
+						5
+					</a>
+				</li>
+				<li id="level-6" class="nav-item">
+					<a class="nav-link btn btn-active-light-primary btn-color-muted py-2 px-4 fw-bolder" data-bs-toggle="tab">
+						6
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--end::Header-->
+	<!--begin::Body-->
+	<div class="card-body pt-3 pb-0 mt-n3">
+		<div class="tab-content mt-sm-4" id="myTabTables2">
+			<!--begin::Tap pane-->
+			<div class="tab-pane fade show active" id="kt_tab_pane_2_1" role="tabpanel" aria-labelledby="kt_tab_pane_2_1">
+				<!--begin::Table-->
+				<!--All-->
+				<div class="table-responsive">
+					<table class="table table-borderless align-middle">
+						<thead>
+							<tr class="fw-bolder">
+								<th class="w-50px"></th>
+								<th class="min-w-150px">Module</th>
+								<th class="min-w-70px text-end">Average Grade</th>
+								<th class="min-w-70px text-end">Grades Submitted</th>
+								<th class="min-w-50px"></th>
+							</tr>
+						</thead>
+						<tbody id="module-table">
+							<!--begin::Row-->
+							<% res.forEach(function (module) { %>
+							<tr>
+								<td class="px-0 py-3">
+									<div class="symbol symbol-55px mt-1 me-5">
+										<span class="symbol-label bg-light-primary align-items-end">
+											<div class="symbol symbol-50px">
+												<div class="level symbol-label fs-2 fw-bold text-success">L<%= module.level %></div>
+											</div>	
+										</span>
+									</div>
+								</td>
+								<td class="px-0">
+									<a href="/module_leaderboard?module_id=<%= module.id %>" class="text-gray-800 fw-bolder text-hover-primary fs-6"><%= module.title %></a>
+									<a href="/module_leaderboard?module_id=<%= module.id %>"><span class="text-muted fw-bold d-block mt-1"><%= module.id %></span></a>
+								</td>
+								<td class="text-end">
+									<span class="text-primary fw-bolder d-block fs-6"><%= module.grade %></span>
+								</td>
+								<td class="text-end">
+									<span class="text-primary fw-bolder d-block fs-6"><%= module.submissions %></span>
+								</td>
+								<td class="text-end pe-0">
+									<a href="/module_leaderboard?module_id=<%= module.id %>"  class="btn btn-icon btn-bg-light btn-active-primary btn-sm">
+										<!--begin::Svg Icon | path: '.svg/icons/Navigation/Arrow-right.svg.'-->
+										<span class="svg-icon svg-icon-4">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<polygon points="0 0 24 0 24 24 0 24" />
+													<rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)" x="11" y="5" width="2" height="14" rx="1" />
+													<path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+												</g>
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</a>
+								</td>
+							</tr>
+							<% }); %>
+							<!--end::Row-->
+						</tbody>
+					</table>
+				</div>
+				<!--end::Table-->
+			</div>
+			<!--end::Tap pane-->
+		</div>
+	</div>
+	<!--end::Body-->
+</div>
+<!--end::Modules table-->

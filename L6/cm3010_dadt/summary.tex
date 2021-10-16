@@ -1,0 +1,125 @@
+\input{../../Templates/preamble} %Adjust this based on where your Summary is stored
+\title{CM3010: Databases and Advanced Data Techniques \\ Summary}
+\author{Arjun Muralidharan}
+\begin{document}
+\input{../../Templates/cover}
+
+\section{Working with Data}
+\begin{mdframed}
+\textbf{Learning Outcomes}
+\begin{itemize}[label={\checkmark}]
+\item Find, describe and evaluate data sources
+\item Understand the forms data comes input
+\item Evaluate data-related access and reuse rights
+\end{itemize}
+\end{mdframed}
+
+\subsection{Data Sources}
+Data can be:
+
+\begin{itemize}
+    \item \textbf{New data}. Can be added as you go, or requiring an initial bulk entry. Having a small amount of data when you start can make testing easier and performance isn't a problem.
+    \item \textbf{Pre-existing data}. Might need extraction, conversion and cleaning before it can be used in a new database.
+    \begin{itemize}
+        \item \textbf{Internal ``legacy'' data}. Data in existing, in-house sources or systems that you need to re-use.
+        \item \textbf{External data}. Useful if you want to eliminate costs for data entry and quality checks, or need delegated expertise from a third party. However, you have no control over data quality and data structure, and data may be incomplete or ambiguous, and you need to trust the third party. 
+    \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Ordering some data: What's on the menu?}
+
+\begin{itemize}
+    \item \href{http://trevormunoz.com/notebook/2013/08/08/what-is-on-the-menu-more-work-with-nypl-open-data-part-one.html}{Trevor Munoz, 'What IS on the menu'}
+    \item \href{http://trevormunoz.com/notebook/2013/08/19/refining-the-problem-more-work-with-nypl-open-data-part-two.html}{Trevor Munoz, 'Refining the problem'}
+    \item \href{http://menus.nypl.org/menus}{NYPL Menus}
+\end{itemize}
+
+NYPL's menus data scores 3-4 stars on TimBLs \href{http://www.w3.org/DesignIssues/LinkedData.html}{5 Start Linked Open Data Scale}. It uses JSON instead of the W3C standards RDF and SPARQL. \textbf{Data curation} involves moving data from it's original site of creation to a stable, accessible environment. Additional value can be created by creating secondary and tertiary resources such as indexes of data.
+
+An important concept is ``Strings vs. Things'', as computers can only see strings, while humans identify things (Captain Cook is the same as James Cook, but computers can't know that at first glance). NYPLs data is largely composed of strings, not things, as identical dishes are counted separately due to naming differences.
+
+The way NYPL asks for data in its interface conflates "transcribing" and "naming", making it easier for users to enter names but at the cost of semantic precision.
+
+Cleaning might be made easier with tools such as \href{https://openrefine.org/}{OpenRefine} which can help normalize strings (removing spaces and such) and grouping. It also provides a Python client library.
+
+\subsubsection{What does your data look like?}
+
+When we use data, we need to consider the use of the data, for example what the data represents, what attributes we're interested in, and other metadata. For example, if we are making a database of books, we might want to store the contents and title of the book, but also the look, colour and weight depending on what we are using the data for.
+
+\subsection{Linking and using data}
+
+The Pratt institute founded the \href{https://linkedjazz.org/}{Linked Jazz} project, which creates a \textit{Semantic Web} of Jazz musician data. It uses \textbf{linked open data (LOD)}, a semantic technology, that gives visibility to information that is often hidden behind institutions. Semantic webs which are linked as Linked Data are created using standard formats such as RDF, GRDDL, POWDER, SPARQL and so on.
+
+\subsubsection{Licensing, sharing and ethics}
+
+Access to data is often placed under legal restrictions. But there are cases where open data is published, for example to drive sales, for the common good,  for contractual requirements or interoperability.
+
+Reasons to \textit{not} publish data are restrictions on the source data (e.g. medical records), control of use (e.g. artistic data), value of the data (e.g. if the data is the product), 
+
+Researchers increasingly plan the release of their data in journals or repositories along with the published work. This release needs to be governed by some terms. Depending on the region, data will be treated differently, e.g. in the US, creativity is emphasised, so raw data can usually be easily published, in Australia, originality is more important. In the EU, a database has copyright if there was some intellectual judgement needed in assembling it (see also the EU database directive).
+
+Three conditions commonly found in licences are \textit{attribution}, \textit{copyleft}, and \textit{non-commerciality}.
+
+\begin{itemize}
+    \item An \textit{attribution} requirement means that the licensor must be given due credit for the work when it is distributed, displayed, performed, or used to derive a new work.
+    \item A \textit{copyleft} requirement means that any new works derived from the licensed one must be released under the same license, and only that licence.
+    \item The intent of a \textit{non-commercial} licence is to prevent the licensee from exploiting the work commercially. Such licences are often used as part of a dual-licensing regime (see ‘Multiple licensing’, below), where the alternative licence allows commercial uses but requires payment to the licensor.
+\end{itemize}
+
+Problems with attribution are \textit{attribution stacking}, i.e. the need to attribute all preceding works. Problems with copyleft are that the derived work cannot be licensed under its own copyleft licence.
+
+Important licenses include the creative commons licenses, including CC0 for public domain works, Open Data Commons, Open/Non-Commercial Government Licence or GNU/GPL. Sometimes, multiple licensing can be used so the recipient can decide under what license they will use the data. See \href{https://www.dcc.ac.uk/guidance/how-guides/license-research-data#x1-8000}{How to license research data}.
+
+
+\subsection{Data Structure}
+
+There are different sorts of structure:
+
+\begin{enumerate}
+    \item Structures in \textbf{programming environments}
+    \item Structures in \textbf{data models}
+    \item Structures in \textbf{serialization} (data formats)
+    \item Structures in \textbf{exchange protocols}
+    \item Structures in \textbf{User Interfaces}
+\end{enumerate}
+
+The general \textbf{shapes available} are:
+
+\begin{enumerate}
+    \item Tables
+    \item Trees
+    \item Graphs
+    \item Media (raw data)
+    \item Documents / objects
+\end{enumerate}
+
+\subsubsection{Tables}
+
+In tables consisting of rows and columns, each row represents a thing, and each column describes a type of information that we ascribe to a thing. 
+
+A table as normally understood is a rectangular array with the following properties:
+
+\begin{enumerate}
+    \item it is column-homogeneous - in other words, in any selected column the items are all of the same kind, whereas items in different columns need not be of the same kind;
+    \item each item is a simple number or a character string (thus, for example, if we look at the item in any specified row and any specified column, we do not find a set of numbers or a repeating group).
+    \item all rows of a table must be distinct (duplicate rows are not allowed);
+    \item the ordering of rows within a table is immaterial;
+    \item the columns of a table are assigned distinct names and the ordering of columns within a table is immaterial.
+\end{enumerate}
+
+This list is important in determining if a table is in an acceptable form for a database use; many spreadsheets and open data sources do not comply with this form.
+
+A table with \(n\) columns represents a \(n\)-ary relation between the rows and the columns (each row is related to \(n\) columns).
+
+\subsection{Trees}
+
+Trees can represent data in hierarchical form and suited for \textit{heterogenous data}. It is an arrangement of nodes, with each node in the tree having zero or more child nodes, and exactly one parent node (with exception of the root). The data in child nodes is usually of a distinct subtype of the parent node. HTML is a tree structure. Trees have a more rigid order of elements but each node can store a different number of child elements, unlike a table.
+
+\subsubsection{Other}
+A \textbf{graph} is a more general form of tree, where each node can be connected to other nodes. The web in general is organised as a graph.
+
+More complex forms involve \textbf{blobs}, used for inaccessible data for storage, such as raw media. \textbf{Features} are searchable information derived from blobs. \textbf{Documents} are rich, but not interrelated data structures, for example the musical notation for a piece of music.
+
+\end{document}
+

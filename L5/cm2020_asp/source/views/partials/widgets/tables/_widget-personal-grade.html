@@ -1,0 +1,69 @@
+<!--begin::Personal Grade-->
+<div class="card card-custom card-stretch mb-5 mb-xxl-8">
+    <!--begin::Header-->
+    <div class="card-header border-0 pt-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label fw-bolder text-dark fs-3"><%= user.name %></span>
+            <span class="text-muted mt-2 fw-bold fs-6"">My Grade</span>
+        </h3>
+    </div>
+    <!--end::Header-->
+    <!--begin::Body-->
+    <div class="card-body pt-3 pb-0 mt-n3">
+        <div class="tab-content mt-4" id="myTabTables2">
+            <!--begin::Tap pane-->
+            <div class="tab-pane fade show active" id="kt_tab_pane_2_1" role="tabpanel" aria-labelledby="kt_tab_pane_2_1">
+                <!--begin::Table-->
+                <div class="table-responsive">
+                    <table class="table table-borderless align-middle">
+                        <thead>
+                            <tr>
+                                <!-- <th class="p-0 w-50px"></th> -->
+                                <th class="p-0 min-w-70px text-front fw-bolder" >Session</th>
+                                <th class="p-0 min-w-100px fw-bolder">Module</th>
+                                <th class="p-0 w-70px text-end fw-bolder"> Grade </th>
+                                <th class="p-0 min-w-50px text-end"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% grades_res.forEach(function (grade) { %>																
+                            <tr>
+                                <td class="text-front">
+                                    <span class="text-wmuted fw-bolder d-block fs-6"><%= grade.session %></span>
+                                </td>
+                                <td class="px-0">
+                                    <a href="/module_leaderboard?module_id=<%= grade.course_id %>" class="text-gray-800 fw-bolder text-hover-primary fs-6"> <%=grade.title %></a>
+                                    <span class="text-muted fw-bold d-block mt-1"><%=grade.course_id %></span>
+                                </td>
+                                <td class="text-end">
+                                    <span class="text-primary fw-bolder d-block fs-6"><%= grade.grade %></span>
+                                </td>
+                                <!-- Edit button -->
+                                <td class="text-end pe-0">
+                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-primary btn-sm" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#kt_modal_edit_grade" 
+                                        data-bs-module="<%= grade.title %>"
+                                        data-bs-semester="<%= grade.session_id %>"
+                                        data-bs-grade="<%= grade.grade %>"
+                                        data-bs-grade-id="<%= grade.id %>"
+                                        data-bs-anonymous="<%= grade.anonymous?true:false %>"
+                                        >
+                                        <span class="svg-icon svg-icon-4 fw-bolder">
+                                            Edit
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+                <!--end::Table-->
+            </div> 
+            <!--end::Tap pane-->
+        </div>
+    </div>
+    <!--end::Body-->
+</div>
+<!--end::Personal Grade-->

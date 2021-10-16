@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{INSERT} \PYG{k}{INTO}
+	\PYG{n}{dishes} \PYG{p}{(}\PYG{n}{name}\PYG{p}{,} \PYG{n}{price}\PYG{p}{,} \PYG{n}{is\PYGZus{}vegetarian}\PYG{p}{,} \PYG{n}{is\PYGZus{}vegan}\PYG{p}{)}
+\PYG{k}{VALUES}
+	\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}pizza margherita\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{.}\PYG{l+m+mi}{99}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{),}
+	\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}soya burger\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{.}\PYG{l+m+mi}{50}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{);}
+\end{Verbatim}

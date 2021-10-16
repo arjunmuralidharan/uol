@@ -1,0 +1,403 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=MuseoModerno:wght@400;600&display=swap");
+
+/*
+Colors
+https://coolors.co/fcf7f8-9a9a98-166088-db504a-4a4a48
+*/
+* {
+	padding: 0;
+	margin: 0;
+}
+:root {
+	--background-color: #4a4a48;
+	--foreground-color: #9a9a98;
+	--red-highlight: #cc2e28;
+	--blue-highlight: #166088;
+	--snow: #fcf7f8;
+}
+
+/*Generic style rules applying to header, body, and top nav bar*/
+/*Which is the same accross all pages.*/
+
+body {
+	padding: 10px;
+	text-align: center;
+	background-color: var(--snow);
+
+	font-family: "MuseoModerno", "Arial", sans-serif;
+}
+
+header {
+	padding: 5px;
+	padding-left: 20px;
+	background-color: var(--foreground-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#logo {
+	font-family: "MuseoModerno", cursive;
+	font-size: 1.3em;
+	text-align: left;
+	display: flex;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	align-items: center;
+}
+
+#logo img {
+	width: 75px;
+	height: 75px;
+	padding-right: 20px;
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: stretch;
+	justify-self: flex-end;
+}
+
+nav a {
+	padding: 15px 15px;
+	margin: 10px 10px;
+	background-color: var(--red-highlight);
+	border: 2px solid var(--red-highlight);
+	border-radius: 10px;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background-color 0.5s;
+	/* order: 1; */
+	position: relative;
+	width: auto;
+	flex-shrink: 0;
+}
+
+nav a:hover {
+	background-color: var(--snow);
+}
+
+nav a.selected {
+	background-color: var(--snow);
+}
+
+/*Jumbotron Rules*/
+
+.jumbotron {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	height: 350px;
+	position: relative;
+	text-shadow: 2px 2px var(--snow);
+}
+
+.jumbotron img {
+	min-width: 100%;
+}
+
+.jumbotron h1 {
+	font-size: 3em;
+	width: 50%;
+	text-align: left;
+	color: var(--background-color);
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+/* generic content rules */
+
+.content {
+	display: flex;
+	justify-content: space-evenly;
+	align-content: stretch;
+	flex-wrap: wrap;
+	font-family: "Montserrat", "Arial";
+	border: 1px solid var(--background-color);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	height: fit-content;
+	flex-grow: 1;
+}
+
+.content > * {
+	flex: 1 1 500px;
+}
+
+/* gallery rules */
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+.gallery img {
+	object-fit: cover;
+	height: 100px;
+	width: 100px;
+	border: 0px solid var(--foreground-color);
+	flex-basis: 30%;
+	margin: 10px;
+	opacity: 0.5;
+	transition: 0.4s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.gallery img:hover {
+	opacity: 1;
+	display: block;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* generic h2 rules - same accross all pages */
+h2 {
+	justify-self: flex-start;
+	flex-basis: 100%;
+	align-items: center;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+/*reviews rules*/
+
+.reviews {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-grow: 1;
+}
+
+.review {
+	min-height: max-content;
+	padding: 20px;
+	flex-basis: 30%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	margin: 10px;
+	background-color: var(--snow);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	flex-grow: 1;
+}
+
+.review:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.reviewStars {
+	padding: 5px;
+	color: gold;
+}
+
+.reviewName {
+	font-weight: bold;
+}
+
+/* Styles for Rides & Attractions */
+
+.ride {
+	padding: 10px;
+	flex-basis: 30%;
+	display: flex;
+	flex-direction: column;
+	margin: 5px;
+	background-color: var(--snow);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	align-items: center;
+}
+
+.ride:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.contentRidesAttractions {
+	display: flex;
+	flex-wrap: wrap;
+	border: 1px solid var(--background-color);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.rides {
+	display: flex;
+	flex-basis: 100%;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: space-evenly;
+}
+
+.rides h3 {
+	padding: 5px;
+}
+
+.rides p {
+	padding: 10px;
+	font-family: "Montserrat", "Arial";
+}
+
+.rides a {
+	color: var(--snow);
+	background: var(--blue-highlight);
+	padding: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+	transition: background 0.2s;
+}
+
+.rides a:hover {
+	color: var(--snow);
+	background: var(--red-highlight);
+	padding: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+.attractions {
+	display: flex;
+	flex-wrap: wrap;
+	flex-basis: 100%;
+}
+
+.attractions h2 {
+	flex-basis: 100%;
+}
+
+.attraction {
+	flex-basis: 100%;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin: 10px;
+	background-color: var(--snow);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	align-items: flex-start;
+	justify-content: space-evenly;
+}
+
+.attractionContent {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: flex-start;
+	text-align: left;
+	padding-left: 20px;
+	flex-basis: 60%;
+}
+
+.attraction p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: "Montserrat", "Arial";
+}
+
+.attraction:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.attractions a {
+	color: var(--snow);
+	background: var(--blue-highlight);
+	padding: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+	transition: background 0.2s;
+	max-width: fit-content;
+}
+
+.attractions a:hover {
+	color: var(--snow);
+	background: var(--red-highlight);
+	padding: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+/* styles for special deals page*/
+
+.grid-container-deals-specials {
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+.specialDetails {
+	border: 0px solid grey;
+	border-right: none;
+	padding: 0px;
+}
+.specialHeader {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-grow: 1;
+	font-family: "Montserrat", "Arial";
+}
+
+/*item rules*/
+
+.itemImage {
+	border: 0px solid var(--foreground-color);
+	margin: 10px;
+	float: left;
+	width: 400px;
+	height: 300px;
+	object-fit: scale-down;
+}
+.itemtext {
+	padding: 10px;
+	margin-bottom: 0px;
+	justify-content: space-evenly;
+	align-content: stretch;
+	flex-wrap: wrap;
+	font-family: "Montserrat", "Arial";
+}
+.item-grid {
+	margin: 20px;
+	display: flex;
+	flex-direction: row;
+
+	background-color: var(--snow);
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+}
+
+.item-grid:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* cart rule */
+.cartIcon {
+	width: "96";
+	height: "96";
+}
+
+/* generic footer rule */
+
+footer {
+	padding: 10px;
+}

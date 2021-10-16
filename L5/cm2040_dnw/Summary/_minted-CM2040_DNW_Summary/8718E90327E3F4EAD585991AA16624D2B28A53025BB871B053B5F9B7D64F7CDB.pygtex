@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Create a database names \PYGZdq{}myRestaurantMenu\PYGZdq{}}
+	\PYG{k}{CREATE} \PYG{k}{DATABASE} \PYG{n}{myRestaurantMenu}\PYG{p}{;}
+
+	\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Show all databases on the system}
+	\PYG{k}{SHOW} \PYG{n}{DATABASES}\PYG{p}{;}
+	
+	\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Switch to a specific database named \PYGZdq{}myBookShop\PYGZdq{}}
+	\PYG{n}{USE} \PYG{n}{myBookShop}\PYG{p}{;}
+
+	\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Show the available tables}
+	\PYG{k}{SHOW} \PYG{n}{TABLES}\PYG{p}{;}
+\end{Verbatim}

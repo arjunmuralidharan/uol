@@ -1,0 +1,21 @@
+function getCountries()
+	paths = array of paths in the svg
+	countries = new Array
+	for each path in paths
+		countries.push(path.name)
+	end for
+	return countries
+end function
+	
+	
+function groupCountries(selectedDate, country list, data)
+	for each country in list of countries
+		for each row in data
+			if the country is the current country from list of countries do
+				confirmedCases += cases of the current row at the selected Date
+			end if
+		end for
+		result["country_name"] = confirmedCases
+	end for
+	return result
+end function

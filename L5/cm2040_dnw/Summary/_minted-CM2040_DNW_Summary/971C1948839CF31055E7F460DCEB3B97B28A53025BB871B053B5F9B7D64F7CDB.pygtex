@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Delete rows}
+\PYG{k}{DELETE} \PYG{k}{FROM}
+	\PYG{n}{dishes}
+\PYG{k}{WHERE}
+	\PYG{n}{price} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1}\PYG{p}{;}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{}Update rows}
+\PYG{k}{UPDATE}
+	\PYG{n}{dishes}
+\PYG{k}{SET}
+	\PYG{n}{price} \PYG{o}{=} \PYG{l+m+mi}{2}
+\PYG{k}{WHERE}
+	\PYG{n}{price} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;}	
+\end{Verbatim}

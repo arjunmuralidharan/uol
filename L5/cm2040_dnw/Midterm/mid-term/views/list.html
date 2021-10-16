@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<%- include('partials/header.ejs') %>
+	<body>
+		<div class="container">
+			<%- include('partials/nav.ejs') %>
+			<h1 class="mt-4"><%= heading %></h1>
+			<p class="lead">
+				All food items in the database are listed below.
+			</p>
+			<% if(Object.keys(availableFoods).length != 0) { %>
+			<div class="alert alert-success">
+				Found <%=Object.keys(availableFoods).length%>
+				results.
+			</div>
+			<table class="table text-center" id="foodlist">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Food</th>
+						<th>Amount</th>
+						<th>Unit</th>
+						<th>Calories</th>
+						<th>Sugar</th>
+						<th>Salt</th>
+						<th>Carbs</th>
+						<th>Protein</th>
+						<th>Fat</th>
+						<th>Select</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+					availableFoods.forEach(function(food){
+					%>
+					<tr>
+						<th scope="row">
+							<%= food.Id %>
+						</th>
+						<td><%= food.name%></td>
+						<td><%= food.typicalAmount%></td>
+						<td><%= food.typicalUnit%></td>
+						<td><%= food.calories%></td>
+						<td><%= food.sugar%></td>
+						<td><%= food.salt%></td>
+						<td><%= food.carbs%></td>
+						<td><%= food.protein%></td>
+						<td><%= food.fat%></td>
+						<td><input class="form-check-input" type="checkbox" onclick="addUp()" value="" id="<%= food.Id %>"></td>
+					</tr>
+					<% }) %>
+				</tbody>
+				<tfoot>
+					<tr class="table-info">
+						<th scope="row" id="total">Selected Totals</td>
+						<td ></td>
+						<td ></td>
+						<td ></td>
+						<td id="totalCalories"></td>
+						<td id="totalSugar"></td>
+						<td id="totalSalt"></td>
+						<td id="totalCarbs"></td>
+						<td id="totalProtein"></td>
+						<td id="totalFat"></td>
+						<td></td>
+					</tr>
+				</tfoot>
+			</table>
+
+			<% } else { %>
+			<div class="alert alert-danger">
+				The database is empty.
+				<button
+					type="button"
+					class="close"
+					data-dismiss="alert"
+					aria-label="Close"
+				>
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<% } %>
+			
+		</div>
+
+		<script>
+		function addUp() {
+			var foodlist = document.getElementById('foodlist');
+			var sumArray = [0,0,0,0,0,0,0,0];
+			for (let i = 1; i < foodlist.rows.length - 1; i++) {
+				for (let j = 2; j < foodlist.rows[i].cells.length - 1; j++) {
+
+					if (foodlist.rows[i].cells[10].childNodes[0].checked) {
+
+					sumArray[j-2] += parseInt(foodlist.rows[i].cells[j].innerHTML, 10);
+					}
+				}
+				
+			}
+			document.getElementById('totalCalories').innerHTML = sumArray[2];
+			document.getElementById('totalSugar').innerHTML = sumArray[3];
+			document.getElementById('totalSalt').innerHTML = sumArray[4];
+			document.getElementById('totalCarbs').innerHTML = sumArray[5];
+			document.getElementById('totalProtein').innerHTML = sumArray[6];
+			document.getElementById('totalFat').innerHTML = sumArray[7];
+		}
+		</script>
+
+		
+
+	</body>
+</html>

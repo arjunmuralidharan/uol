@@ -1,0 +1,259 @@
+\input{../../Templates/preamble} %Adjust this based on where your Summary is stored
+\title{CM1035: Algorithms \& Data Structures I\\ Midterm Assignment}
+\author{Arjun Muralidharan}
+
+
+
+\begin{document}
+\input{../../Templates/cover}
+\paragraph{Note on Notation} In this assignment, I use consistent notation for functions and arguments as \textsc{FunctionName}(\emph{arugment1, argument2, ...} ). For data structure, notation of \( v[k] \) is used. Operations on data structures are treated as functions, such as  \textsc{Dequeue}\( (q) \).
+
+\paragraph{Assumptions} We are designing an algorithm strictly for a \( 4 \times 4 \) pseudoku as outlined in the assignment. The algorithms therefore assume fixed row and columns lengths of 4, and a fixed number of 16 squares used in the puzzle.
+
+\section{MakeVector}
+\begin{algorithm}[H]
+	\caption{}
+	\begin{algorithmic}
+	
+	\Function{MakeVector}{\emph{row}}
+	\State{\textbf{new}  Vector \( puzzle(4) \)}
+	\For{\( 1 \leq i \leq 4 \)}
+		\State \( puzzle[i] \gets row \) 
+	\EndFor{}
+	\State{\textbf{return} \(puzzle \)}
+	\EndFunction{}
+	
+	\end{algorithmic}
+\end{algorithm}
+
+
+\section{PermuteVector}
+
+\begin{algorithm}[H]
+	\caption{}
+	\begin{algorithmic}
+	
+	\Function{PermuteVector}{\emph{row, p}}
+	\State{\textbf{new} Queue \( q \)}
+	\For{\( i \gets 4 \) \textbf{downto}  \( 1 \) }
+	\State \textsc{Enequeue}\((row[i],q) \) 
+	\EndFor
+
+	\For{\( 1 \leq i \leq p \)}
+		\State{\( store \gets\) \textsc{HEAD}(\( q \))}
+		\State{\textsc{Dequeue}\((q) \)}
+		\State{\textsc{Enqueue}\((store, q) \) }
+	\EndFor{}
+	\State{\textbf{return} \( q \)}
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\section{PermuteRow}
+
+\begin{algorithm}[H]
+	\caption{}
+	\begin{algorithmic}
+	
+	\Function{PermuteRow}{\emph{puzzle, x, y, z}}
+	\State \( puzzle[1] \gets\) \textsc{PermuteVector}(\( puzzle[1], x \))
+	\State \( puzzle[2] \gets\) \textsc{PermuteVector}(\( puzzle[2], y \)) 
+	\State \( puzzle[3] \gets\) \textsc{PermuteVector}(\( puzzle[3], z \))
+	\State \textbf{return} \( puzzle \) 
+	\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+\section{CheckColumn}
+
+\begin{algorithm}[H]
+	\caption{}
+	\begin{algorithmic}
+		\Function{CheckColumn}{\emph{puzzle, j}}
+			\State \textbf{new}  Vector \( temp(4) \)
+				\For{\( 1 \leq i \leq 4 \)}
+					\State \( temp[i] \gets puzzle[i][j] \) 
+				\EndFor
+				
+				\For{\( 1 \leq k \leq 4 \)}
+					\If{\textsc{LinearSearch}(\( temp, k\)) = \texttt{false}}
+					\State{ \textbf{return} \texttt{false}}
+					\EndIf{}
+				\EndFor{}
+				\State{\textbf{return} \texttt{true}}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+\section{ColCheck}
+\begin{algorithm}[H]
+	\caption{}
+	\begin{algorithmic}
+		\Function{ColCheck}{\emph{puzzle}}
+			\For{\( 1 \leq i \leq 4 \)}
+			\If{\textsc{CheckColumn}(\( puzzle, j \)) = \texttt{false})}
+			\State{\textbf{return} \texttt{false}}
+			\EndIf{}
+			\EndFor{}
+			\State{\textbf{return} \texttt{true}}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+\section{CheckGrids}
+We assume that the \textsc{MakeGrid} and \textsc{LinearSearch} functions are declared and work as defined in the assignment.
+
+\begin{algorithm}[H]
+	\caption{}
+	\begin{algorithmic}
+		\Function{CheckGrids}{\emph{puzzle}}
+		\State{\textbf{new}  Vector \( grids(4) \)  }
+		\State \( grids[1] \gets\) \textsc{MakeGrid}\( (puzzle, 1, 1, 2, 2) \)
+		\State \( grids[2] \gets\) \textsc{MakeGrid}\( (puzzle, 1, 3, 2, 4) \) 
+		\State \( grids[3] \gets\) \textsc{MakeGrid}\( (puzzle, 3, 1, 4, 2) \)
+		\State \( grids[4] \gets\) \textsc{MakeGrid}\( (puzzle, 3, 3, 4, 4) \)  
+
+		\For{\( 1 \leq i \leq 4 \)}
+		\For{\( 1 \leq k \leq 4 \)}
+		\If{\textsc{LinearSearch}(\( grids[i],k \)) = \texttt{false} }
+		\State{\textbf{return} \texttt{false}}
+		\EndIf{}
+		\EndFor{}
+		\EndFor{}
+		\State{\textbf{return} \texttt{true}}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+\section{MakeSolution}
+My implementation aims to provide a selection out of all possible solutions at random. A simpler implementation would just return the first solution found, however this would always result in the same solution since the mechanism to cycle through all permutations is deterministic.
+
+Instead, for generating a valid solution, we loop through all possible cyclical permutations of rows until we find such solutions. We store all solutions as nested vectors in a dynamic array \textbf{solutions}, of which one is returned at random as the assignment requires returning only one solution. We additionally define a function \textsc{RandomInt}\emph{(min, max)}  which generates a pseudorandom integer between \( x \) and \( y \). This is used to pick one of the valid solutions and return this.
+
+
+
+\begin{algorithm}[H]
+	\caption{}
+	\begin{algorithmic}
+		\Function{MakeSolution}{\emph{row}}
+		\State{\( puzzle \gets\) \textsc{MakeVector}(\emph{row}) }
+		\State \textbf{new}  Dynamic Array \( solutions(0) \)
+		\For{\( 0 \leq x \leq 3 \)}
+			\For{\( 0 \leq y \leq 3 \)}
+				\For{\( 0 \leq z \leq 3 \)}
+				\State{\( candidate \gets\) \textsc{PermuteRow}\( (puzzle, x, y, z) \) }
+				\If{\textsc{ColCheck}\( (candidate) \)  = \texttt{true} \( \wedge \)  \textsc{CheckGrids}\( ( candidate)  \) = \texttt{true}}
+				\State{\( solutions[ \)\textsc{Length}\((solutions) +1] \gets candidate \)}
+				\EndIf{}
+				\EndFor{}
+				\EndFor{}
+				\EndFor{}
+				\State{\(selectedSolution \gets\) \textsc{RandomInt}(\( 1 \), \textsc{Length}(\( solutions \)))}
+				\State{\textbf{return} \( solution[selectedSolution] \) }
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+
+\section{Puzzle Creation Method}
+To create a puzzle with blanks, I would proceed with the following steps.
+
+\begin{enumerate}
+	\item Check if \( n \) is a valid input, i.e.\ it is at least 1 and at most the number of squares in the grid
+	\item For an even distribution of blanks, we first loop through each row for \( n \) iterations. If \( n \) is greater than the number of rows, we repeat the process over all rows again until we have iterated \( n \) times
+	\item For each loop iteration, we loop over the individual elements of the row and remove one random element from the row, using a pseudorandom number generator function.
+	\item We return the puzzle with removed elements.
+\end{enumerate}
+
+We again assume that we have a pseudorandom integer generator at hand, namely \textsc{RandomInt}\emph{(min, max)}.
+
+The function \textsc{CreatePuzzle}(\emph{puzzle, n} ) takes a puzzle of the format of the output of \textsc{MakeSolution} and returns a puzzle of the same format with blanks inserted in \( n \) locations.
+
+We further use modulo operations to cycle over the individual rows of the puzzle.
+
+\begin{algorithm}[H]
+	\caption{}
+	\begin{algorithmic}
+		\Function{CreatePuzzle}{\emph{puzzle, n} }
+		\If{\( n < 1 \vee n > 16 \) }
+		\State{\textbf{return} \texttt{false}}
+		\EndIf{} 
+		\For{\( 1 \leq i \leq n \)}
+		\State{\( randSlot \gets \)\textsc{RandomInt}\(() 1,4 )\)}
+		\While{\( puzzle[i \bmod 4][randSlot] = \emptyset \) } 
+		\State \( randSlot = (randSlot \bmod 4) + 1 \)
+		\EndWhile 
+		\State{\( puzzle[i \bmod 4 + 1][j] \gets \emptyset\)}
+		\EndFor{}
+		\State \textbf{return} puzzle
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+
+\section{Puzzles not possible with the current algorithm}
+As the current algorithm relies on cyclical permutations of an input vector, any puzzle where the row vectors are not cyclical permutations of each other could not be generated using this puzzle.
+
+An example of such a puzzle would be shown in \autoref{tab:altpseudoku}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+	\hline
+	3 & 1 & 4 & 2 \\ \hline
+	2 & 4 & 1 & 3 \\ \hline
+	4 & 2 &  & 1 \\ \hline
+	1 & 3 & 2 & 4 \\ \hline
+	\end{tabular}
+	\caption{Example of an alternative pseudoku}\label{tab:altpseudoku}
+	\end{table}
+
+\section{Alternative approach to generating puzzles}
+A simple alternative to the algorithm outlined so far would be to not use cyclical permutation, but some other way to manipulate the input vector to generate rows.
+
+One method would be:
+\begin{enumerate}
+	\item Store the input vector in a dynamic array
+	\item Use a shuffle method (e.g.\ \textbf{Fisher-Yates-Durstenfeld}) to find a pseudorandom permutation of a row vector
+	\item Create new puzzles indefinitely until a puzzle satisfying the conditions is found
+\end{enumerate}
+This process would affect primarily the \textsc{PermuteVector} and \textsc{MakeSolution} functions. \textsc{MakeSolution} function needs to be adapated to loop indefinitely until a solution is found. This may be more computationally intensive, but yields many more possible solutions than the previous algorithm.
+
+The function \textsc{PermuteRow} is almost identical with the omission of the parameters \( x, y \) and \( z \).
+
+We use the \textbf{Durstenfeld Shuffle} to randomly permute the input vectors until a solution is found.\footnote{Richard Durstenfeld. 1964. Algorithm 235: Random permutation. Commun. ACM 7, 7 (July 1964), 420. DOI:https://doi.org/10.1145/364520.364540}
+
+\begin{algorithm}[H]
+	\caption{Alternative for PermuteVector}
+	\begin{algorithmic}
+		\Function{PermuteVector}{\emph{row} }
+		\State{\textbf{new}  Dynamic Array \( d \)}
+		\For{\( 1 \leq i \leq 4 \) }
+		\State \( d[ \)\textsc{Length}\( (d)+1] \gets row[i]\)
+		\EndFor{}
+		\For{\( i =\)\textsc{Length}\((d) - 1 \)\textbf{downto} 2}
+		\State{\( j \gets \)\textsc{RandomInt}\( (1,i) \)}
+		\State{\( temp \gets d[i] \)}
+		\State{\(  d[i] \gets d[j]  \) }
+		\State{\(  d[j] \gets temp  \) }
+		\EndFor{}
+		\State{\textbf{return} d}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+\begin{algorithm}[H]
+	\caption{Alternative for MakeSolution}
+	\begin{algorithmic}
+		\Function{MakeSolution}{\emph{row} }
+		\( puzzle \gets \)\textsc{MakeVector}\( (row) \)
+		\While{\textsc{ColCheck}\( (candidate) \)  = \texttt{false} \( \vee \)  \textsc{CheckGrids}\( ( candidate)  \) = \texttt{false}}
+		\State	\( puzzle \gets\)\textsc{PermuteRow}\((puzzle)\)
+		\EndWhile
+		\State{\textbf{return} puzzle}
+		\EndFunction{}
+	\end{algorithmic}
+\end{algorithm}
+
+
+\end{document}
+

@@ -1,0 +1,9 @@
+services:
+  app:
+    image: acamilosevic/gradez-alpine
+    container_name: "gradez"
+    restart: unless-stopped
+    env_file:
+      - .env      
+    ports:
+      - 8000:8080

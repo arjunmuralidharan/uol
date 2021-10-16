@@ -1,0 +1,379 @@
+\input{../../templates/preamble} %Adjust this based on where your Summary is stored
+\title{CM2025: Computer Security \\ Summary}
+\author{Arjun Muralidharan}
+\begin{document}
+\input{../../templates/cover}
+
+\section{Introduction to computer security and malware}
+
+\subsection{Security threats}
+
+\textbf{Computer security} is the protection of computer-related assets against an attacker, as well as the ensuring the secure usage of these assets by non-attackers.
+
+Three goals of computer security:
+
+\begin{enumerate}
+    \item \textbf{Prevention:} Safeguarding of assets from threats.
+    \item \textbf{Detection:} Having systems in place to tell you that an attack or malicious activity is or is about to take place.
+    \item \textbf{Reaction:} Defining the procedures that enable you to deal with an attack.
+\end{enumerate}
+
+Three further aspects related to security:
+
+\begin{enumerate}
+    \item \textbf{Policy:} Dealing with confidentiality, integrity and availability of data.
+    \item \textbf{Threat model:} The set of assumptions about the people involved in malicious activity.
+    \item \textbf{Mechanism:} The hardware and software designed to make sure the policies are enforced using assumptions which we made using the threat model.
+\end{enumerate}
+
+Five key terms:
+
+\begin{enumerate}
+    \item \textbf{Attack:} Activities harmful to computer systems.
+    \item \textbf{Risk:} Possibility of loss or damage to assets in case of an attack.
+    \item \textbf{Zero-Day Vulnerability:} A vulnerability used by an attacker before being discovered by anyone else. 
+    \item \textbf{Exploit:} Software used to take advantage of a vulnerability.
+    \item \textbf{Hacker:} Actor exploiting a vulnerability, usually grouped into white hat (authorized) and black hat (unauthorized) hackers. Grey hats are somewhere in between and use varying combinations of good and bad intentions.
+\end{enumerate}
+
+\subsubsection{Types of Malicious Software}
+
+\textbf{Malware} is software designed to disrupt, damage and destroy the normal functionality of an information system.
+
+\paragraph{Viruses} Self-replicating software that inserts itself into other files and programs, and easily spread. Early viruses were Creepr (1971) and the Elk Cloner (1982), which were both benign.
+
+\paragraph{Worms} Self-replicating software that does not need a host program or file to attach itself to. Examples are Stuxnet, which was designed to target Iranian power plants.
+
+\paragraph{Adware} Displays ads on-screen with the purpose of collecting user data and usually downloaded to a computer without consent of the user. Examples include Fireball (2017) which secretely changed the default search engine to track user searches and was able to download and execute remote code.
+
+\paragraph{Trojans} Named after the trojan horse, these are programs that hide themselves inside an application or program data and spread based on a triggering event or user action. Examples include Zeus (2010) that was able to compromise the networks of Cisco, BofA and Amazon.
+
+\paragraph{Spyware} Designed to extract data from the user silently and used for selling collected data on the dark web. Examples include Dark Hotel, which used hotel Wi-Fi to target the personal systems of government officials and business tycoons.
+
+\paragraph{Keyloggers} Records every keystroke of the user and transmits this to an attacker. Examples include Olympic Vision.
+
+\paragraph{Ransomware} Software that encrypts a victims software, deletes backups and requires payment in order to release the data. Examples include WannaCry in 2017.
+
+\paragraph{Botnets} Programs that infect computers on the internet, where the attacker takes control of them without the user realizing. The taken over ``bots'' can then take orders from a central commander to launch a distributed denial-of-service (DDoS) attack by flooding a server with requests.
+
+\paragraph{Rootkits} Hidden software on the target computer that activitates in secret, allowing attackers to gain access to low-level system resources, use the computer for any of the other attack types. Examples include the Zaclino rootkit, which impersonates legitimate software by simulating user actions so it doesn't get detected by anti-virus software. It then continues to execute it's actual objective.
+
+\subsection{Malware Analysis}
+
+Malware Analysis is a set of processes and techniques that help a security address, understand the functionality, origin, impact, and intend to malicious software.
+
+\paragraph{Indicator of Compromise} Also known as \textbf{IOC}, this depicts the behabiour of the malicious software. Identifying the IOC is the goal of malware analysis.
+
+\subsubsection{Static Analysis}
+
+Static analysis involves analysing files without running them. This is usually a starting point for security analysis.
+
+Two techniques are commonly used:
+\begin{itemize}
+    \item \textbf{Anti-virus scanning}: Runs a file through software to determine if a file is clean or not. Example: virusTotal.
+    \item \textbf{Hashing}: Run the file through software that produces a digital fingerprint (a hash) of a file. This can be used to analyze the structure of malware. Examples: MD5 and SHA1. A check against a known database of bad hashes will help to find if a file is malicious.
+\end{itemize}
+
+\subsubsection{Dynamic Analysis}
+Dynamic analysis allows a security professional to understand the behaviour and functionality of software. This is often not possible through static analysis.
+
+\paragraph{Sandboxes} A way to analyse malware in a controlled environment. The virtualized environment contains a virtual network, services, drives, etc. to ensure that the malware behaves exactly as it would in a real environment. Two types of sandboxes are typically used:
+
+\begin{enumerate}
+    \item \textbf{Agent-Based}: Requires software to be installed on every computer that needs to be monitored. Examples: Cuckoo, Threat Expert, BitBlaze and Comodo.
+    \item \textbf{Agent-Less}: Monitors computers from afar. Examples: VMRay, Analyzer and SNDBox.
+\end{enumerate}
+
+Research suggests that agent-less sandboxes are more efficient. Another tool on Windows machines is \textbf{Process Monitor}, which allows monitoring of the registry, file system, network, running processes etc. in a Windows-based operating system.
+
+\subsection{Ethics}
+
+When a vulnerability is discovered, it might be sufficient to secure a local system, but there are usually wider \textbf{ethical ramifications}. It is common practice to identify a bug to a provider of software, and offer enough time to fix it before public disclosure. The biggest challenge in this context is \textbf{transparency}, as the provider may not fix the issue or even seek legal action - in which case there is a dilemma of disclosing the vulnerability for the sake of the wider public.
+
+\subsection{Passwords}
+
+It is becoming more common for sharing leaked data on the dark web. Reusing passwords is a common problem, and therefore these data are usually not unique to a single system. We can encourage use of stronger passwords, encourage two-factor authentication. We need to balance \textbf{accessibility} with \textbf{security} and \textbf{usability}.
+
+\subsection{Social Engineering}
+
+An example of social engineering is scattering USB drives with malicious software and having people just plug them into computers. The drives can be run as an input/output device, and can therefore act e.g. as a keyboard.
+
+Other examples are e-mails that feel and look legitimate but a deeper look may show they are not authentic.
+
+
+\section{Network Security}
+
+\subsection{Objectives of network security}
+
+\textbf{Network security} is a set of policies and practices to protect a network. A policy might be that nobody can access resources without being authenticated. The associated practice would be to implement the authentication system that enforces the policy. Objectives of network security are:
+
+\begin{enumerate}
+    \item \textbf{Confidentiality:} Controlling the read access of users to resources.
+    \item \textbf{Integrity:} Controlling the write access, or ability to change, resources.
+    \item \textbf{Availability:} Maintaining functionality. A unavailable network would be a network that is hard to access, with numerous safeguards in place. A highly available network is easy to access.
+\end{enumerate}
+
+\subsection{Types of attacks}
+
+\subsubsection{Denial of service}
+
+A \textbf{denial of service} (DoS) attack is an attack where a service is attacked so that users are denied usage of that service generally by overloading the network. The attack surface is comprised of a classical OSI model:
+
+\begin{enumerate}
+    \item Hardware
+    \item Data link
+    \item Network
+    \item Transport
+    \item Session
+    \item Presentation
+    \item Application
+\end{enumerate}
+
+\paragraph{Example 1: ARP flood} Every machine on the network has an IP address. An ARP request ia a broadcast on the network that asks for the MAC address from the IP address. All machines receive the request, and the matching device responds. By flooding a network with ARP requests for one machine, you can take the machine down. This operates at the \textbf{data link} layer.
+
+\paragraph{Example 2: ICMP ping flood} A host is flooded with internet control message protocol messages, or pings, and gets overwhelmed as the machine must respond to each ping request it receives. This operates at the \textbf{network} layer.
+
+\paragraph{Example 3: TCP-SYN flood} TCP involves opening a connection using the TCP-SYN request (part one of the three-part TCP handshake). Opening millions of these connections will overwhelm a machine. This operates at the \textbf{transport} layer.
+
+\subsubsection{Distributed denial of service, botnets and Mirai}
+
+The main difference of a \textbf{distributed denial of service attack (DDoS)} compared to a DoS attack is that there are multiple agents attacking a target simultaneously. Essentially it is a DoS attack performed with a network of agents instead of a single agent.
+
+A \textbf{botnet} attack is a kind of DDoS attack where a control server instructs bots on the network (that have first been placed on host machines on the network) to take action. This is a risk with the internet of things, where items might get infected with bots that are then activated or controlled by a control server.
+
+An example of a botnet is the \textbf{Mirai} attack, where 100.000 devices where used to attack the DNS provider Dyn, taking down a lot of large websites. It used code to remove its own binary code (residing only in memory) and hiding its process name.
+
+The Mirai botnet placed \textbf{bots}, each comprising the following components:
+
+\begin{enumerate}
+    \item \textbf{Attack}: The component that generates the network traffic, in this case 10 DoS attacks
+    \item \textbf{Kill}: Takes down other malware and servers so that it can do what it needs to document
+    \item \textbf{Scan}: Find other devices to infect  
+\end{enumerate}
+
+The bots communicate with the \textbf{server} that handles data (e.g. if a bot finds another devices, this gets stored on the server) and instructs the bots.
+
+A \textbf{loader} is separate from the server and is responsible for creating new bots. It gets the list of new devices from the server, and then loads the attack payloads and creates new bots, and the server then sends these out.
+
+\subsubsection{Wireless attacks}
+
+WiFi standards have evolved, and WiFi security has seen numerous updates:
+
+\begin{enumerate}
+    \item WEP (802.11a/b) - 1997
+    \item WPA (802.11g) - 2003
+    \item WPA2 (802.11i) - 2004
+    \item WPA3 - 2020
+\end{enumerate}
+
+Each standard has increased the encryption and authentication standards. Wireless networks are much more easily accessed than physical networks. For example, WEP was subject to a \textbf{dictionary attack} where short keys allow brute force encryption breaking.
+
+A \textbf{replay attack} replays a series of packets and inspects the response to potentially get valuable data.
+
+A \textbf{PRGA attack} uses packet tampering to impersonate packets and gain access to systems.
+
+\subsection{Firewalls}
+
+\subsubsection{Stateless Firewalls}
+
+\paragraph{Access control list} An example of a stateless firewall that checks all traffic that's coming through, inspecting each packet, and applying a set of rules. For example, it can define that packets targeted at a certain IP address cannot come through.
+
+\subsubsection{Stateful Firewalls}
+
+A stateful firewall inspects the initial connection packet but then doesn't monitor the traffic anymore. It's slightly more efficient than a stateless firewall because it doesn't check every packet.
+
+\subsubsection{Proxy Firewalls}
+
+A proxy firewall serves as a single point where all traffic between an external and internal network (WAN and LAN) is routed through. This makes sure that any traffic to the internal network is checked. The proxy pretends to be the internal machine towards the outside world.
+
+\subsection{Intrusion Detection Systems}
+
+An \textbf{Intrusion Detection System (IDS)} is a system that runs on the network or a machine which aims to detect when an intruder is operating on the network or machine. 
+
+Most security experts agree that a completely secure system is impossible to achieve. So we must stay alert for attacks.
+
+The model is based on the hypothesis that exploitation of a system's vulnerabilities involves abnormal use of the system; therefore, security violations could be detected from abnormal patterns of system usage.
+
+\paragraph{Challenges}
+
+\begin{enumerate}
+    \item \textbf{Effectiveness} False positives, false negatives
+    \item \textbf{Performance}: Resource use, speed
+    \item \textbf{Scalability} Ability to operate over a whole network
+\end{enumerate}
+
+New techniques involve using pattern recognition (AI, machine learning) to detect abnormal behaviour.
+
+Commercial examples are the Cisco Firepower appliances (physical servers installed in your rack) and the Darktrace Enterprise Immune System. The latter uses machine learning and is software-based.
+
+\section{Operating System Security}
+
+OS security is needed more today due to most computers being connected to the internet. Key components of a secure OS are:
+
+\begin{enumerate}
+    \item \textbf{Kernel:} Operates services at the lowest level
+    \item \textbf{Security Kernel:} Resposinbile for managing all the OS's security processes
+    \item \textbf{Reference Monitor:} Component of the security kernel that manages access to the device
+\end{enumerate}
+
+On Windows, the components are typically:
+
+\begin{enumerate}
+    \item \textbf{Security Reference Monitor:} Element of kernel mode which executes access checks, sets audit log entries and manipulates privileges. The SRMP performs every permission check.
+    \item \textbf{Local security authority:} Accountable for executing windows local security policies and publishes users authentication tokens as they sign into the network. It also includes authentication policy and privileged parameters.
+    \item \textbf{Security account manager:} A database that stores user credentials and related individual user and local community sensitive data. When a user signs in, the SAM server is checked. 
+    \item \textbf{Active Directory:} Handling cloud workflows and monitoring in-house network identification and encryption control.
+    \item \textbf{WinLogon Android NetLogon} Manages local and network-wide input logins respectively.
+\end{enumerate}
+
+\paragraph{Client-side vulnerabilities} Every piece of installed software, such as a browser, a productivity suite or another program can present a client-side vulnerability. 
+
+\paragraph{Hardeing} Reduced the number of features that unauthenticated users are exposed to, and removing unused software or files. Examples include disabling automatic login, requiring credentials to exit screensaver, disabling WiFi when not needed, disabling updates, turning authentication on, creating backups, establishing a root user and password, and so on.
+
+\subsection{File System and Directory Structure}
+
+A \textbf{file} is a set of linked data collected in a non-volatile memory location. Each file has a logical location for storage and retrieval.
+
+A \textbf{file system} manages the stucture of where files are stored and how they are retrieved. On Windows, this is often NTFS or FAT32, on macOS it's usually HFS or APFS, and Ext4 on Linux.
+
+There are three file structure categories on an OS.
+
+\begin{enumerate}
+    \item Text files, describing bits arranged in lines
+    \item Object files, a collection of bits, structured in blocks
+    \item Source files, a file related to a variety of activities in the OS
+\end{enumerate}
+
+A file has \textbf{file system attributes}, which include the \textit{name}, \textit{position}, \textit{type}, the \textit{taylor} (which helps calculate the file size), \textit{protection}, and finally \textit{time, date} and \textit{safety}. 
+
+The \textbf{directory structure} keeps the structure of all the files involved in a directory. It's used to also enforce authentication policies.
+
+\begin{enumerate}
+    \item Users should have the right to assign a file an appropriate title without worrying about other identical files on the network.
+    \item Users should be able to access the files they and others generate
+\end{enumerate}
+
+A file structure consists of the \textit{file name}, the \textit{type} and the \textit{location}. There's also protection information, which includes the flag (D for directories, L for links or M for miscellaneous installed file format).
+
+\subsection{Windows Security History}
+
+\paragraph{Windows 1 to Vista} Use the FAT file system with very limited functionality on the file system level and limited user security (e.g. Win95 had only one user). Rudimentary and not super-secure networking stack. 
+
+\paragraph{Windows NT} An enterprise class version of Windows with a different kernel with NTFS. More secure, multiple users and authentication, disk encryption.
+
+\paragraph{Windows 2000-XP} Merged the NT kernel into the consumer product, with a new interface in XP. Suffered the major onslaught of malware and security attacks, since it was also incredibly popular.
+
+\paragraph{Windows 10} Introduced consumer windows security with Microsoft Defender, Windows Hello and Onedrive which significantly improved the security architecture for consumers. Enterprise windows security include features such as \textit{identity and access}, \textit{threat protection} and \textit{information protection}.
+
+\subsection{Linux Security}
+
+Most online services run on Linux, and therefore need to be secure. The \textbf{Harbian} Linux distribution (based on Debian) provides a security-hardened version of Debian, which provides an auditing script to run static checks to identify security issues. Usage of the script is described at \url{https://www.kitploit.com/2020/07/harbian-audit-hardened-debian-gnulinux.html} and the Git repository is at \url{https://github.com/hardenedlinux/harbian-audit}.
+
+The script executes around 272 tests and provides output for each; often tests fail if a piece of software is not installed, so not every error is necessarily a security issue.
+
+\subsubsection{Android Attack Surface}
+
+\paragraph{Radios} An Android device will have \textbf{WiFi}, which exposes it to any local network attacks, \textbf{Bluetooth}, which might connect to other devices such as a heart rate monitor or a watch, and \textbf{cellular antennas} (incl. 5G, 4G, GSM, etc.) which connects to local cell towers, which in turn connect to the cell network and the internet.
+
+\paragraph{Sensors} Devices have \textbf{Cameras}, \textbf{Touchscreens}, \textbf{Microphones}, and a \textbf{Gyroscope}. These can also be attacked in various ways. \textbf{GPS} is another sensor that can be attacked.
+
+\paragraph{Android Stack} The software stack consists of the \textbf{Kernel}, the \textbf{base linux}, \textbf{vendor extensions} and then software provided by the \textbf{network provider}. The question is if all parties in the stack have practices for providing secure software and patching old software.
+
+
+\subsubsection{Container Security}
+
+A \textbf{virtual machine} spins up a complete operating system in a ringfenced fashion running on another system. It's slow to startup. A \textbf{container} shares the kernel, it's much more lightweight than a VM and can start up faster. Used for rapid scaling of web applications, e.g. with Docker. The four typical attack routes in a container environemtn are:
+
+\begin{enumerate}
+    \item \textbf{Container $\rightarrow$ Host}
+    \item \textbf{Host $\rightarrow$ Container}
+    \item \textbf{Container $\rightarrow$ Container}
+    \item \textbf{Application $\rightarrow$ Container}
+\end{enumerate}
+
+
+\section{Cryptography}
+
+We are interested in the general setup of \textbf{Alice} sending a message to \textbf{Bob}, and \textbf{Eve} tries to intercept the message.
+
+A basic concept to secure this message is to place it in a ``box'' and provide two keys, and Alice and Bob each have one key to lock and unlock the message.
+
+\textbf{Encryption} involves transforming the plain text message into a \textit{ciphertext} before transmitting it. The usual process involes \textit{encrypt $\rightarrow$ send $\rightarrow$ decrypt}.
+
+\paragraph{History of Cryptography} The first documented scientific documents related to cryptography was \textit{Al Kindi}, an arabic scientist. More modern documents are \textit{Viginère} in the sixteenth century.
+
+Modern \textbf{public key cryptography} was developed with the \textbf{RSA} algorithm. More recently, \textbf{elliptic curves}, used e.g. for Bitcoin.
+
+\paragraph{Goals of Cryptography}
+
+\begin{enumerate}
+    \item Confidentiality (secrecy)
+    \item Integrity (anti-tampering)
+    \item Authentication
+    \item Non-repudiation (cannot be denied that it was sent)
+\end{enumerate}
+
+\subsection{Symmetric cryptography}
+
+Symmetric cryptography involves using the same key for encryption and decryption. Alice and Bob have the same key. An example of this is the \textit{Caesar Cypher} which involves mapping the alphabet to an alternative alphabet. This is also called a \textit{substitution cypher}. It can be broken by analysing the frequency of letters, and mapping those to the frequency of letters in the regular alphabet.
+
+\subsection{Asymmetric cryptography}
+
+In \textbf{public-private key cryptography}, both Alice and Bob each have their own set of \textit{public} and \textit{private} keys. Messages encrypted with the public key \(F(M)\) can be decrypted with the corresponding private key \(G(M) = F^{-1}(M)\).
+
+Messages encrypted with a public key are hard to reverse, the public key encryption process is a \textbf{one-way function}.
+
+To send a message from Alice to Bob:
+
+\begin{enumerate}
+    \item Alice encrypt's a message using \textbf{Bob's public key}
+    \item Only Bob can read it, because he has his \textbf{private key}
+    \item Eve cannot read it, because she doesn't have \textbf{Bob's private key}
+    \item Alice can of course read it because she has access to the plaintext.
+\end{enumerate}
+
+All that is needed to initiate a two-way communication is an exchange of the public keys.
+
+\paragraph{Signing Messages} To send a message that confirms that Alice sent a message, we use signing or authentication. This is done by encrypting a signing message with her \textbf{private key}, because this can be decrypted by anyone (using Alice's public key) but only created using Alice's private key.
+
+\paragraph{SHA-1 collision} In 2017, Google discovered that SHA-1, a hashing algorithm, could be broken, which means it was possible to produce two different PDFs with different content that hashed to the same value. See \url{https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html} and \url{https://www.schneier.com/blog/archives/2005/02/cryptanalysis_o.html}.
+
+\subsection{Advanced techniques}
+
+\paragraph{Transposition Cipher} Rearranging the letters to a scrambled version is done using this kind of cipher. It's done using a \textit{transposition grid}. This requires the length of the plaintext message, and a transposition number.
+
+The letters of the plaintext are written in rows of a grid with as many columns as the transposition number (with rows to accomodate the entire message), and the cipher is generated by reading the columns.
+
+Bob can decipher the message knowing the transposition number and the length of the message.
+
+If spaces are left blank in the grid, we can fill them with a special character, such as \texttt{x}.
+
+A more advanced variation is by using a keyword instead of a number. The keyword length determines the number of columns. We assign each letter in the keyword to a column. Then I arrange the letters in the keyword by alphabet, and also rearrange the columns accordingly. This is the cipher grid.
+
+\subsubsection{Playfair Cipher} This cipher was used by the CIA. It uses a 25-space grid for the alphabet, treating I and J as one letter. It uses a keyword.
+
+\begin{enumerate}
+    \item The keyword is entered into the first spaces of the grid. The rest of the spaces are filled up with all letters that don't appear in the keyword. The keyword needs to therefore consist of unique letters, with no repeated letters.
+    \item We then break our plain text into pairs of letters (``This'' becomes TH IS) Double letters are separated with an X.
+    \item If the letters are not even, add an X at the end.
+    \item The first pair is encoded by looking at where the letters appear on the cipher grid. The two positions span a rectangle. The letters are then replaced with the letters in the opposite corners of the spanned rectangle. The convention is that the first letter is the one that shares the row with the first encrypted letter.
+    \item If the letters are in the same column, they get replaced with the letter below them in the column.
+\end{enumerate}
+
+A weakness of the Playfair cipher is that pairs remain the same, so given a large body of text, the pairs can provide a way to revers-engineer the cipher grid.
+
+
+\subsubsection{Viginère Cipher}
+
+The Viginère cipher is similar to the Caesar cipher but varies the amount by which one moves, using a keyword.
+\begin{enumerate}
+    \item The keyword's letters define by how much a letter is offset. For example, an E in the keyword indicates an offset by 5 (because E is the fifth letter).
+    \item The keyword is mapped to the plaintext, by repeating it as many times as needed.
+    \item Each letter in the plaintext is then ciphered by the offset given in the keyword.
+\end{enumerate}
+
+This cipher results in the same letter being ciphered to different result letters, so it's a clear improvement over Caesar. This technique is best done using a Viginère table.
+
+
+\end{document}
+

@@ -1,0 +1,73 @@
+\section{Combinatorics}
+\paragraph{Product Rule} Suppose that a procedure can be broken down into a sequence of two tasks. If there are \( n_1 \)  ways to do the first task and for each of these ways of doing the first task, there are \( n_2 \) ways to do the second task; then there are \( n_1 n_2 \)  ways to do the procedure.
+\paragraph{Sum Rule} 
+If a task can be done either in one of \( n_1 \)  ways or in one of \( n_2 \) ways, where none of the set of \( n_1 \) ways is the same as any of the set of \( n_2 \) ways, then there are \( n_1 + n_2 \) ways to do the task.
+\paragraph{Subtraction Rule} 
+If a task can be done in either \( n_1 \) ways or \( n_2 \) ways, then the number of ways to do the task is \( n_1 + n_2 \) minus the number of ways to do the task that are common to the two different ways. This is the same as the \textbf{principle of inclusion-exclusion} (see Discrete Mathematics --- Set Theory).
+\subsection{Pigeonhole Principle}
+If \( N \) objects are placed into \( k \) boxes, then there is \textbf{at least} one box with \textbf{at least} \(\lceil N/k \rceil \) objects.
+
+\textbf{Important:} When calculating the number of objects \( N \)  required to satisfy a specific \(\lceil N/k \rceil \) outcome, keep in mind that you are rounding up \( N/k \). For example, if \( \lceil N/k \rceil = 6 \) and \( k = 4 \), then 
+\begin{align*}
+	\lceil N/4 \rceil = 6 \Leftrightarrow N/4 &> 5\\
+	N &> 20 \\
+	N &= 21
+\end{align*}
+Therefore, when solving the inequality, you can add one to the result for N to arrive at the smallest number that will satisfy the desired \( N/k \) (if that is what is asked). 
+
+\subsection{Permutations}
+A permutation of \(n\) different elements is an ordering of the elements such that one element is first, one is second, one is third, and so on.
+
+The number of permutations of \(n\) elements is
+\[
+	\begin{array}{l}{n \cdot(n-1) \cdot \cdot 4 \cdot 3 \cdot 2 \cdot 1=n !} \\ \end{array}
+\]
+In other words, there are \( n! \) different ways of ordering \(n\) elements.
+
+The number of permutations of \(n\) elements taken \(r\) at a time \textbf{without repetition}  is
+
+\[
+	\nPr{n}{r}=\frac{n !}{(n-r) !}=n(n-1)(n-2) \cdots(n-r+1)
+\]
+
+The number or permutations of \( n \) elements taken \( r \) at a time \textbf{with repetition allowed}  inclusion
+\[
+n^r	
+\]
+
+Consider a set of \(n\) objects that has \(n_1\) of one kind of object, \(n_2\) of a second kind, and so on. The number of \textbf{distinguishable permutations} of the \(n\) objects is
+
+\begin{equation}
+	\frac{n !}{n_{1} ! \cdot n_{2} ! \cdot n_{3} ! \cdot \cdot \cdot \cdot \cdot n_{k} !}
+\end{equation}
+
+This is equivalent to the number of ways \( n \) distinguishable objects can be placed into \( k \) boxes.
+
+\subsection{Combinations}
+
+Combinations consider only the possible sets of objects \emph{regardless} of the order in which the members of the set are arranged.
+
+The number of possible combinations of \(n\) elements taken \(r\) at a time \textbf{without repetition}  is
+
+\begin{equation}
+	\nCr{n}{r}=\frac{n !}{(n-r) ! r !} = \frac{\nPr{n}{r}}{r!}
+\end{equation}
+
+
+The number of possible combinations of \(n\) elements taken \(r\) at a time \textbf{with repetition}  is
+\[
+	\nCr{n}{r}=\frac{(n+r-1)!}{(n-1)!r!}	
+\]
+
+\subsection{Binomial Theorem}
+The number of \( r \)-combinations from a set with \( n \) elements can be denoted as
+\( (\begin{smallmatrix}
+	n \\
+	r
+\end{smallmatrix}) \).
+A \textbf{binomial} expression is the sum of two terms. The \textbf{binomial theorem} states that given two variables \( x \) and \( y \), and a nonnegative integer \( n \),
+\[
+(x + y)^n = \sum_{j=0}^n \begin{pmatrix} n\\j \end{pmatrix} x^{n-j}y^j = 	\begin{pmatrix} n\\0 \end{pmatrix}x^n + \begin{pmatrix} n\\1 \end{pmatrix} x^{n-1}y+ \cdots + \begin{pmatrix} n\\n-1 \end{pmatrix}xy^{n-1}+ \begin{pmatrix} n\\n \end{pmatrix}y^n
+\] 
+
+Note that the exponent of \( n \) decreases with each term as the exponent of \( y \) increases with each term. Also note that if \( x \) or \( y \) is negative, then each alternating term will be negative by moving the negative sign from the negative term to the front (e.g. \( x(-y)^3 =  - xy^3  \) ).

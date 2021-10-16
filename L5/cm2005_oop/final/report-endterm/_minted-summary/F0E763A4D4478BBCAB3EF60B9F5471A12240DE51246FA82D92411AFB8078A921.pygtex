@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n}{MerkleBot}\PYG{o}{::}\PYG{n}{generateWalletLog}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{ofstream} \PYG{n}{walletLog}\PYG{p}{;}
+	\PYG{n}{walletLog}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}walletLog.txt\PYGZdq{}}\PYG{p}{);}
+	\PYG{n}{walletLog} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{wallet} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+	\PYG{n}{walletLog}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

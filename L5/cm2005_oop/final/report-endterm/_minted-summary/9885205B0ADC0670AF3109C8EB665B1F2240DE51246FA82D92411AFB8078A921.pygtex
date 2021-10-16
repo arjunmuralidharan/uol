@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n}{PlaylistComponent}\PYG{o}{::}\PYG{n}{filesDropped}\PYG{p}{(}\PYG{k}{const} \PYG{n}{StringArray} \PYG{o}{\PYGZam{}}\PYG{n}{files}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{x}\PYG{p}{,} \PYG{k+kt}{int} \PYG{n}{y}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{c+c1}{// Iterate over all dropped files and store the track titles and lengths into vectors}
+	\PYG{k}{for} \PYG{p}{(}\PYG{n}{String} \PYG{n+nl}{file} \PYG{p}{:} \PYG{n}{files}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{trackTitles}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{file}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+c1}{// Refresh the table to show the newly added files}
+	\PYG{n}{tableComponent}\PYG{p}{.}\PYG{n}{updateContent}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/************************/}
+
+\PYG{k+kt}{void} \PYG{n}{PlaylistComponent}\PYG{o}{::}\PYG{n}{paintCell}\PYG{p}{(}\PYG{n}{Graphics} \PYG{o}{\PYGZam{}}\PYG{n}{g}\PYG{p}{,}
+					\PYG{k+kt}{int} \PYG{n}{rowNumber}\PYG{p}{,}
+					\PYG{k+kt}{int} \PYG{n}{columnId}\PYG{p}{,}
+					\PYG{k+kt}{int} \PYG{n}{width}\PYG{p}{,}
+					\PYG{k+kt}{int} \PYG{n}{height}\PYG{p}{,}
+					\PYG{k+kt}{bool} \PYG{n}{rowIsSelected}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+
+	\PYG{c+c1}{// Insert the track titles into the first column of the library}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{columnId} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{g}\PYG{p}{.}\PYG{n}{drawText}\PYG{p}{(}\PYG{n}{File}\PYG{p}{\PYGZob{}}\PYG{n}{trackTitles}\PYG{p}{[}\PYG{n}{rowNumber}\PYG{p}{]\PYGZcb{}.}\PYG{n}{getFileName}\PYG{p}{(),}
+				   \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,}
+				   \PYG{n}{width} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{height}\PYG{p}{,}
+				   \PYG{n}{Justification}\PYG{o}{::}\PYG{n}{centredLeft}\PYG{p}{,}
+				   \PYG{n+nb}{true}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

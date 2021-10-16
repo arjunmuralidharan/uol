@@ -1,0 +1,311 @@
+<!--begin::Card-->
+<div class="card card-custom">
+	<!--begin::Card Body-->
+	<div class="card-body p-10 p-lg-15 p-xxl-30">
+		<!--begin::Stepper 1-->
+		<div class="stepper stepper-1 d-flex flex-column flex-xl-row flex-row-fluid" id="kt_stepper">
+			<!--begin::Aside-->
+			<div
+				class="d-none d-xl-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px w-xxl-400px">
+				<!--begin::Nav-->
+				<div class="stepper-nav d-flex flex-column py-15">
+					<!--begin::Step 1-->
+					<div class="stepper-item current" data-kt-stepper-element="nav">
+						<div class="stepper-wrapper">
+							<div class="stepper-icon">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">1</span>
+							</div>
+							<div class="stepper-label">
+								<h3 class="stepper-title">Module and session</h3>
+								<div class="stepper-desc">Select module and session</div>
+							</div>
+						</div>
+					</div>
+					<!--end::Step 1-->
+					<!--begin::Step 2-->
+					<div class="stepper-item" data-kt-stepper-element="nav">
+						<div class="stepper-wrapper">
+							<div class="stepper-icon">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">2</span>
+							</div>
+							<div class="stepper-label">
+								<h3 class="stepper-title">Grade and privacy</h3>
+								<div class="stepper-desc">Add grade and set privacy</div>
+							</div>
+						</div>
+					</div>
+					<!--end::Step 2-->
+					<!--begin::Step 3-->
+					<div class="stepper-item" data-kt-stepper-element="nav">
+						<div class="stepper-wrapper">
+							<div class="stepper-icon">
+								<i class="stepper-check fas fa-check"></i>
+								<span class="stepper-number">3</span>
+							</div>
+							<div class="stepper-label">
+								<h3 class="stepper-title">Review</h3>
+								<div class="stepper-desc">Review and Submit</div>
+							</div>
+						</div>
+					</div>
+					<!--end::Step 3-->
+				</div>
+				<!--end::Nav-->
+			</div>
+			<!--begin::Aside-->
+			<!--begin::Content-->
+			<div class="d-flex flex-row-fluid justify-content-center">
+				<!--begin::Form-->
+				<form method="POST" class="pt-10 w-100 w-md-400px w-xl-500px" novalidate="novalidate" id="kt_stepper_form">
+					<!--begin::Step 1-->
+					<div class="current" data-kt-stepper-element="content">
+						<div class="w-100">
+							<!--begin::Heading-->
+							<div class="pb-10 pb-lg-15">
+								<h3 class="fw-bolder text-dark display-6">Module and session</h3>
+								<div class="text-muted fw-bold fs-3">Not sure?
+									<a href="https://my.london.ac.uk/group/student/results" class="text-primary fw-bolder">Check your offical UoL results <img src="assets/media/logos/uol_logo.png" class="opacity-30 img-fluid ms-2 mh-30px" alt="UoL Logo"> </a>  </div>
+							</div>
+							<!--begin::Heading-->
+							<!--begin::Form Group-->
+							<div class="fv-row">
+								<label class="fs-6 fw-bolder text-dark mb-7">Module</label>
+								<!--begin:Option-->
+								<label class="d-flex align-items-center justify-content-between mb-6 cursor-pointer">
+									<span class="d-flex align-items-center me-2">
+										<span class="symbol symbol-50px me-6">
+											<span class="symbol-label bg-light-primary">
+												<!--begin::Svg Icon | path: '.svg/icons/Home/Book-open.svg.'-->
+												<span class="svg-icon svg-icon-1 svg-icon-primary">
+													<!-- <img src="assets/media/svg/icons/Home/Book-open.svg" alt="Globe"> -->
+													<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+														xmlns="http://www.w3.org/2000/svg"
+														xmlns:xlink="http://www.w3.org/1999/xlink">
+														<!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+														<title>Stockholm-icons / Home / Book-open</title>
+														<desc>Created with Sketch.</desc>
+														<defs></defs>
+														<g id="Stockholm-icons-/-Home-/-Book-open" stroke="none"
+															stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect id="bound" x="0" y="0" width="24" height="24">
+															</rect>
+															<path
+																d="M13.6855025,18.7082217 C15.9113859,17.8189707 18.682885,17.2495635 22,17 C22,16.9325178 22,13.1012863 22,5.50630526 L21.9999762,5.50630526 C21.9999762,5.23017604 21.7761292,5.00632908 21.5,5.00632908 C21.4957817,5.00632908 21.4915635,5.00638247 21.4873465,5.00648922 C18.658231,5.07811173 15.8291155,5.74261533 13,7 C13,7.04449645 13,10.79246 13,18.2438906 L12.9999854,18.2438906 C12.9999854,18.520041 13.2238496,18.7439052 13.5,18.7439052 C13.5635398,18.7439052 13.6264972,18.7317946 13.6855025,18.7082217 Z"
+																id="Combined-Shape" fill="#000000"></path>
+															<path
+																d="M10.3144829,18.7082217 C8.08859955,17.8189707 5.31710038,17.2495635 1.99998542,17 C1.99998542,16.9325178 1.99998542,13.1012863 1.99998542,5.50630526 L2.00000925,5.50630526 C2.00000925,5.23017604 2.22385621,5.00632908 2.49998542,5.00632908 C2.50420375,5.00632908 2.5084219,5.00638247 2.51263888,5.00648922 C5.34175439,5.07811173 8.17086991,5.74261533 10.9999854,7 C10.9999854,7.04449645 10.9999854,10.79246 10.9999854,18.2438906 L11,18.2438906 C11,18.520041 10.7761358,18.7439052 10.4999854,18.7439052 C10.4364457,18.7439052 10.3734882,18.7317946 10.3144829,18.7082217 Z"
+																id="Path-41-Copy" fill="#000000" opacity="0.3">
+															</path>
+														</g>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+										</span>
+
+									</span>
+									<span class="d-flex flex-row-fluid">
+										<select class="form-select form-select-lg form-select-solid"
+											data-control="select2" data-placeholder="Select module" name="course_id" id="module" required>
+											<option selected disabled value=""></option>
+											<% courseList.forEach(function(course){ %>
+											<option value="<%= course.id %>"><%= course.id %> - <%= course.title %></option>
+											<% }) %>
+										</select>
+									</span>
+								</label>
+								<!--end::Option-->
+
+							</div>
+							<!--end::Form Group-->
+							<!--begin::Form Group-->
+							<div class="fv-row">
+								<label class="fs-6 fw-bolder text-dark mb-7">Study session</label>
+								<!--begin:Option-->
+								<label class="d-flex align-items-center justify-content-between mb-6 cursor-pointer">
+									<span class="d-flex align-items-center me-2">
+										<span class="symbol symbol-50px me-6">
+											<span class="symbol-label bg-light-primary">
+												<!--begin::Svg Icon | path: '.svg/icons/Code/Time-schedule.svg.'-->
+												<span class="svg-icon svg-icon-1 svg-icon-primary">
+													<!-- <img src="assets/media/svg/icons/Code/Time-schedule.svg" alt="Globe"> -->
+													<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+														xmlns="http://www.w3.org/2000/svg"
+														xmlns:xlink="http://www.w3.org/1999/xlink">
+														<!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+														<title>Stockholm-icons / Code / Time-schedule</title>
+														<desc>Created with Sketch.</desc>
+														<defs></defs>
+														<g id="Stockholm-icons-/-Code-/-Time-schedule" stroke="none"
+															stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect id="bound" x="0" y="0" width="24" height="24">
+															</rect>
+															<path
+																d="M10.9630156,7.5 L11.0475062,7.5 C11.3043819,7.5 11.5194647,7.69464724 11.5450248,7.95024814 L12,12.5 L15.2480695,14.3560397 C15.403857,14.4450611 15.5,14.6107328 15.5,14.7901613 L15.5,15 C15.5,15.2109164 15.3290185,15.3818979 15.1181021,15.3818979 C15.0841582,15.3818979 15.0503659,15.3773725 15.0176181,15.3684413 L10.3986612,14.1087258 C10.1672824,14.0456225 10.0132986,13.8271186 10.0316926,13.5879956 L10.4644883,7.96165175 C10.4845267,7.70115317 10.7017474,7.5 10.9630156,7.5 Z"
+																id="Path-107" fill="#000000"></path>
+															<path
+																d="M7.38979581,2.8349582 C8.65216735,2.29743306 10.0413491,2 11.5,2 C17.2989899,2 22,6.70101013 22,12.5 C22,18.2989899 17.2989899,23 11.5,23 C5.70101013,23 1,18.2989899 1,12.5 C1,11.5151324 1.13559454,10.5619345 1.38913364,9.65805651 L3.31481075,10.1982117 C3.10672013,10.940064 3,11.7119264 3,12.5 C3,17.1944204 6.80557963,21 11.5,21 C16.1944204,21 20,17.1944204 20,12.5 C20,7.80557963 16.1944204,4 11.5,4 C10.54876,4 9.62236069,4.15592757 8.74872191,4.45446326 L9.93948308,5.87355717 C10.0088058,5.95617272 10.0495583,6.05898805 10.05566,6.16666224 C10.0712834,6.4423623 9.86044965,6.67852665 9.5847496,6.69415008 L4.71777931,6.96995273 C4.66931162,6.97269931 4.62070229,6.96837279 4.57348157,6.95710938 C4.30487471,6.89303938 4.13906482,6.62335149 4.20313482,6.35474463 L5.33163823,1.62361064 C5.35654118,1.51920756 5.41437908,1.4255891 5.49660017,1.35659741 C5.7081375,1.17909652 6.0235153,1.2066885 6.2010162,1.41822583 L7.38979581,2.8349582 Z"
+																id="Combined-Shape" fill="#000000" opacity="0.3"></path>
+														</g>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+										</span>
+									</span>
+									<span class="d-flex flex-row-fluid">
+										<select class="form-select form-select-lg form-select-solid"
+											data-control="select2" data-placeholder="Select session" name="semester" id="semester" required>
+											<option></option>
+											<% semesterList.forEach(function(semester){ %>
+											<option value="<%= semester.id %>"><%= semester.title %></option>
+											<% }) %>
+										</select>
+									</span>
+								</label>
+								<!--end::Option-->
+
+							</div>
+							<!--end::Form Group-->
+						</div>
+					</div>
+					<!--end::Step 1-->
+					<!--begin::Step 2-->
+					<div class="" data-kt-stepper-element="content">
+						<div class="w-100">
+							<!--begin::Heading-->
+							<div class="pb-10 pb-lg-15">
+								<h3 class="fw-bolder text-dark display-6">Grade and privacy</h3>
+								<div class="text-muted fw-bold fs-3">Not sure?
+									<a href="https://my.london.ac.uk/group/student/results" class="text-primary fw-bolder">Check your offical UoL results <img src="assets/media/logos/uol_logo.png" class="opacity-30 img-fluid ms-2 mh-30px" alt="UoL Logo"> </a>  </div>
+							</div>
+							<!--end::Heading-->
+							<!--begin::Form Group-->
+							<div class="fv-row mb-10">
+								<label class="fs-6 form-label fw-bolder text-dark">Grade</label>
+								<input type="number" class="form-control form-control-lg form-control-solid"
+									id="grade" name="grade" min="40" max="100" required placeholder="Enter your grade" value="" />
+							</div>
+							<!--begin::Form Group-->
+							<!--end::Row-->
+							<div class="fv-row row">
+								<!-- <div class="col-lg-6 col-md-6"> -->
+									<!--end::Form Group-->
+									<div class="form-check form-switch form-check-custom form-check-solid ms-3">
+										<input class="form-check-input h-30px w-50px" type="checkbox" value="false" id="anonymous" name="anonymous"/>
+										<label class="form-check-label fs-6 form-label fw-bolder text-dark" for="anonymous">Hide my name from the leaderboard for this grade
+										</label>
+									<%- include('../partials/widgets/info/_widget-anonymity-info.html')%>
+									</div>									
+									<!--begin::Form Group-->
+							</div>
+							<!--begin::Row-->
+						</div>
+					</div>
+					<!--end::Step 2-->
+					<!--begin::Step 3-->
+					<div class="" data-kt-stepper-element="content">
+						<div class="w-100">
+							<!--begin::Heading-->
+							<div class="pb-10 pb-lg-15">
+								<h3 class="fw-bolder text-dark display-6">Review</h3>
+								<div class="text-muted fw-bold fs-3">Review Your Grade Information and Submitt</div>
+							</div>
+							<!--end::Heading-->
+							<!--begin::Section-->
+							<h4 class="fw-bolder mb-3">Module and session</h4>
+							<div class="text-gray-600 fw-bold lh-lg mb-8">
+								<div>Module: <span id="module-confirmation" class="text-primary">CM1005 How Computers Work</span></div>
+								<div>Session: <span id="semester-confirmation" class="text-primary">April 2019</span></div>
+							</div>
+							<!--end::Section-->
+							<!--begin::Section-->
+							<h4 class="fw-bolder mb-3">Grade and privacy</h4>
+							<div class="text-gray-600 fw-bold lh-lg mb-8">
+								<div>Grade: <span id="grade-confirmation" class="text-primary">84</span></div>
+								<div>Privacy: <span id="anonymous-confirmation" class="text-primary">Visible to Gradez users</span></div>
+							</div>
+							<!--end::Section-->
+						</div>
+					</div>
+					<!--end::Step 3-->
+
+
+					<!--begin::Actions-->
+					<div class="d-flex justify-content-between pt-10">
+						<div class="mr-2">
+							<button type="button" class="btn btn-lg btn-light-primary fw-bolder py-4 pe-8 me-3"
+								data-kt-stepper-action="previous">
+								<!--begin::Svg Icon | path: '.svg/icons/Navigation/Left-2.svg.'-->
+								<span class="svg-icon svg-icon-4 me-1">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+										width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+											<polygon points="0 0 24 0 24 24 0 24" />
+											<rect fill="#000000" opacity="0.3"
+												transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000)"
+												x="14" y="7" width="2" height="10" rx="1" />
+											<path
+												d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z"
+												fill="#000000" fill-rule="nonzero"
+												transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997)" />
+										</g>
+									</svg>
+								</span>
+								<!--end::Svg Icon-->Previous</button>
+						</div>
+						<div>
+							<button type="button" class="btn btn-lg btn-primary fw-bolder py-4 ps-8 me-3"
+								data-kt-stepper-action="submit">Submit
+								<!--begin::Svg Icon | path: '.svg/icons/Navigation/Right-2.svg.'-->
+								<span class="svg-icon svg-icon-4 ms-2">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+										width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+											<polygon points="0 0 24 0 24 24 0 24" />
+											<rect fill="#000000" opacity="0.3"
+												transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)"
+												x="7.5" y="7.5" width="2" height="9" rx="1" />
+											<path
+												d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
+												fill="#000000" fill-rule="nonzero"
+												transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+										</g>
+									</svg>
+								</span>
+								<!--end::Svg Icon--></button>
+							<button type="button" class="btn btn-lg btn-primary fw-bolder py-4 ps-8 me-3"
+								data-kt-stepper-action="next">Next Step
+								<!--begin::Svg Icon | path: '.svg/icons/Navigation/Right-2.svg.'-->
+								<span class="svg-icon svg-icon-4 ms-1">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+										width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+										<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+											<polygon points="0 0 24 0 24 24 0 24" />
+											<rect fill="#000000" opacity="0.3"
+												transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)"
+												x="7.5" y="7.5" width="2" height="9" rx="1" />
+											<path
+												d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
+												fill="#000000" fill-rule="nonzero"
+												transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+										</g>
+									</svg>
+								</span>
+								<!--end::Svg Icon--></button>
+						</div>
+					</div>
+					<!--end::Actions-->
+				</form>
+				<!--end::Form-->
+			</div>
+			<!--end::Content-->
+		</div>
+		<!--end::Stepper 1-->
+	</div>
+	<!--end::Card Body-->
+
+</div>
+<!--end::Card-->

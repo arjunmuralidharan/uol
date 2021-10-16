@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kt}{void} \PYG{n}{PlaylistComponent}\PYG{o}{::}\PYG{n}{searchLibraryFor}\PYG{p}{(}\PYG{k}{const} \PYG{n}{String} \PYG{o}{\PYGZam{}}\PYG{n}{searchTerm}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{n}{searchResults}\PYG{p}{.}\PYG{n}{clear}\PYG{p}{();}
+
+	\PYG{c+c1}{// User needs to type at least two characters for the search to execute.}
+	\PYG{c+c1}{// The search works by looking for a string in each element of the track titles vector.}
+	\PYG{c+c1}{// We maintain a vector \PYGZdq{}searchResults\PYGZdq{} that is of equal length as track titles. If the track title matches our}
+	\PYG{c+c1}{// search term, we mark our result vector as \PYGZdq{}true\PYGZdq{} in the same index position as the track title.}
+	\PYG{c+c1}{// Later, we can check each track title against the results vector to decide how to show the user that a specific}
+	\PYG{c+c1}{// track was a match (or not)}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{searchTerm}\PYG{p}{.}\PYG{n}{length}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{// Iterate over the track titles and look for the search term in each}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{trackTitles}\PYG{p}{.}\PYG{n}{size}\PYG{p}{();} \PYG{o}{++}\PYG{n}{i}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{k}{if} \PYG{p}{(}\PYG{n}{trackTitles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{contains}\PYG{p}{(}\PYG{n}{searchTerm}\PYG{p}{))}
+			\PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{// Hit \PYGZhy{} mark this track as a result}
+				\PYG{n}{searchResults}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n+nb}{true}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+			\PYG{k}{else}
+			\PYG{p}{\PYGZob{}}
+				\PYG{c+c1}{// Miss \PYGZhy{} mark this track as not a result}
+				\PYG{n}{searchResults}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n+nb}{false}\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

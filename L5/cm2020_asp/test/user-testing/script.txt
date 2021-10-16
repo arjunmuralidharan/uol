@@ -1,0 +1,30 @@
+# User Testing #2 Script
+
+Gradez is a website for University of London Students. The goal is to 
+give students a place to keep track of their grades and see how well
+they are doing compared to others.
+
+Feel free to explore the application after completing the script.
+
+After completing the test and exploring the website further please fill
+complete the this survey: https://forms.gle/qXWbrAX1D7XsnGpS7
+
+1. Read the welcome message
+2. Sign in as the Demo User
+3. Find the average grades for all the modules
+4. Find the highest grade for CM2005
+5. Find which modules the Demo User has submitted grades for
+6. See the module leaderboard for one of the Demo User's submitted grades
+7. Go to My grades and take note of modules the demo user has submitted a grade for
+8. Go to a module leaderboard which Demo User has NOT submitted a grade for
+9. Go to homepage
+10. From the homepage, add a grade for CM2005
+11. Go to leaderboard for CM2005 and ensure grade is correct.
+12. Go to the leaderboard for Algorithms and Data Structures I
+13. Enter a grade for Algorithms and Data Structures I
+14. Having entered a grade for Algorithms and Data Structures I, change the session, grade, and privacy setting.
+15. Visit the leaderboard for Algorithms and Data Structures I to verify changes
+16. Find the Demo User's rank out of all the students
+17. Find the Demo User's rank in CM2005 and CM1005
+18. Determine if the Demo User is doing better than average
+19. Sign-out

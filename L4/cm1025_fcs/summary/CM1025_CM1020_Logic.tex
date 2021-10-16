@@ -1,0 +1,362 @@
+\section{Propositional Logic}
+\begin{mdframed}
+\textbf{Learning Outcomes}
+\begin{itemize}[label={\( \checkmark \)}]
+\item Define propositional logic and learn some of its properties 
+\item Give some examples of domains where 
+	propositional logic is used  
+\item Defining a proposition in mathematical context and distinguish examples of sentences considered as propositions and other that are not propositions 
+\item Learn how propositional variables help to simplify notations 
+\item Learn how we can build a truth table and give an example of how it works 
+\item Practice how to build compound statements using logical operators and take into consideration the order of precedence of the operators 
+\item Define truth sets and learn some examples of truth sets for some compound propositions 
+\item Define what is an implication and equivalence, what are their properties and build their truth table 
+\item Learn some important laws of propositional logic including De Morgan’s laws, and practice their use in building a reasoning, and proving equivalence
+\end{itemize}
+\end{mdframed}
+\subsection{Connectives}
+A \textbf{proposition} is a declarative sentence that is either true or false, but not both. We use \textbf{propositional} or \textbf{sentential} variables such as \(p,q,r,s \ldots \) to represent propositions. The \textbf{truth value of a proposition} is denoted by \textbf{T} or \textbf{F}. The simplest form of a proposition is an \textbf{atomic proposition}. Propositions can be placed in relation to one another using \textbf{connectives}.
+
+\subsubsection{Negation}
+Let \( p \) be a proposition. The \emph{negation} of \(p\) is stated as \[\mathbf{\neg p}\]
+and proposes that ``It is not the case that \(p\)''.
+
+The proposition \(\neg p\) is read ``not \(p\)''. The truth value of the negation of \(p, \neg p, \) is the opposite of the truth value of \(p\).
+
+\subsubsection{Conjunction}
+Let \(p\) and \(q\) be propositions. The \emph{conjunction} of \(p\) and \(q\), is denoted as \[\mathbf{p \wedge q }\] and proposes that ``\(p\) and \(q\)''.
+
+The \emph{conjunction} \(p \wedge q\) is true when both \(p\) and \(q\) are true and is false otherwise.
+
+\subsubsection{Disjunction}
+Let \(p\) and \(q\) be propositions. The \emph{disjunction} of \(p\) and \(q\), denoted as \[\mathbf{p \vee q }\] is the statement ``\(p\) or \(q\)''.
+
+The \emph{disjunction} \(p \vee q\) is false when both \(p\) and \(q\) are false and is true otherwise. This is an \textbf{inclusive or}, which means that the disjunction is true if at least one of the propositions is true, or both are true.
+
+\subsubsection{Conditional Statements \& Implication}
+Let \( p \) and \( q \) be propositions. The \emph{conditional statement} \[
+p \implies q	
+\]
+is the proposition ``if \( p \), then \( q \).'' The conditional statement \( p \implies q \) is false when \( p \) is true and \( q \) is false, and true otherwise. In the implication \( p \implies q \), \( p \) is the \emph{hypothesis} (or \emph{antecedent} or \emph{premise}) and \( q \) is called the \emph{conclusion} (or \emph{consequence}).
+
+The implication does not express causality in discrete mathematics. It only covers the truth value of the statement. It can also be read as:
+
+\begin{enumerate}
+	\item ``\( p \) is sufficient for \( q \) ''
+	\item ``a necessary condition for \( q \) is \( p \) ''
+	\item ``\( q \) unless \( \neg p \) ''
+	\item ``\( q \) whenever \( p \) ''
+\end{enumerate}
+
+\subsubsection{Exclusive Or}
+
+Let \(p\) and \(q\) be propositions. The \emph{exclusive or} of \(p\) and \(q\), denoted as \[ \mathbf{p \oplus q }\] is the statement ``either \(p\) or \(q\), but not both''.
+
+The \emph{exclusive or} \(p \oplus q\) is true when exactly one of \(p\) and \(q\) is true and false otherwise. In other words, \( p \) and \( q \) may never have the same truth value.  
+
+\subsubsection{Biconditional}
+Let \(p\) and \(q\) be propositions. The \emph{biconditional statement} \[ \mathbf{p \leftrightarrow q } \] is the proposition ``\(p\) if and only if \(q\)''.
+
+The biconditional statement \(p \leftrightarrow q\) is true when \(p\) and \(q\) have the same truth values, and is false otherwise.
+
+\subsection{Truth Tables}
+A truth table evaluates the truth values for propositions and connectives systematically. When given a compound proposition, a truth table can be used to evaluate the atomic propositions step-by-step and arrive at the correct truth value for the compound proposition.
+
+\begin{table}[H]
+\centering
+\caption{Truth table for basic connectives}\label{tab:truth}
+\begin{tabular}{@{}>{\bfseries}c>{\bfseries}cccccc@{}}
+\toprule
+ \( \mathbf{p} \) & \( \mathbf{q} \) & \(p \wedge q\) & \(p \vee q\) & \(p \oplus q\) & \(p \implies q\) & \(p \leftrightarrow q\)  \\ \midrule
+ T & T & T & T & F & T & T \\
+ T & F & F & T & T & F & F \\
+ F & T & F & T & T & T & F \\
+ F & F & F & F & F & T & T \\
+  \bottomrule
+\end{tabular}
+\end{table}
+Truth values can also be denoted using binary bits, i.e.~T is 1 and F is 0. When constructing a truth table, the number of rows is \(2^n\) where n is the number of propositions involved. So compound proposition involving 3 atomic propositions \(p, q, r\) has \(2^3 = 8\) rows.
+Further, The the first column (e.g.~\(p\)) is constructed with all true values for the first half, and false values for the second half, the second (\(q\)) is true for the first 2 rows and false for next two rows, and the third is true for the first row and false for the second row of the table, and then this pattern repeats down the table for \(p, q\) and \(r\).
+
+The universal and existential quantifications \( \forall \) and \( \exists \) are described in \autoref{ssub:quantifiers}.
+
+\subsection{Precedence of Logical Operators}
+Logical operators have an order of precedence as follows. \[
+\forall \quad \exists \quad \neg \quad \wedge \quad \vee \quad \implies \quad \leftrightarrow
+\]
+\subsection{Propositional Equivalences}\label{ssec:equiv}
+\begin{enumerate}
+	\item \textbf{Tautology:} A compound proposition that is always true, no matter the truth values of the individual propositions
+	\item \textbf{Contradiction:} A compound proposition that is always false, no matter the truth values of the individual propositions. This is called \textbf{inconsistent}.
+	\item \textbf{Contingency:} A compound proposition that is true for at least one scenario of truth values. This is called \textbf{consistent}. All tautologies are consistent by definition.
+\end{enumerate}
+
+% TODO: Add contrapositive comment to equivalences table
+
+\subsection{Logical Equivalence}
+Compound propositions that have the same truth value in all possible cases are called \textbf{logically equivalent}. In other words, if \(p \leftrightarrow q\) is a tautology, then \(p \equiv q\).
+
+Logical equivalence can be proved using truth tables.
+
+\subsection{De Morgan's Laws}
+\begin{gather*}
+\neg (p \wedge q) \equiv \neg p \vee \neg q  \tag{De Morgan's First Law} \\
+\neg (p \vee q) \equiv \neg p \wedge \neg q \tag{De Morgan's Second Law}
+\end{gather*}
+\subsection{Special equivalences}
+\subsubsection{Conjunction-Disjunction} The \textbf{conditional-disjunction equivalence} allows us to replace conditional statements with disjunctions. This is especially useful to convert a conditional to a form that can then be transformed using De Morgan's laws.
+
+\begin{gather*}
+p \implies q \equiv \neg p \vee q
+\end{gather*}
+
+\subsubsection{Contrapositive}The \textbf{contrapositive} of a conditional statement is equivalent to the original conditional statement and is defined as follows.
+\begin{gather*}
+p \implies q \equiv \neg q \implies \neg p
+\end{gather*}
+
+\subsection{Summary of Logical Equivalences}
+\begin{table}[H]
+\centering
+\caption{Summary of Equivalence Laws}\label{tab:identlaws}
+\def\arraystretch{1.4}
+\begin{tabular}{p{0.4\textwidth}p{0.4\textwidth}}
+\toprule
+Name  & Equivalence \\ \midrule
+\textbf{Identity Laws} & \(p \wedge \mathbf{T} \equiv p\) \\
+\textbf{} & \(p \vee \mathbf{F} \equiv p\) \\\midrule
+\textbf{Domination Laws} & \(p \vee \mathbf{T} \equiv \mathbf{T}\) \\
+\textbf{} &  \(p \wedge \mathbf{F} \equiv \mathbf{F}\) \\\midrule
+\textbf{Idempotent Laws} & \( p \vee p \equiv p \) \\
+\textbf{} &  \(p \wedge p \equiv p\)  \\\midrule
+\textbf{Double Negation Law} & \(\neg(\neg p) \equiv p\) \\\midrule
+\textbf{Commutative Laws} & \( p \vee q \equiv q \vee p \) \\
+\textbf{} & \(p \wedge q \equiv q \wedge p \) \\\midrule
+\textbf{Associative Laws} & \( (p \vee q) \vee r \equiv p \vee(q \vee r) \) \\
+\textbf{} & \((p \wedge q) \wedge r \equiv p \wedge(q \wedge r)\)  \\\midrule
+\textbf{Distributive Laws} & \(p \vee(q \wedge r) \equiv(p \vee q) \wedge(p \vee r)\) \\
+\textbf{} & \(p \wedge(q \vee r) \equiv(p \wedge q) \vee(p \wedge r)\) \\ \midrule
+\textbf{De Morgan's Laws} & \(\neg(p \wedge q) \equiv \neg p \vee \neg q\) \\
+\textbf{} & \(\neg(p \vee q) \equiv \neg p \wedge \neg q\) \\\midrule
+\textbf{Absorption Laws} & \(p \vee(p \wedge q) \equiv p\) \\
+\textbf{} & \(p \wedge(p \vee q) \equiv p\) \\\midrule
+\textbf{Negation Laws} & \(p \vee \neg p \equiv \mathbf{T}\) \\
+\textbf{} & \(p \wedge \neg p \equiv \mathbf{F}\) \\ \bottomrule
+\end{tabular}
+
+\end{table}
+\subsubsection{Logical Equivalences Involving Conditional Statements}
+\begin{align*}
+p \implies q &\equiv \neg p \vee q \\
+p \implies q &\equiv \neg q \implies \neg p\\
+p \vee q &\equiv \neg p \implies q \\
+p \wedge q &\equiv \neg(p \implies \neg q) \\
+\neg(p \implies q) &\equiv p \wedge \neg q\\
+(p \implies q) \wedge(p \implies r) &\equiv p \implies(q \wedge r) \\
+(p \implies q) \wedge(q \implies r) &\equiv(p \vee q) \implies r \\
+(p \implies q) \vee(p \implies r) &\equiv p \implies(q \vee r) \\
+(p \implies r) \vee(q \implies r) &\equiv(p \wedge q) \implies r \\
+(p \lor \neg r )\to (\neg q \land r)
+\end{align*}
+
+\subsubsection{Logical Equivalences Involving Biconditional Statements}
+\begin{align*}
+p \leftrightarrow q &\equiv(p \implies q) \wedge(q \implies p) \\ p \leftrightarrow q &\equiv \neg p \leftrightarrow \neg q \\ p \leftrightarrow q &\equiv(p \wedge q) \vee(\neg p \wedge \neg q) \\ \neg(p \leftrightarrow q) &\equiv p \leftrightarrow \neg q
+\end{align*}
+
+\section{Predicate Logic}
+The \textbf{predicate} of a statement is the property assigned to a specific variable. In the statement ``\(x\) is greater than 3'', \(x\) is the variable and ``is greater than 3'' is the predicate. This statement can be noted as the \textbf{propositional function} \(P(x)\)
+Predicate statements that describe valid input are \textbf{preconditions}, and statements describing valid output are \textbf{postconditions}.
+
+\subsection{Quantifiers}\label{ssub:quantifiers}
+Quantification expresses to which extent a propositional function \(P(x)\) is true over a range of elements.
+\subsubsection{Universal Quantification}The \emph{universal quantification} is stated as \[
+	\forall x P(x)
+\]
+and states ``\(P(x)\) for all values of \(x\) in the domain''.
+\subsubsection{Existential Quantification}The \emph{existential quantification} is stated as \[
+	\exists x P(x)
+\]
+and states ``There exists an element \(x\) in the domain such that \(P(x)\)''.
+
+The truth values of universal and existential quantifications are shown in \autoref{tab:quant}.
+
+\subsubsection{Uniqueness Quantification}
+The \emph{uniqueness quantifier} is stated as \[
+	\exists!xP(x)
+\]
+and states ``There exists one and only one element \( x \) in the domain such that \( P(x) \) ''
+
+\begin{table}[H]
+\centering
+\caption{Truth values of quantifiers}\label{tab:quant}
+\def\arraystretch{2}
+\begin{tabular}{p{0.2\textwidth}p{0.35\textwidth}p{0.35\textwidth}}
+\toprule
+\textbf{Statement}  & \emph{When true?} & \emph{When false?} \\ \midrule
+\(\forall x P(x)\) & \(P(x)\) is true for every \(x\). & \(P(x)\) is false for at least one \(x\).\\
+\(\exists x P(x)\) & There exists at least an \(x\) such that \(P(x)\). & \(P(x)\) is false for all \(x\). \\ \bottomrule
+
+\end{tabular}
+\end{table}
+\subsubsection{De Morgan's Laws for Quantifiers}\label{ssub:de_morgan_s_laws_for_quantifiers}
+
+The negation of a universal quantification of a statement \(P(x)\) is equivalent to an existential quantification of the negation of \(P(x)\). Likewise, the negation of an existential quantification of a statement \(P(x)\) is equivalent to the universal quantification of the negation of \(P(x)\).
+\begin{gather*}
+\neg \forall x P(x) \equiv \exists x \neg P(x) \\
+\neg \exists x Q(x) \equiv \forall x \neg Q(x)
+\end{gather*}
+
+\subsection{Rules of Inference}\label{sub:rules_of_inference}
+An \textbf{argument} in propositional logic is a sequence of propositions. All but the final proposition in the argument are called \emph{premises} and the final proposition is called the \emph{conclusion}. An argument is \textbf{valid} if the truth of all its premises implies that the conclusion is true. That is, \[
+	(p_1 \wedge p_2 \wedge \ldots \wedge p_n) \implies q
+\]
+is a \hyperref[ssec:equiv]{tautology} where \(p_1 \ldots p_n\) are the premises and \(q\) is the conclusion. A single premise can in itself be a conditional proposition.
+
+An argument form in propositional logic is a sequence of compound propositions involving propositional variables. An \textbf{argument form} is valid no matter which particular propositions are substituted for the propositional variables in its premises, the conclusion is true if the premises are all true. The notation for two premises \(p\) and \(p \implies q \) and its conclusion \(q\) is shown below.
+\begin{equation*}
+\setlength{\jot}{-0.1cm}
+\begin{aligned}
+&p &\\
+&p \implies q & \\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad &  q & \\
+\end{aligned}
+\end{equation*}
+
+
+Instead of using truth tables, an argument's truth value can be evaluated by using \textbf{rules of inference}. The most common rules for logical propositions are listed in \autoref{tab:rulesinf}, while rules for quantified statements are shown in \autoref{tab:rulesinfquant}.
+
+\begin{table}[H]
+	\scriptsize
+	\renewcommand*{\arraystretch}{-1}
+\begin{tabular}{m{0.2\textwidth}m{0.4\textwidth}m{0.3\textwidth}}
+\textbf{Rule} & \textbf{Tautology} & \textbf{Name} \\ \toprule
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&p &\\
+&p \implies q & \\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad & q & \\
+\end{aligned}
+\end{equation*} & \((p \wedge (p \implies q) ) \implies q \) & Modus ponens \\ \midrule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&\neg q &\\
+&p \implies q & \\
+&\rule[0.1cm]{1cm}{0.5pt} & \\[1pt]
+\therefore \quad & \neg p& \\
+\end{aligned}
+\end{equation*} & \((\neg q \wedge (p \implies q) ) \implies \neg p \) & Modus tollens \\\midrule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&p \implies q &\\
+&q \implies r & \\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad & p \implies r & \\
+\end{aligned}
+\end{equation*} & \(((p \implies q) \wedge (q \implies p)) \implies (p \implies q) \) & Hypothetical syllogism \\\midrule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&p \vee q&\\
+&\neg p & \\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad & q & \\
+\end{aligned}
+\end{equation*} & \( ((p \vee q) \wedge \neg p) \implies q \) & Disjunctive syllogism \\\midrule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&p &\\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad & p \vee q & \\
+\end{aligned}
+\end{equation*} & \(p \implies (p \vee q) \) & Addition \\\midrule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&p \wedge q &\\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad & p& \\
+\end{aligned}
+\end{equation*} & \( ((p \wedge q ) \implies p) \) & Simplification \\\midrule
+
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&p &\\
+&q & \\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad & p \wedge q & \\
+\end{aligned}
+\end{equation*} & \((p) \wedge (q)  \implies (p \wedge q) \) & Conjunction \\\midrule
+
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&p \vee q&\\
+&\neg p \vee r & \\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad & q \vee r & \\
+\end{aligned}
+\end{equation*} & \((p \vee q) \wedge (\neg p \vee r) \implies (q \vee r) \) & Resolution \\\midrule
+\end{tabular}
+
+\caption{Rules of inference}\label{tab:rulesinf}
+
+\end{table}
+
+\begin{table}[H]
+	\centering
+\begin{tabular}{m{0.4\textwidth}m{0.4\textwidth}}
+\textbf{Rule} & \textbf{Name} \\ \toprule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&\forall x P(x)&\\
+&\rule[0.1cm]{1cm}{0.5pt} & \\
+\therefore \quad &P(c)& \\
+\end{aligned}
+\end{equation*}   & Universal Instantiation \\\midrule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&P(c) \text{ for an arbitrary } c&\\
+&\rule[0.1cm]{3.5cm}{0.5pt} & \\
+\therefore \quad &\forall x P(x)& \\
+\end{aligned}
+\end{equation*}  & Universal Generalization \\\midrule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&\exists x P(x)&\\
+&\rule[0.1cm]{3.8cm}{0.5pt} & \\
+\therefore \quad &P(c) \text{ for some element } c& \\
+\end{aligned}
+\end{equation*}   & Existential Instantiation \\\midrule
+
+\begin{equation*}
+\setlength{\jot}{-0.05cm}
+\begin{aligned}
+&P(c) \text{ for some element c}&\\
+&\rule[0.1cm]{3.5cm}{0.5pt} & \\
+\therefore \quad &\exists x P(x)& \\
+\end{aligned}
+\end{equation*}   & Existential Generalization \\\midrule
+\end{tabular}
+\caption{Rules of Inference for Quantified Statements}\label{tab:rulesinfquant}
+\end{table}

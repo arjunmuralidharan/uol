@@ -1,0 +1,66 @@
+<!--begin::Table Widget Module Leaderboard-->
+<div class="card card-custom card-stretch mx-auto mb-xxl-8">
+<!-- <div class="card card-custom card-stretch mx-auto my-5 mb-xxl-8" style="max-width: 600px"> -->
+	<!--begin::Header-->
+	<div class="card-header border-0 pt-5">
+		<h3 class="card-title align-items-start flex-column">
+			<span class="card-label fw-bolder text-dark fs-2">Top 10</span>
+			<span class="text-muted mt-2 fw-bold fs-6"><%= moduleStats.count %> Grades Submitted</span>
+		</h3>
+	</div>
+	<!--end::Header-->
+	<!--begin::Body-->
+	<div class="card-body pt-3 pb-0 mt-n3">
+		<div class="table-responsive">
+			<table class="table table-borderless align-middle">
+				<thead>
+					<tr>
+						<th class="p-0 w-50px"></th>
+						<th class="p-0 min-w-55px"></th>
+						<th class="p-0 min-w-70px"></th>
+						<th class="p-0 min-w-70px"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% res.forEach(function (row) { %>
+					<tr>
+						<td class="fw-bolder fs-3"><%= row.ranking %>.</td>
+						<td class="px-0 py-3" style="width: 65px">
+							<div class="symbol symbol-55px">
+								<img alt="user avatar" src="<%= row.avatar_url %>" class="mh-55px rounded" />
+							</div>
+						</td>
+						<td class="px-0">
+							<%= row.name %>
+						</td>
+						<td class="text-end">
+							<span class="text-primary fw-bolder d-block fs-6"><%= row.grade %></span>
+						</td>
+					</tr>
+					<% }); %>
+					
+					<!-- Placeholder to for more users for testing layout -->
+					<!-- <//% for(let i = 7; i <= 10; i++) { %>
+					<tr>
+						<td class="fw-bolder fs-3"><//%=i%>.</td>
+						<td class="px-0 py-3" style="width: 65px">
+							<div class="symbol symbol-55px">
+								<img alt="user avatar" src="/assets/media/avatars/blank.png" class="mh-55px rounded" />
+							</div>
+						</td>
+						<td class="px-0">
+							Test User<//%= i %>
+						</td>
+						<td class="text-end">
+							<span class="text-primary fw-bolder d-block fs-6">-1</span>
+						</td>
+					</tr>
+					<//% } %> -->
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!--end::Body-->
+</div>
+<!--end::Table Widget Module Leaderboard-->
+										

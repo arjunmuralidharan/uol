@@ -1,0 +1,68 @@
+\babel@toc {british}{}
+\contentsline {section}{\numberline {1}Aims and Objectives}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Background and Problem}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Opportunity}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Goals}{4}{subsection.1.3}%
+\contentsline {paragraph}{Business Goals}{4}{section*.4}%
+\contentsline {paragraph}{Usability Goals}{5}{section*.5}%
+\contentsline {paragraph}{Technical Goals}{5}{section*.6}%
+\contentsline {section}{\numberline {2}Market Research}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Overview of Alternative Solutions}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Grade Tracking}{5}{subsubsection.2.1.1}%
+\contentsline {paragraph}{Peer student's Python command line grade calculator}{5}{section*.7}%
+\contentsline {subparagraph}{Notable Features}{6}{section*.9}%
+\contentsline {subparagraph}{Notable Design Choices}{6}{section*.10}%
+\contentsline {paragraph}{Peer's Google Sheets Degree Planner}{6}{section*.11}%
+\contentsline {subparagraph}{Notable Features}{6}{section*.13}%
+\contentsline {subparagraph}{Notable Design Choices}{6}{section*.14}%
+\contentsline {paragraph}{gpacalculator.io}{7}{section*.15}%
+\contentsline {subparagraph}{Notable Features}{7}{section*.17}%
+\contentsline {subparagraph}{Notable Design Choices}{7}{section*.18}%
+\contentsline {paragraph}{University of London Portal}{7}{section*.19}%
+\contentsline {subparagraph}{Notable Features}{8}{section*.21}%
+\contentsline {subparagraph}{Notable Design Choices}{8}{section*.22}%
+\contentsline {subsubsection}{\numberline {2.1.2}Grade Sharing}{8}{subsubsection.2.1.2}%
+\contentsline {paragraph}{University of London Slack workspace}{8}{section*.23}%
+\contentsline {subparagraph}{Notable Features}{9}{section*.25}%
+\contentsline {subparagraph}{Notable Design Choices}{9}{section*.26}%
+\contentsline {paragraph}{glassdoor.com}{9}{section*.27}%
+\contentsline {subparagraph}{Notable Features}{10}{section*.29}%
+\contentsline {subparagraph}{Notable Design Choices}{10}{section*.30}%
+\contentsline {subsection}{\numberline {2.2}Comparison of Alternative Solutions}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Market Positioning}{10}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}STEEPLE Analysis}{11}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}SWOT Analysis}{12}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}Planning and Requirements Gathering}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Methodology}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Discovery}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}High-Level Requirements Funnel}{16}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Key Research Questions}{17}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Online Survey - Design Choices}{17}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Online Survey - Questions and Results}{17}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Online Survey Insights}{20}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Initial Epics}{21}{subsection.3.4}%
+\contentsline {paragraph}{Capture Grades}{21}{section*.44}%
+\contentsline {subparagraph}{Acceptance Criteria}{21}{section*.45}%
+\contentsline {paragraph}{View Grades}{21}{section*.46}%
+\contentsline {subparagraph}{Acceptance Criteria}{21}{section*.47}%
+\contentsline {paragraph}{Manage Personal Grades}{21}{section*.48}%
+\contentsline {subparagraph}{Acceptance Criteria}{21}{section*.49}%
+\contentsline {paragraph}{Submit Module Retrospectives}{22}{section*.50}%
+\contentsline {subparagraph}{Acceptance Criteria}{22}{section*.51}%
+\contentsline {paragraph}{View Module Retrospectives}{22}{section*.52}%
+\contentsline {subparagraph}{Acceptance Criteria}{22}{section*.53}%
+\contentsline {subsection}{\numberline {3.5}Implementation Approach}{22}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Formative Testing and Evaluation}{23}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Identifying Users}{23}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Testing \& Evaluation Methods}{23}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Evaluation Type}{23}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Evaluation Approach}{24}{subsubsection.4.2.2}%
+\contentsline {section}{\numberline {5}Prototyping Techniques}{24}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Techniques}{24}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Storyboards \& Sketching}{24}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Wireframes}{25}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Post-Launch Evaluation Techniques}{29}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Critical Success Factors}{29}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Measurement of Success \& Failure}{29}{subsection.6.2}%
+\contentsline {section}{Appendices}{32}{section*.64}%
+\contentsline {section}{\numberline {A}Git History}{32}{appendix.A}%

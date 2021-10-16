@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{String} \PYG{n}{PlaylistComponent}\PYG{o}{::}\PYG{n}{getLengthOfTrack}\PYG{p}{(}\PYG{n}{String} \PYG{n}{file}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{k}{auto} \PYG{n}{duration}\PYG{p}{\PYGZob{}}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{};}
+
+	\PYG{c+c1}{// Calculate the duration of the track by using an AudioFormatReader on the audio file}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{unique\PYGZus{}ptr}\PYG{o}{\PYGZlt{}}\PYG{n}{juce}\PYG{o}{::}\PYG{n}{AudioFormatReader}\PYG{o}{\PYGZgt{}} \PYG{n}{reader}\PYG{p}{(}\PYG{n}{formatManager}\PYG{p}{.}\PYG{n}{createReaderFor}\PYG{p}{(}\PYG{n}{File}\PYG{p}{\PYGZob{}}\PYG{n}{file}\PYG{p}{\PYGZcb{}));}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{reader}\PYG{p}{.}\PYG{n}{get}\PYG{p}{()} \PYG{o}{!=} \PYG{k}{nullptr}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{// Formula to calculate length based on sample size and sample rate}
+		\PYG{n}{duration} \PYG{o}{=} \PYG{p}{(}\PYG{k+kt}{float}\PYG{p}{)}\PYG{n}{reader}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{lengthInSamples} \PYG{o}{/} \PYG{n}{reader}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{sampleRate}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+c1}{// Calculate minutes and seconds}
+	\PYG{n}{String} \PYG{n}{minutes} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{duration} \PYG{o}{/} \PYG{l+m+mi}{60}\PYG{p}{);}
+	\PYG{n}{String} \PYG{n}{seconds} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{to\PYGZus{}string}\PYG{p}{(}\PYG{n}{duration} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{60}\PYG{p}{);}
+
+	\PYG{c+c1}{// If the track doesn\PYGZsq{}t have any seconds beyond the full minute, we need to append another 0}
+	\PYG{c+c1}{// Otherwise tracks that are e.g. 5 minutes long show up as \PYGZdq{}5:0\PYGZdq{} instead of \PYGZdq{}5:00\PYGZdq{}.}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{seconds} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{seconds} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}00\PYGZdq{}}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+c1}{// Return the combined track length in MM:SS format}
+	\PYG{k}{return} \PYG{n}{minutes} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}:\PYGZdq{}} \PYG{o}{+} \PYG{n}{seconds}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

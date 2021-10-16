@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>List webpage!</title>
+	</head>
+	<body>
+		<h1>This is List Page</h1>
+		<h3>
+			You can see names and prices of all available books at
+			our book shop here:
+		</h3>
+		<ul>
+			<%if (Object.keys(availableBooks).length == 0) {%>
+			<li>No results found</li>
+			<% } availableBooks.forEach(function(book){ %>
+			<li><%= book.name %>, £<%= book.price %></li>
+			<% }) %>
+		</ul>
+	</body>
+</html>

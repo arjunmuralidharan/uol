@@ -1,0 +1,16 @@
+<!--begin::Sidebar-->
+<div id="kt_sidebar" class="sidebar bg-info" data-kt-offcanvas="true" data-kt-offcanvas-name="sidebar" data-kt-offcanvas-activate="{default: true, lg: false}" data-kt-offcanvas-overlay="true" data-kt-offcanvas-width="{default:'200px', '350px': '300px'}" data-kt-offcanvas-direction="right" data-kt-offcanvas-toggle="#kt_sidebar_toggler">
+	<!--begin::Sidebar Content-->
+	<div class="d-flex flex-column sidebar-body">
+
+		<!--layout-partial:partials/layout/_sidebar-general.html-->
+		<% if (user) { %>
+			<%- include('../partials/layout/_sidebar-profile.html')%>
+		<% } else { %>
+			<%- include('../partials/layout/_sidebar-general.html')%>
+		<% } %>
+	</div>
+	<!--end::Sidebar Content-->
+</div>
+<!--end::Sidebar-->
+				

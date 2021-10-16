@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+c1}{\PYGZsh{} Invoke the mysql shell with with user root and ask for password}
+	mysql \PYGZhy{}u root \PYGZhy{}p
+	
+	\PYG{c+c1}{\PYGZsh{} Exit the mysql shell}
+	exi
+\end{Verbatim}

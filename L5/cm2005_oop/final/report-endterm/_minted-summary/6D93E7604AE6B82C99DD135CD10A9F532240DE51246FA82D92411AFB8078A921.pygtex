@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n}{DJAudioPlayer}\PYG{o}{::}\PYG{n}{getNextAudioBlock}\PYG{p}{(}\PYG{k}{const} \PYG{n}{AudioSourceChannelInfo}\PYG{o}{\PYGZam{}} \PYG{n}{bufferToFill}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{c+c1}{// Switch to the reverb source if reverb is active}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{reverb} \PYG{o}{==} \PYG{n+nb}{true}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{reverbSource}\PYG{p}{.}\PYG{n}{getNextAudioBlock}\PYG{p}{(}\PYG{n}{bufferToFill}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+c1}{// Otherwise use the regular resample source}
+	\PYG{k}{else}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{resampleSource}\PYG{p}{.}\PYG{n}{getNextAudioBlock}\PYG{p}{(}\PYG{n}{bufferToFill}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

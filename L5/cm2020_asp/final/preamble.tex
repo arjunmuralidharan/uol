@@ -1,0 +1,147 @@
+% Using KOMA Script document style
+% Font size setting and
+% option to skip empty lines as new paragraphs
+\documentclass[10pt,a4paper]{article}
+% Packages without Options
+\usepackage{
+	algorithm,
+	algpseudocode,
+	amsfonts,
+	amssymb,
+	appendix,
+	array,
+	booktabs,
+	enumitem,
+	float,
+	footnote,
+	gensymb,
+	geometry,
+	graphicx,
+	interval,
+	karnaugh-map,
+	lipsum,
+	listings,
+	longtable,
+	makecell,	mathtools,
+	minted,
+    nicematrix,
+	parskip,
+	pdfpages,
+	pgfkeys,
+	pgfplots,
+    sectsty,
+	subcaption,
+	tablefootnote,
+	textcomp,
+	tikz,
+    titlecaps,
+	venndiagram,
+	wrapfig,
+	wrapfig,
+	xcolor
+}
+
+% Packages with Options
+
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage[colorlinks,linkcolor=cyan, citecolor=cyan, urlcolor=cyan]{hyperref}
+\usepackage[labelfont=bf,textfont=it,labelsep=period]{caption}
+\usepackage[RPvoltages]{circuitikz}
+\usepackage[british]{babel}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\definecolor{mintedbackground}{rgb}{0.97,0.97,0.97}
+
+\setminted[cpp]{
+bgcolor=mintedbackground,
+    linenos=true,
+    breaklines=true,}
+
+\setminted[js]{
+bgcolor=mintedbackground,
+    linenos=true,
+    breaklines=true,}
+
+\setminted[python]{
+bgcolor=mintedbackground,
+    linenos=true,
+    breaklines=true,}
+    
+% Enforce title case for section
+\allsectionsfont{\titlecap}
+
+% \lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+
+\linespread{1.5}
+
+
+
+% Package: Interval
+% Sets the style of mathematical intervals
+\intervalconfig{
+soft open fences, separator symbol=,,
+}
+
+% Package: Geometry
+% Sets the page margins
+\geometry{
+    a4paper,
+    left=32mm,
+    right=22mm,
+    top=22mm,
+    }
+	
+% Creates a proper caption name for algorithms
+\newcommand{\algorithmautorefname}{Algorithm}
+\newcommand{\listingautorefname}{Listing}
+\algrenewcommand{\algorithmiccomment}[1]{\texttt{// #1} }
+% Creates a numbered environment for Theorems
+\newtheorem{theorem}{Theorem}
+
+% Redefine the implication arrow to be a simple, thin arrow instead of the default, thick arrow
+\renewcommand{\implies}{\rightarrow}
+
+% Create a new command for the set complement to make my logical statements easier to read
+\newcommand{\compl}{\overline}
+
+% Creates commands for combinatorics nCr and nPr
+\newcommand{\nCr}[2]{\,_{#1}C_{#2}} % nCr
+\newcommand{\nPr}[2]{\,_{#1}P_{#2}} % nPr
+
+% Package: tikz
+% Loads libraries for drawing automata, 
+\usetikzlibrary{automata,positioning,shadows,arrows, shapes.gates.logic.US, calc}
+
+% Creates a command to create a button shape
+\newcommand*\keystroke[1]{%
+  \tikz[baseline= (key.base)]
+    \node[%
+      draw,
+      fill=white,
+      drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+      rectangle,
+      rounded corners=2pt,
+      inner sep=1pt,
+      line width=0.5pt,
+      font=\scriptsize\sffamily
+    ] (key) {#1\strut};
+}
+
+% Package: pgfplot
+% Sets the global options for PGF Plots
+\pgfplotsset{compat=newest}
+
+% Package: tikz
+% Flowchart Shapes
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+% Disable Minted syntax error highlights (red boxes)
+\AtBeginEnvironment{minted}{%
+  \renewcommand{\fcolorbox}[4][]{#4}}
+
+
+\graphicspath{{images/}}

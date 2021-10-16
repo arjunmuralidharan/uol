@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{MerkleBot}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{public}\PYG{o}{:}
+	\PYG{n}{MerkleBot}\PYG{p}{(}\PYG{n}{Wallet}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}wallet}\PYG{p}{,} \PYG{n}{OrderBook}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}orderBook}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}currentTime}\PYG{p}{);}
+	\PYG{n}{Wallet}\PYG{o}{\PYGZam{}} \PYG{n}{wallet}\PYG{p}{;}
+	\PYG{n}{OrderBook}\PYG{o}{\PYGZam{}} \PYG{n}{orderBook}\PYG{p}{;}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZam{}} \PYG{n}{currentTime}\PYG{p}{;}
+\PYG{p}{\PYGZcb{};}
+\PYG{err}{\PYGZbs{}}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{myminted}\PYG{p}{\PYGZcb{}}
+\PYG{err}{\PYGZbs{}}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{myminted}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{MerkleBot}\PYG{p}{.}\PYG{n}{cpp}\PYG{p}{\PYGZcb{}}
+\PYG{n}{MerkleBot}\PYG{o}{::}\PYG{n}{MerkleBot}\PYG{p}{(}\PYG{n}{Wallet}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}wallet}\PYG{p}{,} \PYG{n}{OrderBook}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}orders}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}currentTime}\PYG{p}{)}
+	\PYG{o}{:} \PYG{n}{wallet}\PYG{p}{\PYGZob{}}\PYG{n}{\PYGZus{}wallet}\PYG{p}{\PYGZcb{},} \PYG{n}{orderBook}\PYG{p}{\PYGZob{}}\PYG{n}{\PYGZus{}orders}\PYG{p}{\PYGZcb{},} \PYG{n}{currentTime}\PYG{p}{\PYGZob{}}\PYG{n}{\PYGZus{}currentTime}\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZob{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

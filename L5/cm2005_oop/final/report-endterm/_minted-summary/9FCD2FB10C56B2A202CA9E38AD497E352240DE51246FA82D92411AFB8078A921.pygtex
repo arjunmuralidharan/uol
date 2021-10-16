@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n}{MerkleBot}\PYG{o}{::}\PYG{n}{trade}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+	\PYG{c+c1}{// ...}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{bidPicks}\PYG{p}{.}\PYG{n}{size}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{k}{for} \PYG{p}{(}\PYG{k}{auto} \PYG{k}{const} \PYG{p}{[}\PYG{n}{product}\PYG{p}{,} \PYG{n}{price}\PYG{p}{]} \PYG{o}{:} \PYG{n}{bidPicks}\PYG{p}{)}
+		\PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{// Get the currency pair for the stock pick product}
+			\PYG{n}{std}\PYG{o}{::}\PYG{n}{string} \PYG{n}{currency} \PYG{o}{=} \PYG{n}{product}\PYG{p}{.}\PYG{n}{substr}\PYG{p}{(}\PYG{n}{product}\PYG{p}{.}\PYG{n}{find}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}/\PYGZdq{}}\PYG{p}{)} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{);}
+
+			\PYG{c+c1}{// Get the correct balance from your wallet}
+			\PYG{k+kt}{double} \PYG{n}{balance}\PYG{p}{\PYGZob{}}\PYG{n}{wallet}\PYG{p}{.}\PYG{n}{checkBalance}\PYG{p}{(}\PYG{n}{currency}\PYG{p}{)\PYGZcb{};}
+
+			\PYG{c+c1}{// Create the bid, splitting your balance across all bids for the same currency}
+			\PYG{n}{createBid}\PYG{p}{(}\PYG{n}{price}\PYG{p}{,} \PYG{p}{(}\PYG{n}{balance} \PYG{o}{/} \PYG{n}{bidPicks}\PYG{p}{.}\PYG{n}{count}\PYG{p}{(}\PYG{n}{product}\PYG{p}{))} \PYG{o}{*} \PYG{n}{price}\PYG{p}{,} \PYG{n}{product}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{c+c1}{// ...}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

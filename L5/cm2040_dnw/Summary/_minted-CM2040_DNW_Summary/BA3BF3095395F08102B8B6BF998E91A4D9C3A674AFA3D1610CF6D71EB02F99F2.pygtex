@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ \PYG{p}{\PYGZlt{}}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}\PYG{err}{\PYGZlt{}}\PYGZpc{}=title\PYGZpc{}\PYGZgt{}\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{h1}\PYG{p}{\PYGZgt{}}
+ \PYG{p}{\PYGZlt{}}\PYG{n+nt}{ul}\PYG{p}{\PYGZgt{}}
+	\PYG{err}{\PYGZlt{}}\PYGZpc{}for (var i=0; i \PYG{p}{\PYGZlt{}} \PYG{n+nt}{supplies.length}\PYG{err}{;} \PYG{n+na}{i}\PYG{err}{++)} \PYG{err}{\PYGZob{}\PYGZpc{}}\PYG{p}{\PYGZgt{}}
+		\PYG{p}{\PYGZlt{}}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+			\PYG{p}{\PYGZlt{}}\PYG{n+nt}{a} \PYG{n+na}{href}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}supplies/\PYGZlt{}\PYGZpc{}=supplies[i]\PYGZpc{}\PYGZgt{}\PYGZdq{}}\PYG{p}{\PYGZgt{}\PYGZlt{}/}\PYG{n+nt}{a}\PYG{p}{\PYGZgt{}}
+		\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{li}\PYG{p}{\PYGZgt{}}
+	\PYG{err}{\PYGZlt{}}\PYGZpc{}\PYGZcb{}\PYGZpc{}\PYGZgt{}
+\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{ul}\PYG{p}{\PYGZgt{}}
+\end{Verbatim}

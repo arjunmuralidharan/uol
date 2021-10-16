@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{c+cm}{/****** WRITING ******/}
+	\PYG{c+c1}{// Store the music library to a text file on disk so we can retrieve it again}
+	\PYG{c+c1}{// Create an output stream}
+	\PYG{n}{FileOutputStream} \PYG{n+nf}{libStream}\PYG{p}{(}\PYG{n}{library}\PYG{p}{);}
+	\PYG{c+c1}{// Write each loaded track to a new line in the library}
+	\PYG{k}{for} \PYG{p}{(}\PYG{k}{const} \PYG{n}{String} \PYG{o}{\PYGZam{}}\PYG{n+nl}{trackTitle} \PYG{p}{:} \PYG{n}{trackTitles}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{libStream} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{trackTitle} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{newLine}\PYG{p}{;}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+cm}{/****** READING ******/}
+
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{library}\PYG{p}{.}\PYG{n}{existsAsFile}\PYG{p}{())}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{FileInputStream} \PYG{n}{libStream}\PYG{p}{(}\PYG{n}{library}\PYG{p}{);}
+        \PYG{n}{trackTitles}\PYG{p}{.}\PYG{n}{clear}\PYG{p}{();}
+        \PYG{k}{while} \PYG{p}{(}\PYG{o}{!}\PYG{n}{libStream}\PYG{p}{.}\PYG{n}{isExhausted}\PYG{p}{())}
+		\PYG{p}{\PYGZob{}}
+			\PYG{n}{String} \PYG{n}{currentTrack} \PYG{o}{=} \PYG{n}{libStream}\PYG{p}{.}\PYG{n}{readNextLine}\PYG{p}{();}
+			\PYG{n}{trackTitles}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{currentTrack}\PYG{p}{);}
+			\PYG{n}{trackLengths}\PYG{p}{.}\PYG{n}{push\PYGZus{}back}\PYG{p}{(}\PYG{n}{getLengthOfTrack}\PYG{p}{(}\PYG{n}{currentTrack}\PYG{p}{));}
+			\PYG{n}{tableComponent}\PYG{p}{.}\PYG{n}{updateContent}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	
+\end{Verbatim}

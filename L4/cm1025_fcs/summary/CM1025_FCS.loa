@@ -1,0 +1,7 @@
+\contentsline {algorithm}{\numberline {1}{\ignorespaces Bubble Sort\relax }}{24}{algorithm.1}%
+\contentsline {algorithm}{\numberline {2}{\ignorespaces Insertion Sort\relax }}{25}{algorithm.2}%
+\contentsline {algorithm}{\numberline {3}{\ignorespaces Binary Search\relax }}{26}{algorithm.3}%
+\contentsline {algorithm}{\numberline {4}{\ignorespaces Recursive decrease-and-conquer procedure\relax }}{26}{algorithm.4}%
+\contentsline {algorithm}{\numberline {5}{\ignorespaces Quicksort --- \( \mathcal {O}(n^2) \) \relax }}{27}{algorithm.5}%
+\contentsline {algorithm}{\numberline {6}{\ignorespaces Merge Sort --- \( \mathcal {O}(n \qopname \relax o{log}n) \) \relax }}{28}{algorithm.6}%
+\contentsline {algorithm}{\numberline {7}{\ignorespaces Gale-Shapley Algorithm for Stable Matching --- \( \mathcal {O}(n^2) \) \relax }}{29}{algorithm.7}%

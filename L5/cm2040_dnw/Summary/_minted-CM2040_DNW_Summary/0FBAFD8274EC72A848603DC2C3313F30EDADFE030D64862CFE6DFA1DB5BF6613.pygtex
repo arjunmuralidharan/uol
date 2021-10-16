@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/bookadded\PYGZdq{}}\PYG{p}{,} \PYG{k+kd}{function} \PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,}\PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+
+\PYG{c+c1}{// saving data in database}
+\PYG{k+kd}{let} \PYG{n+nx}{sqlquery} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}INSERT INTO books (name, price) VALUES (?,?)\PYGZdq{}}\PYG{p}{;}
+
+\PYG{c+c1}{// execute sql query}
+\PYG{k+kd}{let} \PYG{n+nx}{newrecord} \PYG{o}{=} \PYG{p}{[}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{name}\PYG{p}{,} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{price}\PYG{p}{];}
+\PYG{n+nx}{db}\PYG{p}{.}\PYG{n+nx}{query}\PYG{p}{(}\PYG{n+nx}{sqlquery}\PYG{p}{,} \PYG{n+nx}{newrecord}\PYG{p}{,} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{,} \PYG{n+nx}{result}\PYG{p}{)} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{k}{return} \PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{error}\PYG{p}{(}\PYG{n+nx}{err}\PYG{p}{.}\PYG{n+nx}{message}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{k}{else} \PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{send}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{} This book is added to database, name: \PYGZdq{}}
+					\PYG{o}{+} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{name}
+					\PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{} price \PYGZdq{}}
+					\PYG{o}{+} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{price}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\end{Verbatim}

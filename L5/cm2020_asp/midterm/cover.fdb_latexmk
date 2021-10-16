@@ -1,0 +1,10 @@
+# Fdb version 3
+["pdflatex"] 1610191462 "cover.tex" "cover.pdf" "cover" 1610191462
+  "/usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf" 1598393674 39451 15a3ebee027466ecb89701aa91dfebaf ""
+  "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1608797493 2553349 3b94acb36267840cc19d3183a1f622c0 ""
+  "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
+  "cover.aux" 1610191462 8 a94a2480d3289e625eea47cd1b285758 ""
+  "cover.tex" 1600511554 175 3f187c75511c637828dcbfc3a4323649 ""
+  (generated)
+  "cover.log"
+  "cover.pdf"

@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n}{MerkleBot}\PYG{o}{::}\PYG{n}{generateBidsAsksSalesLog}\PYG{p}{(}\PYG{k}{const} \PYG{n}{OrderBookEntry}\PYG{o}{\PYGZam{}} \PYG{n}{order}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{n}{std}\PYG{o}{::}\PYG{n}{ofstream} \PYG{n}{logFile}\PYG{p}{;}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{order}\PYG{p}{.}\PYG{n}{orderType} \PYG{o}{==} \PYG{n}{OrderBookType}\PYG{o}{::}\PYG{n}{ask} \PYG{o}{||} \PYG{n}{order}\PYG{p}{.}\PYG{n}{orderType} \PYG{o}{==} \PYG{n}{OrderBookType}\PYG{o}{::}\PYG{n}{bid}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{logFile}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}bidsAsksLog.txt\PYGZdq{}}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{app}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{order}\PYG{p}{.}\PYG{n}{orderType} \PYG{o}{==} \PYG{n}{OrderBookType}\PYG{o}{::}\PYG{n}{asksale} \PYG{o}{||} \PYG{n}{order}\PYG{p}{.}\PYG{n}{orderType} \PYG{o}{==} \PYG{n}{OrderBookType}\PYG{o}{::}\PYG{n}{bidsale}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{std}\PYG{o}{::}\PYG{n}{ofstream} \PYG{n}{salesLog}\PYG{p}{;}
+		\PYG{n}{logFile}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}sales.txt\PYGZdq{}}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{app}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{k}{else}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{logFile}\PYG{p}{.}\PYG{n}{open}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}errors.txt\PYGZdq{}}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{ios}\PYG{o}{::}\PYG{n}{app}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{n}{logFile} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{order}\PYG{p}{.}\PYG{n}{timestamp} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{},\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{order}\PYG{p}{.}\PYG{n}{product} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{},\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{setprecision}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{order}\PYG{p}{.}\PYG{n}{price} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{},\PYGZdq{}} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{setprecision}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{order}\PYG{p}{.}\PYG{n}{amount} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+s}{\PYGZdq{}, \PYGZdq{}}
+			\PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{order}\PYG{p}{.}\PYG{n}{username} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+	\PYG{n}{logFile}\PYG{p}{.}\PYG{n}{close}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

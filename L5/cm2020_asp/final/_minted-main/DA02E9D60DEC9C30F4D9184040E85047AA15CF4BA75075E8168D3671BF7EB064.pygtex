@@ -1,0 +1,39 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		.
+├── config
+├── db
+├── middlewares
+├── public
+│   ├── assets
+│   │   ├── css
+│   │   ├── js
+│   │   │   └── custom
+│   │   ├── media
+│   │   │   ├── avatars
+│   │   │   ├── logos
+│   │   │   ├── misc
+│   │   │   ├── plugins
+│   │   │   ├── products
+│   │   │   ├── stock
+│   │   │   └── svg
+│   │   └── plugins
+│   │       ├── custom
+│   │       └── global
+│   └── style
+├── routes
+└── views
+    ├── layout
+    │   └── content
+    ├── pages
+    └── partials
+        ├── content
+        │   └── dropdown
+        ├── layout
+        ├── modals
+        └── widgets
+            ├── engage
+            ├── info
+            ├── lists
+            ├── stats
+            └── tables
+\end{Verbatim}

@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{searchTitle}\PYG{p}{.}\PYG{n}{setText}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Search (Hit Enter)\PYGZdq{}}\PYG{p}{,} \PYG{n}{juce}\PYG{o}{::}\PYG{n}{dontSendNotification}\PYG{p}{);}
+	\PYG{n}{searchTitle}\PYG{p}{.}\PYG{n}{attachToComponent}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{searchInput}\PYG{p}{,} \PYG{n+nb}{true}\PYG{p}{);}
+	\PYG{n}{searchTitle}\PYG{p}{.}\PYG{n}{setJustificationType}\PYG{p}{(}\PYG{n}{juce}\PYG{o}{::}\PYG{n}{Justification}\PYG{o}{::}\PYG{n}{verticallyCentred}\PYG{p}{);}
+	\PYG{n}{searchInput}\PYG{p}{.}\PYG{n}{setEditable}\PYG{p}{(}\PYG{n+nb}{true}\PYG{p}{);}
+	\PYG{n}{searchInput}\PYG{p}{.}\PYG{n}{setColour}\PYG{p}{(}\PYG{n}{juce}\PYG{o}{::}\PYG{n}{Label}\PYG{o}{::}\PYG{n}{backgroundColourId}\PYG{p}{,} \PYG{n}{juce}\PYG{o}{::}\PYG{n}{Colours}\PYG{o}{::}\PYG{n}{darkblue}\PYG{p}{);}
+
+	\PYG{c+c1}{// Lambda function to handle text inputs into the search box}
+	\PYG{n}{searchInput}\PYG{p}{.}\PYG{n}{onTextChange} \PYG{o}{=} \PYG{p}{[}\PYG{k}{this}\PYG{p}{]} \PYG{p}{\PYGZob{}} \PYG{n}{searchLibraryFor}\PYG{p}{(}\PYG{n}{searchInput}\PYG{p}{.}\PYG{n}{getText}\PYG{p}{());} \PYG{p}{\PYGZcb{};}
+\end{Verbatim}

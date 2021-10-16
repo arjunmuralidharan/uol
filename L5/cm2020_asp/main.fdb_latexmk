@@ -1,0 +1,15 @@
+# Fdb version 3
+["latex"] 1610191619 "midterm/main.tex" "main.dvi" "main" 1610191619
+  "/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1600980374 32860 63891baa3c1e8b2b5e9009dbcf141ebc ""
+  "/usr/local/texlive/2020/texmf-dist/tex/latex/tools/q.tex" 1580683321 1412 cd20387542dea4fd6eec91ec3611f2c6 ""
+  "/usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf" 1598393674 39451 15a3ebee027466ecb89701aa91dfebaf ""
+  "/usr/local/texlive/2020/texmf-var/web2c/pdftex/latex.fmt" 1608797495 2553202 645754bf5349215fb55a7e43dfcbeadf ""
+  "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
+  "cover.tex" 0 -1 0 ""
+  "main.aux" 1610191618 8 a94a2480d3289e625eea47cd1b285758 "latex"
+  "midterm/main.tex" 1610191606 44891 9ccc271c58296d06358d63107e5e8a11 ""
+  "preamble.tex" 0 -1 0 ""
+  (generated)
+  "main.aux"
+  "main.log"
+  "main.dvi"

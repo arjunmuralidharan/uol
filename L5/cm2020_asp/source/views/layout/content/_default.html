@@ -1,0 +1,23 @@
+<!--begin::Container-->
+<div class="container-fluid">
+	<!--layout-partial:pages/index.html-->
+
+	<% if(messages.success){ %>
+		<div class="alert alert-success"><%= messages.success %></div>
+	<% }; %>
+	<% if(messages.info){ %>
+		<div class="alert alert-info"><%= messages.info %></div>
+	<% }; %>
+	<% if(messages.warning){ %>
+		<div class="alert alert-warning"><%= messages.warning %></div>
+	<% }; %>
+	<% if(messages.error){ %>
+		<div class="alert alert-danger"><%= messages.error %></div>
+	<% }; %>
+
+	<!-- IMPORTANT: Make sure that you name your content pages according to 
+		            route names e.g. _leaderboard.html for /leaderboard route.
+     -->
+	<%- include('../../pages/'+req.path.replace('/','_') +'.html')%>
+</div>
+<!--end::Container-->

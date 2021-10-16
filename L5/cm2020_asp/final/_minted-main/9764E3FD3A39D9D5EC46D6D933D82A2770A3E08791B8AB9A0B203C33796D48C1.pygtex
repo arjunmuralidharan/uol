@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{app}\PYG{p}{.}\PYG{n+nx}{post}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}/addgrade\PYGZdq{}}\PYG{p}{,} \PYG{n+nx}{checkAuth}\PYG{p}{,} \PYG{n+nx}{checkPermission}\PYG{p}{,} \PYG{n+nx}{async} \PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{,} \PYG{n+nx}{res}\PYG{p}{)} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+	\PYG{k}{try} \PYG{p}{\PYGZob{}}
+		\PYG{k+kd}{let} \PYG{n+nx}{params} \PYG{o}{=} \PYG{p}{[}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{course\PYGZus{}id}\PYG{p}{,} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{semester}\PYG{p}{,} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{user}\PYG{p}{.}\PYG{n+nx}{id}\PYG{p}{,} \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{grade}\PYG{p}{,} \PYG{o}{!!}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{anonymous}\PYG{p}{];}
+		\PYG{k+kd}{let} \PYG{n+nx}{sql} \PYG{o}{=} \PYG{l+s+sb}{`}
+\PYG{l+s+sb}{		INSERT INTO grades(course\PYGZus{}id, study\PYGZus{}session\PYGZus{}id, user\PYGZus{}id, grade, anonymous)}
+\PYG{l+s+sb}{		VALUES (?, ?, ?, ?, ?)`}\PYG{p}{;}
+		\PYG{k+kd}{var} \PYG{p}{[}\PYG{n+nx}{results}\PYG{p}{,} \PYG{n+nx}{\PYGZus{}}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{await} \PYG{n+nx}{db}\PYG{p}{.}\PYG{n+nx}{query}\PYG{p}{(}\PYG{n+nx}{sql}\PYG{p}{,} \PYG{n+nx}{params}\PYG{p}{);}
+		\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{redirect}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{baseUrl} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}?addResult=success\PYGZdq{}}\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{error}\PYG{p}{.}\PYG{n+nx}{code} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}ER\PYGZus{}DUP\PYGZus{}ENTRY\PYGZdq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{n+nx}{res}\PYG{p}{.}\PYG{n+nx}{redirect}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{baseUrl} \PYG{o}{+} \PYG{l+s+sb}{`?addResult=You already have a grade for module }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{.}\PYG{n+nx}{course\PYGZus{}id}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{. You may edit an existing grade`}\PYG{p}{);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{});}
+\end{Verbatim}

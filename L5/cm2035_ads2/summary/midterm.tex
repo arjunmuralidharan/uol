@@ -1,0 +1,220 @@
+\input{../../templates/preamble} %Adjust this based on where your Summary is stored
+\title{CM2035: Algorithms \& Data Structures II \\ Midterm Assignment}
+\author{Arjun Muralidharan}
+\begin{document}
+\input{../../templates/cover}
+
+\section{Task 1}
+\subsection{Question 1}
+When the array $A$ is distributed to two other arrays, the even indices of the values in $A$ are halved and floored, i.e.\ the index $A[6]$ becomes $A1[3]$ and a value at $A[3]$ becomes $A2[1]$ (because 3 divided by two is 1.5, which is 1 when rounded down).
+
+This means that when we find a matching key, we need to return the doubled value $2*i$ to get the original index. \textbf{The value $j$ represents whether the input array $B$ is storing the even or odd indices of $A$}. If $j$ is 0, we consider $B$ to contain even indices of $A$. If $j$ is 1, we consider $B$ to store odd indices of $A$.
+
+\subsection{Question 2}
+
+The recursive version of the \textsc{Find} function is shown in \autoref{alg:find}.
+
+\begin{algorithm}[H]
+    \caption{Recursive \textsc{Find} function }\label{alg:find}
+    \begin{algorithmic}
+        \Function{RecursiveFind}{$key, B, M, i, j$}
+
+        \If{$i < 0$}
+        \State{\textbf{return} $-1$}
+        \EndIf{}
+
+        \If{$B[i] == key$}
+        \State{\textbf{return} $j + 2*i$}
+        \EndIf{}
+
+        \State{\textbf{return} \textsc{Find}$(key, B, M, i-1, j)$}
+
+        \EndFunction{}
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Question 3}
+
+The master theorem applies to recurrence equations of the form
+
+\[
+    T(n) = a*T(\frac{n}{b}) + f(n)
+\]
+
+Since the recurrence equation $T(M) = T(M-2) + C$ does not express $T(M)$ in terms of a fraction of $M$, i.e., as $T(\frac{M}{b})$ where $b > 1$, the master theorem does not apply.
+
+\section{Task 2}
+\subsection{Question 1}
+
+The \textbf{best case} is given when the desired key is present in the \textit{first} element of the \textit{first} subarray $A1$. In the provided example, the inputs would be
+
+\[
+    key = 7, A1 = [7,6,2,4,9], A2 = [5, 3 ,1, 8], N = 9
+\]
+
+while the worst case inputs are given if the desired key is the \textit{last} element in the \textit{second} subarray $A2$, with the inputs
+
+\[
+    key = 8, A1 = [7,6,2,4,9], A2 = [5, 3 ,1, 8], N = 9
+\]
+
+\subsection{Question 2}
+First, we'll analyse the running time of the \textsc{Find} function by using the \textbf{method of counting up time units}.
+
+\begin{algorithm}[H]
+    \caption{Worst case time complexity of the \textsc{Find} function }\label{alg:FindTime}
+    \begin{algorithmic}
+        \Function{Find}{$key, B, M, j$}
+
+        \For{$0 \leq i < M$} \hfill\Comment{7N+5 time units}
+        \If{$B[i] == key$} \hfill\Comment{5 time units}
+        \State{\textbf{return} $j + 2*i$} \hfill\Comment{not executed in the worst case}
+        \EndIf{}
+        \EndFor{}
+        \State{\textbf{return} $-1$} \hfill\Comment{1 time unit}
+        \EndFunction{}
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+    \caption{Best case time complexity of the \textsc{Find} function }\label{alg:FindTimeBest}
+    \begin{algorithmic}
+        \Function{Find}{$key, B, M, j$}
+
+        \For{$0 \leq i < M$} \hfill\Comment{4 time units}
+        \If{$B[i] == key$} \hfill\Comment{5 time units}
+        \State{\textbf{return} $j + 2*i$} \hfill\Comment{5 time unites}
+        \EndIf{}
+        \EndFor{}
+        \State{\textbf{return} $-1$} \hfill\Comment{not executed in the best case}
+        \EndFunction{}
+    \end{algorithmic}
+\end{algorithm}
+
+
+The worst case running time as shown in \autoref{alg:FindTime} can be expressed as $T(N) = 7N + 11$. The best case can be expressed as $T(N) = 14$, as shown in \autoref{alg:FindTimeBest}.
+
+\begin{algorithm}[H]
+    \caption{Worst case time complexity of the R0 function}\label{alg:R0Time}
+    \begin{algorithmic}
+        \Function{R0}{$key, A1, A2, N$}
+        \State{index = \textsc{Find}($key, A1, \lceil \frac{N}{2} \rceil, 0$)} \qquad \Comment{$7N +11 + 1$}
+        \If{index == -1} \qquad  \Comment{2 time units}
+        \State{\textbf{return} \textsc{Find}($key, A1, \lfloor \frac{N}{2} \rfloor, 1$)} \qquad \Comment{$7N+11 + 1$}
+        \EndIf{}
+        \State{\textbf{return} index} \qquad \Comment{not executed in the worst case}
+        \EndFunction{}
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+    \caption{Best case time complexity of the R0 function}\label{alg:R0TimeBest}
+    \begin{algorithmic}
+        \Function{R0}{$key, A1, A2, N$}
+        \State{index = \textsc{Find}($key, A1, \lceil \frac{N}{2} \rceil, 0$)}\qquad \Comment{14 time units}
+        \If{index == -1}\qquad \Comment{not executed}
+        \State{\textbf{return} \textsc{Find}($key, A1, \lfloor \frac{N}{2} \rfloor, 1$)} \qquad \Comment{not executed}
+        \EndIf{}
+        \State{\textbf{return} index} \qquad \Comment{2 time units}
+        \EndFunction{}
+    \end{algorithmic}
+\end{algorithm}
+
+The worst case time complexity of \textsc{R0} can be stated as $T(N) = 7N + 11 + 1 + 2 + 7N + 11 + 1 = 14N + 27$, as shown in \autoref{alg:R0Time}. The best case time complexity is given as $T(N) = 16$, as shown in \autoref{alg:R0TimeBest}.
+
+
+\subsection{Question 3}
+
+We can use asymptotic analysis to simplify the running times and express them as growth functions.
+
+In the worst case, the \textsc{Find} function needs to loop over both subarrays, it's running time is linear to the input size, $\mathcal{O}(N) = N$. In the best case, the function needs to only inspect the first element of the first subarray, hence the running time is constant $\Omega(N) = C$.
+
+\subsection{Question 4}
+Skipped.
+
+\section{Task 3}
+\subsection{Question 1}
+
+\begin{algorithm}[H]
+    \caption{Pseudocode for R1 algorithm}\label{alg:R1}
+    \begin{algorithmic}
+        \Function{R0}{$key, A, B, N$}
+        \State{$j = -1$}
+        \For{$0 \leq i$ < N}
+        \If{$A[i] == key \wedge B[i] == key$}
+        \State{$j=i$}
+        \EndIf{}
+        \If{$A[i] \neq B[i]$}
+        \State{\textbf{return} $-2$}
+        \EndIf{}
+        \EndFor{}
+        \State{\textbf{return} $j$}
+        \EndFunction{}
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Question 2}
+The time complexity can be noted in Theta notation as $\Theta(N)$, as the function always needs to traverse the entire array to check for consistency. So even if the key is found, the algorithm needs to check every pair of elements in both arrays every time the algorithm runs. Hence the time complexity is proportional to the size of the input.
+
+\section{Task 4}
+
+\subsection{Question 1}
+
+\begin{algorithm}[H]
+    \caption{Pseudocode for R1Hash Search algorithm}\label{alg:R1search}
+    \begin{algorithmic}
+        \Function{R1Hash}{$key, a, b, A, B, N$}
+        \State{hashPos $= (a*key+b) \bmod{N^2}$}
+        \State{index $= B[hashPos]$}
+        \If{A[index] $== key \quad\vee\quad $index $< 0$}
+        \State{\textbf{return} index}
+        \EndIf{}
+        \State{\textbf{return} -2}
+        \EndFunction{}
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Question 2}
+The three cases are handled by the pseudocode in \autoref{alg:R1search} as follows.
+
+\paragraph{Case 1: Value found} In the algorithm, the position of the hashed value in $B$ is calculated and stored in \textit{hashPos}. The index of the value in $A$ is then read from $B$ at the index \textit{hashPos}. If the value in $A$ at this index is equal to the \textit{key}, we return the index with the correct position as desired.
+
+\paragraph{Case 2: Value not found} If the index is less than 0, we can assume that it is -1, and hence the value was not found, and we can return the index as -1.
+
+\paragraph{Case 3: Error in storage} If the index is non-negative, but didn't match the key, then we return -2 as the fallback to indicate an error.
+
+\section{Task 5}
+
+The setting we will use is \textbf{direct referencing} where an array $A$'s indices are stored in an array $B$ at the index $B[A[i]]$. The length of $B$ is the maximum value stored in $A$, and $B$ is filled with -1 by default.
+
+
+\subsection{Question 1}
+
+\begin{algorithm}[H]
+    \caption{Pseudocode for Direct Reference Search}\label{alg:dfsearch}
+    \begin{algorithmic}
+        \Function{DirectRefSearch}{$key, A, B$}
+        \If{$B[key] == A[B[key]] \quad\vee\quad B[key] < 0$}
+        \State{\textbf{return} $B[key]$}
+        \EndIf{}
+        \State{\textbf{return} -2}
+        \EndFunction{}
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Question 2}
+
+The algorithm in \autoref{alg:dfsearch} checks if the value at the index in $B$ that corresponds to \textit{key} is equal to the corresponding value in $A$, and returns the index. It also returns the index if the value in $B$ is less than 0, in which case it can be assumed to return -1.
+
+If these checks fail, the algorithm returns -2.
+
+\subsection{Question 3}
+The best case and worst case are practically identical as no iteration is needed in this setup. The cost of this is that the solution can take a lot of space. Hence the best case here would be an Array $A$ where the largest number is 1 and the length of the array is 1. The worst case would be an array where the largest number is very, very large. However none of these inputs impact time complexity of the search algorithm.
+
+\subsection{Question 4}
+The best and worst case running times are always $T(N) = C$.
+
+\subsection{Question 5}
+The Theta notation for this algorithm is $\Theta(1)$.
+
+\end{document}

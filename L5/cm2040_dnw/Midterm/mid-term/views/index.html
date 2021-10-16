@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<%- include('partials/header.ejs') %>
+
+	<body>
+		<div class="container">
+			<%- include('partials/nav.ejs') %>
+
+			<div class="jumbotron mt-3">
+				<h1 class="display-4"><%= heading %></h1>
+				<p class="lead">
+					CalorieBuddy allows you to create,
+					update and list food items and their
+					calories values.
+				</p>
+				<hr class="my-4" />
+				<p>
+					You can <a href="/add">add</a>,
+					<a href="/search">search</a>,
+					<a href="/search">update</a>, or
+					<a href="/list">list</a> food items in
+					the database.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

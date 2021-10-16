@@ -1,0 +1,328 @@
+* [33m9e0b34b[m Documentation cleanup (#74)
+* [33m8099327[m Flash messages (#73)
+* [33m069ea1f[m Gl 188 histogram on module leaderboard (#72)
+* [33mdb1882d[m fixed general sidebar spacing bug (gl-70)
+*   [33m40e0206[m Merge pull request #70 from grade-leaderboard/gl-189-fix-general-side-bar
+[32m|[m[33m\[m  
+[32m|[m * [33md27c8c0[m add new logo
+[32m|[m * [33me900645[m fixed side bar
+* [33m|[m [33m24783a8[m fixed name padding and improved longname support (#71)
+* [33m|[m [33mc7463dc[m changed head styling (#69)
+[33m|[m[33m/[m  
+* [33m698d558[m updated deprecated body-parser initialization (#67)
+* [33m1c2fd50[m Gl 163 cleanup (#63)
+*   [33m86e35b6[m Merge pull request #59 from grade-leaderboard/GL-177-sidebar-not-logged-in-ver
+[34m|[m[35m\[m  
+[34m|[m * [33m100e1b9[m update sidebar header
+[34m|[m *   [33mf5c88c0[m resolve conflicts
+[34m|[m [36m|[m[1;31m\[m  
+[34m|[m * [1;31m|[m [33mb9a0b1b[m changed a logo area design
+[34m|[m * [1;31m|[m [33m09644d1[m fix avater on non-logged in sidebar
+* [1;31m|[m [1;31m|[m [33m683a798[m polished anonymity info message (#68)
+[1;31m|[m [1;31m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;31m|[m   
+* [1;31m|[m   [33mc3b1907[m Merge pull request #66 from grade-leaderboard/stats
+[1;32m|[m[1;33m\[m [1;31m\[m  
+[1;32m|[m * [1;31m|[m [33ma77c8ca[m Implemented beta sidebar feature This resolves GL-158, GL-159, GL-176
+[1;32m|[m[1;32m/[m [1;31m/[m  
+* [1;31m|[m [33m88d8011[m Add environment variables to container
+* [1;31m|[m [33mbba07f8[m Changed tag to release label
+* [1;31m|[m [33ma88f799[m Final report v2 draft (#65)
+* [1;31m|[m [33m13e30d7[m Changed deployment workflow trigger to release
+* [1;31m|[m [33mf2fc8cb[m Fixed secret name
+* [1;31m|[m [33m614c1cb[m Added compose
+* [1;31m|[m [33m02b7c1c[m Added support for deployment
+* [1;31m|[m [33mb696103[m Fixed source location in CI workflow
+* [1;31m|[m [33mc0aff6d[m Configured secrets
+* [1;31m|[m [33mc051e1d[m Add or update the App Service deployment workflow configuration from Azure Portal.
+* [1;31m|[m [33m7aede5f[m Changed version
+* [1;31m|[m [33ma31c7e1[m Added callback URL
+* [1;31m|[m [33mf32ecbf[m Moved mysql-promise to dependencies
+* [1;31m|[m [33mc10e2b4[m Add deployment config
+* [1;31m|[m [33m3262555[m Added SSL option
+* [1;31m|[m [33m2270db6[m Removed test script
+* [1;31m|[m [33m18994fc[m Update main_gradez.yml
+* [1;31m|[m [33m72bf72a[m Add or update the App Service deployment workflow configuration from Azure Portal.
+* [1;31m|[m [33m82cddfe[m Gl 171 information on privacy and anonymity (#64)
+* [1;31m|[m   [33m3b01571[m Merge pull request #62 from grade-leaderboard/final-report
+[1;34m|[m[1;35m\[m [1;31m\[m  
+[1;34m|[m * [1;31m|[m [33m2874843[m Final report first draft complete
+* [1;35m|[m [1;31m|[m [33m319f827[m Changed home to program dashboard (#57)
+* [1;35m|[m [1;31m|[m [33md6a8388[m initial reports (#61)
+* [1;35m|[m [1;31m|[m   [33m355046a[m Merge pull request #58 from grade-leaderboard/GL-173-ensure-app-is-responsive-in-mobile
+[1;36m|[m[31m\[m [1;35m\[m [1;31m\[m  
+[1;36m|[m * [1;35m|[m [1;31m|[m [33mb6c7df5[m removed unused class
+[1;36m|[m * [1;35m|[m [1;31m|[m [33mb99f3fe[m removed comment
+[1;36m|[m * [1;35m|[m [1;31m|[m [33m08ae3f9[m shrunk avatar to match sidebar toggler
+[1;36m|[m * [1;35m|[m [1;31m|[m [33m3b02a60[m only show stepper only in xl view
+* [31m|[m [1;35m|[m [1;31m|[m   [33m2c42d51[m Merge pull request #60 from grade-leaderboard/gl-179-give-demo-user-identity
+[1;31m|[m[33m\[m [31m\[m [1;35m\[m [1;31m\[m  
+[1;31m|[m [33m|[m[1;31m_[m[31m|[m[1;31m_[m[1;35m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[33m|[m [31m|[m [1;35m|[m   
+[1;31m|[m * [31m|[m [1;35m|[m [33m820a48f[m gave demo user an identity
+[1;31m|[m[1;31m/[m [31m/[m [1;35m/[m  
+* [31m|[m [1;35m|[m [33mf945047[m fix welcome message & my grade table (#56)
+[31m|[m[31m/[m [1;35m/[m  
+* [1;35m|[m [33mb013c27[m Gl 165 refactor acceptance testing (#54)
+[1;35m|[m[1;35m/[m  
+* [33m0c586f5[m added link to add grade button
+*   [33m5e3868b[m Merge pull request #51 from grade-leaderboard/gl-116-slack-sign-in-workspace-instructions
+[34m|[m[35m\[m  
+[34m|[m * [33m52c69fc[m removed extra div
+[34m|[m * [33m1384829[m cleanup
+[34m|[m *   [33m73fd527[m Merge branch 'main' into gl-116-slack-sign-in-workspace-instructions
+[34m|[m [36m|[m[34m\[m  
+[34m|[m [36m|[m[34m/[m  
+[34m|[m[34m/[m[36m|[m   
+* [36m|[m [33m37257ab[m added more steps, context, and final script
+* [36m|[m [33m73dc7cb[m GL-151 Protected view login and error (#52)
+* [36m|[m [33m4e696c8[m Gl 122 fix personal grade table (#50)
+[1;31m|[m * [33meceeb78[m added slack sign-in info button
+[1;31m|[m * [33m22958e8[m widget cleanup
+[1;31m|[m[1;31m/[m  
+*   [33mf8de5c0[m Merge branch 'main' of https://github.com/BlairCurrey/uol-agile-group-project into main
+[1;32m|[m[1;33m\[m  
+[1;32m|[m *   [33m5dbea9f[m Merge pull request #49 from grade-leaderboard/GL-161-add-logout🐶
+[1;32m|[m [1;34m|[m[1;35m\[m  
+[1;32m|[m [1;34m|[m * [33m1124ca9[m add user drop-down menu
+* [1;34m|[m [1;35m|[m [33m51308f2[m added draft of user testing script
+[1;34m|[m[1;34m/[m [1;35m/[m  
+* [1;35m|[m   [33m5a973ac[m Merge pull request #47 from grade-leaderboard/gl-156-demo-mode
+[1;36m|[m[31m\[m [1;35m\[m  
+[1;36m|[m * [1;35m|[m [33mc47791a[m Added demo system
+[1;36m|[m [1;35m|[m[1;35m/[m  
+* [1;35m|[m [33ma22f6c7[m removed unauthorized link from /home page (#48)
+[1;35m|[m[1;35m/[m  
+* [33m68bbbe9[m gl-162-redirect-to-home
+* [33mb0b1a14[m removed/comment out some unnecessary contents (#45)
+*   [33mbcb5d74[m Merge pull request #44 from grade-leaderboard/gl-26-info-and-welcome-message
+[32m|[m[33m\[m  
+[32m|[m * [33m8a5ea39[m fixed bug: only part of button was link
+[32m|[m * [33m2132d93[m removed uncecessary styling
+[32m|[m * [33m0ca599c[m work in progress
+[32m|[m *   [33mdf65357[m Merge branch 'main' into gl-26-info-and-welcome-message
+[32m|[m [34m|[m[35m\[m  
+[32m|[m * [35m|[m [33m89c4bf4[m work in progress
+* [35m|[m [35m|[m [33m1fa046e[m Converted add grade and edit grade to new theme (#43)
+* [35m|[m [35m|[m   [33m2a0b76c[m Merge pull request #42 from grade-leaderboard/gl-117-gradez-everywhere
+[36m|[m[1;31m\[m [35m\[m [35m\[m  
+[36m|[m * [35m|[m [35m|[m [33m0e4505e[m changed grade(s) leaderboard to Gradez
+[36m|[m [35m|[m[35m/[m [35m/[m  
+* [35m|[m [35m|[m   [33md027b84[m Merge pull request #41 from grade-leaderboard/gl-112-default-avatar-for-anonymous
+[35m|[m[1;33m\[m [35m\[m [35m\[m  
+[35m|[m [1;33m|[m[35m_[m[35m|[m[35m/[m  
+[35m|[m[35m/[m[1;33m|[m [35m|[m   
+[35m|[m * [35m|[m [33m6fab2e7[m added default icon for anonymous
+[35m|[m * [35m|[m [33m4de6e3a[m removed unecessary object
+[35m|[m [35m|[m[35m/[m  
+* [35m|[m [33me7270d1[m GL-150_personal_grade 🙈 (#40)
+[35m|[m[35m/[m  
+*   [33me8f0ad1[m Merge pull request #38 from grade-leaderboard/GL-146-port-website-to-new-theme-149
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33mbc2a171[m made rank bold
+[1;34m|[m *   [33m9f5e796[m Merge branch 'main' into GL-146-port-website-to-new-theme-149
+[1;34m|[m [1;36m|[m[31m\[m  
+[1;34m|[m * [31m|[m [33m44c4f94[m ported module leaderboard view
+[1;34m|[m * [31m|[m [33maaeaa63[m changed logo link to goto /home
+[1;34m|[m * [31m|[m   [33m37adac6[m Merge branch 'main' into GL-146-port-website-to-new-theme-149
+[1;34m|[m [32m|[m[33m\[m [31m\[m  
+[1;34m|[m * [33m|[m [31m|[m [33m675ae13[m work in progress
+[1;34m|[m * [33m|[m [31m|[m [33m6807e72[m work in progress
+* [33m|[m [33m|[m [31m|[m [33m3ccafd1[m removed typo 'here' (#39)
+[31m|[m [33m|[m[31m_[m[33m|[m[31m/[m  
+[31m|[m[31m/[m[33m|[m [33m|[m   
+* [33m|[m [33m|[m [33m0274b33[m small cleanup to remove two visible comment tags
+* [33m|[m [33m|[m   [33me2b346f[m Merge pull request #36 from grade-leaderboard/GL-155-remove-the-functionality-of-the-start-button
+[34m|[m[35m\[m [33m\[m [33m\[m  
+[34m|[m * [33m|[m [33m|[m [33m46c71f0[m Update _header.html
+* [35m|[m [33m|[m [33m|[m   [33m06c6bc6[m Merge pull request #37 from grade-leaderboard/GL-153-hide-the-left-aside-for-now
+[35m|[m[1;31m\[m [35m\[m [33m\[m [33m\[m  
+[35m|[m [1;31m|[m[35m/[m [33m/[m [33m/[m  
+[35m|[m[35m/[m[1;31m|[m [33m|[m [33m|[m   
+[35m|[m * [33m|[m [33m|[m [33m82ad2e1[m Update style.bundle.css
+[35m|[m[35m/[m [33m/[m [33m/[m  
+* [33m|[m [33m|[m   [33m72690f9[m Merge pull request #35 from grade-leaderboard/port_home
+[33m|[m[1;33m\[m [33m\[m [33m\[m  
+[33m|[m [1;33m|[m[33m_[m[33m|[m[33m/[m  
+[33m|[m[33m/[m[1;33m|[m [33m|[m   
+[33m|[m * [33m|[m [33m0ba6fcc[m Hide add grade button when user is not signed in
+[33m|[m * [33m|[m [33m6e547c1[m Port home page Added missing _home.html
+[33m|[m[33m/[m [33m/[m  
+* [33m|[m   [33mc50069a[m Merge pull request #34 from grade-leaderboard/profile
+[1;34m|[m[1;35m\[m [33m\[m  
+[1;34m|[m * [33m|[m [33m774ba94[m Add profile sidebar
+[1;34m|[m * [33m|[m   [33me230c59[m Merge branch 'main' into profile
+[1;34m|[m [1;36m|[m[1;34m\[m [33m\[m  
+[1;34m|[m [1;36m|[m[1;34m/[m [33m/[m  
+[1;34m|[m[1;34m/[m[1;36m|[m [33m|[m   
+* [1;36m|[m [33m|[m [33ma6eb6c7[m Make req object available in all views
+* [1;36m|[m [33m|[m [33m80694aa[m Support same layout with different content pages
+[33m|[m [1;36m|[m[33m/[m  
+[33m|[m[33m/[m[1;36m|[m   
+[33m|[m * [33mbe743b7[m Merge from master
+[33m|[m[33m/[m  
+* [33mba31e06[m CSS alignment fixes (#33)
+*   [33m73ad15f[m Merge pull request #31 from grade-leaderboard/session-store
+[32m|[m[33m\[m  
+[32m|[m * [33m2af4975[m removed unused global var
+[32m|[m * [33m43a40b8[m added session-store
+* [33m|[m   [33me166ef5[m Merge pull request #32 from grade-leaderboard/theme
+[34m|[m[35m\[m [33m\[m  
+[34m|[m * [33m|[m [33mfac9dc3[m Convert home page to the theme
+[34m|[m * [33m|[m [33m6e146e0[m Added all theme assets
+[34m|[m * [33m|[m [33m83706c2[m Add theme pages and partials
+[34m|[m * [33m|[m [33mdbcb262[m Prepare folder and file structure for theme
+[34m|[m[34m/[m [33m/[m  
+* [33m|[m [33m824cf6f[m Added .vscode settings
+[33m|[m[33m/[m  
+* [33m870b256[m Minor fixes prior to migrating to new theme (#30)
+*   [33mff3be7f[m Merge pull request #29 from grade-leaderboard/GL-31-editing-of-grades-is-frozen-after-6-months
+[36m|[m[1;31m\[m  
+[36m|[m * [33m625c8dd[m Update personal_grade.html
+[36m|[m * [33mffbfc18[m Update personal_grade.html
+[36m|[m * [33m0ba8ad6[m remove the edit link for older grades
+[36m|[m[36m/[m  
+* [33m79aa7de[m Implemented cumulative grade calculation & completion rate (#28)
+* [33m02821a2[m fixed alice/bob id in grades
+*   [33mf5975a0[m Merge branch 'main' of https://github.com/BlairCurrey/uol-agile-group-project into main
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33m9de7301[m Added testing (#27)
+* [1;33m|[m [33m2be334f[m fixed typo
+[1;33m|[m[1;33m/[m  
+* [33mf1fe77d[m Added my grades to setup.sql (#22)
+*   [33m60545f1[m Merge pull request #26 from BlairCurrey/GL-99Edit-grades-inline-on-My-Grades-page
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33m150af8f[m added tests and generalized some steps
+[1;34m|[m * [33m049b4f8[m converted edit page to modal in my grades
+[1;34m|[m[1;34m/[m  
+* [33md903af8[m fixed typo
+* [33m6dcfe6b[m Gl 29 sort leaderboard by rank and time (#21)
+*   [33m5ff61b8[m Merge pull request #17 from BlairCurrey/🙈GL-30-protected-view
+[1;36m|[m[31m\[m  
+[1;36m|[m * [33mdfbded4[m 🙈➡️💻redirect not sign-in users
+* [31m|[m   [33m1edd16b[m Merge pull request #19 from BlairCurrey/same_grade
+[32m|[m[33m\[m [31m\[m  
+[32m|[m * [31m|[m [33mb41daec[m GL-33 User is trying to submit duplicate grade
+[32m|[m[32m/[m [31m/[m  
+* [31m|[m   [33m15ecf36[m Merge pull request #18 from BlairCurrey/image_size
+[34m|[m[35m\[m [31m\[m  
+[34m|[m * [31m|[m [33md9d85b4[m Changed image size
+[34m|[m[34m/[m [31m/[m  
+* [31m|[m   [33me78d76c[m Merge pull request #16 from BlairCurrey/GL-35-show-avatar
+[36m|[m[31m\[m [31m\[m  
+[36m|[m [31m|[m[31m/[m  
+[36m|[m * [33mb113ccd[m GL-35-show-avatar
+[36m|[m[36m/[m  
+* [33m0aec724[m Add 1/28 Weekly Working Session
+* [33mc868876[m GL-6-sign-in-using-slack (#15)
+* [33md18758f[m fix typos
+*   [33m8655d28[m Merge pull request #14 from BlairCurrey/add-gauge-and-taiko
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33m7c85f21[m update to properly validate a grade being entered twice
+[1;32m|[m * [33m848da67[m now using parameters in the taiko steps
+[1;32m|[m * [33mf9ca0ff[m functioning gauge and taiko
+[1;32m|[m * [33m1af3dc4[m move existing taiko to new structure
+[1;32m|[m[1;32m/[m  
+* [33m9c3699d[m GL-21 Edit submitted grades
+*   [33mdd9cfd0[m Merge pull request #11 from BlairCurrey/GL-32-No-grades-submitted-yet
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33m7796582[m GL-32 No grade submitted yet
+[1;34m|[m[1;34m/[m  
+* [33mbec3558[m additional taiko tests
+* [33m39662a0[m GL-28-number-of-submitted-grade-per-module (#10)
+* [33mf557cba[m initial taiko test
+* [33m3753e2a[m Submit grade for a module (#9)
+* [33mfab3114[m Updated in response to user feedback
+*   [33ma2270aa[m Merge pull request #8 from BlairCurrey/GL-22-Personal-Grade
+[1;36m|[m[31m\[m  
+[1;36m|[m * [33m9c5a2f5[m GL-22-Personal-Grade
+[1;36m|[m[1;36m/[m  
+* [33mff90a58[m Module leaderboard patch (#7)
+* [33mde7d5f2[m Add DB structure needed for grade submission (#6)
+* [33m6919f94[m added 1/21/21 working session
+*   [33mfb86859[m Merge pull request #3 from BlairCurrey/GL-11-Display-a-leaderboard-for-a-specific-module-with-mock-data
+[32m|[m[33m\[m  
+[32m|[m * [33mbf61b6d[m added user/session data
+[32m|[m *   [33m4bd5834[m Merge branch 'main' into GL-11-Display-a-leaderboard-for-a-specific-module-with-mock-data
+[32m|[m [34m|[m[32m\[m  
+[32m|[m [34m|[m[32m/[m  
+[32m|[m[32m/[m[34m|[m   
+* [34m|[m [33mac19ba8[m GL-12 Added fake authentication
+* [34m|[m [33mcdf9388[m added PR instructions
+[35m|[m * [33m931ec2c[m add rank to leaderboard
+[35m|[m * [33mbf0d3f1[m GL-11 module leaderboard w/ fake data
+[35m|[m[35m/[m  
+* [33mcbddf5e[m removed node_modules
+* [33m0f04a51[m ignore node_modules
+* [33m6e7c3a8[m remove mysql
+*   [33md3781c8[m Merge branch 'main' of https://github.com/BlairCurrey/uol-agile-group-project into main
+[36m|[m[1;31m\[m  
+[36m|[m *   [33m7e89bb3[m Merge pull request #2 from BlairCurrey/modules_with_grades
+[36m|[m [1;32m|[m[1;33m\[m  
+[36m|[m [1;32m|[m * [33m6867945[m GL-7 - Display a list of modules
+[36m|[m [1;32m|[m[1;32m/[m  
+* [1;32m|[m [33m06dcf5d[m Updated Readme with Gitflow instructions
+[1;32m|[m[1;32m/[m  
+* [33m2144477[m Stories file uploaded
+*   [33m1a38ca0[m Merge pull request #1 from BlairCurrey/gl-16-add-prettier-file
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33m9797761[m initial
+[1;34m|[m[1;34m/[m  
+* [33m986f1dd[m grade leaderboard scaffolding
+* [33m100bc1c[m Final version midterm
+* [33m35c8b91[m Added compelled pdf after last revision
+* [33mc8aae6f[m Added citations for section 1
+* [33m1f9f666[m Added citations and usability evaluation
+* [33mf296c91[m Updated with compiled PDF
+* [33mfddbd84[m Added more detail to initial epics - final candidate 2
+* [33m0d49a0a[m Midterm final candidate
+* [33m60b1a21[m added some wireframes to section 5
+* [33m94e4e7f[m Updated midterm section 6
+* [33m48b7b4a[m updated wireframes
+* [33mfeeeaa5[m Update leaderboard_wireframes.bmpr
+* [33m8f28ebb[m added the rest of 12-21 notes
+* [33m0d09fae[m added my meeting notes
+* [33m354fc35[m new revision from group session
+* [33m0cf3b52[m updated overleaf as images were not visible or outdated
+* [33m62ca2e7[m new wireframes, renamed source file
+* [33m5995e79[m Added framing to SWOT/STEEPLE and added author names.
+* [33m1a29062[m Reviewed and restructured midterm LaTeX file. Edited sections 2-5 and created tables. Incorporated storyboard graphics.
+* [33mf4465f9[m Create casual_checker_1.png
+* [33mde57acb[m Create competitive_topper_1.png
+* [33mb32c653[m export of gantt used in proposal
+* [33m41852f6[m Some rough ideas for reports to the user
+* [33mb7dea47[m Modified wireframe
+* [33m9f86020[m Added account log in and sign in pages
+* [33m54bf1e4[m initial attempt at wireframe prototype
+* [33m1f79184[m Amended minutes
+* [33m39db9d6[m Minutes from 2020-12-10 session
+* [33m04fa4e1[m Notes 2020-12-07
+* [33m1dc2d5b[m added updated midterm report pdf
+*   [33m5f165af[m Merge branch 'main' of https://github.com/BlairCurrey/uol-agile-group-project into main
+[1;36m|[m[31m\[m  
+[1;36m|[m * [33mf35e4a3[m Added a couple of comments on the meeting
+[1;36m|[m * [33md70fb30[m Fix date
+[1;36m|[m *   [33mc2d0c6a[m Merge branch 'main' of https://github.com/BlairCurrey/uol-agile-group-project into main
+[1;36m|[m [32m|[m[33m\[m  
+[1;36m|[m [32m|[m * [33m273900f[m Updated notes 3-Dec-2020
+[1;36m|[m [32m|[m * [33m0f60790[m Uploaded summary of the book
+[1;36m|[m * [33m|[m [33m03b91ca[m Capture ideation board after the meeting
+[1;36m|[m [33m|[m[33m/[m  
+[1;36m|[m * [33mabaac74[m Update TG1_G6_GroupMeetings.md
+[1;36m|[m * [33ma2e19a4[m Updating exports of Miro
+* [33m|[m [33m51d1a3a[m Add STEEPLE & changed market analysis sectioning
+[33m|[m[33m/[m  
+* [33m6424a17[m added methodology for gathering competitors
+* [33m1022228[m images for market research
+* [33me358d8f[m added Market Research
+* [33m03e7384[m Setup agenda for next meeting
+* [33m0e21f30[m Updated notes 27-11-2020
+* [33meffc3bd[m Added Tex Template for Midterm
+* [33m23a65f7[m Updated meeting outcomes November 23
+* [33m29ab345[m Update TG1_G6_GroupMeetings.md
+* [33m347db17[m 2020-11-19 check-in
+* [33m4f45b8a[m added 2020-11-12 meeting
+* [33m7556267[m corrected date for second meeting
+* [33m859b63f[m Documentation for Weekly Working Session 2020-11-09
+* [33m9b7188d[m Added Meeting Notes 2020-11-05 and updated README
+* [33mf461ecf[m Initial commit

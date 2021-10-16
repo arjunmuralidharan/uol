@@ -1,0 +1,59 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+* 100bc1c (HEAD \PYGZhy{}\PYGZgt{} main, origin/main, origin/HEAD) Final version midterm
+* 35c8b91 Added compelled pdf after last revision
+* c8aae6f Added citations for section 1
+* 1f9f666 Added citations and usability evaluation
+* f296c91 Updated with compiled PDF
+* fddbd84 Added more detail to initial epics \PYGZhy{} final candidate 2
+* 0d49a0a Midterm final candidate
+* 60b1a21 added some wireframes to section 5
+* 94e4e7f Updated midterm section 6
+* 48b7b4a updated wireframes
+* feeeaa5 Update leaderboard\PYGZus{}wireframes.bmpr
+* 8f28ebb added the rest of 12\PYGZhy{}21 notes
+* 0d09fae added my meeting notes
+* 354fc35 new revision from group session
+* 0cf3b52 updated overleaf as images were not visible or outdated
+* 62ca2e7 new wireframes, renamed source file
+* 5995e79 Added framing to SWOT/STEEPLE and added author names.
+* 1a29062 Reviewed and restructured midterm LaTeX file. Edited sections 2\PYGZhy{}5 and created tables. Incorporated storyboard graphics.
+* f4465f9 Create casual\PYGZus{}checker\PYGZus{}1.png
+* de57acb Create competitive\PYGZus{}topper\PYGZus{}1.png
+* b32c653 export of gantt used in proposal
+* 41852f6 Some rough ideas for reports to the user
+* b7dea47 Modified wireframe
+* 9f86020 Added account log in and sign in pages
+* 54bf1e4 initial attempt at wireframe prototype
+* 1f79184 Amended minutes
+* 39db9d6 Minutes from 2020\PYGZhy{}12\PYGZhy{}10 session
+* 04fa4e1 Notes 2020\PYGZhy{}12\PYGZhy{}07
+* 1dc2d5b added updated midterm report pdf
+*   5f165af Merge branch \PYGZsq{}main\PYGZsq{} of https://github.com/BlairCurrey/uol\PYGZhy{}agile\PYGZhy{}group\PYGZhy{}project into main
+|\PYGZbs{}
+| * f35e4a3 Added a couple of comments on the meeting
+| * d70fb30 Fix date
+| *   c2d0c6a Merge branch \PYGZsq{}main\PYGZsq{} of https://github.com/BlairCurrey/uol\PYGZhy{}agile\PYGZhy{}group\PYGZhy{}project into main
+| |\PYGZbs{}
+| | * 273900f Updated notes 3\PYGZhy{}Dec\PYGZhy{}2020
+| | * 0f60790 Uploaded summary of the book
+| * | 03b91ca Capture ideation board after the meeting
+| |/
+| * abaac74 Update TG1\PYGZus{}G6\PYGZus{}GroupMeetings.md
+| * a2e19a4 Updating exports of Miro
+* | 51d1a3a Add STEEPLE \PYGZam{} changed market analysis sectioning
+|/
+* 6424a17 added methodology for gathering competitors
+* 1022228 images for market research
+* e358d8f added Market Research
+* 03e7384 Setup agenda for next meeting
+* 0e21f30 Updated notes 27\PYGZhy{}11\PYGZhy{}2020
+* effc3bd Added Tex Template for Midterm
+* 23a65f7 Updated meeting outcomes November 23
+* 29ab345 Update TG1\PYGZus{}G6\PYGZus{}GroupMeetings.md
+* 347db17 2020\PYGZhy{}11\PYGZhy{}19 check\PYGZhy{}in
+* 4f45b8a added 2020\PYGZhy{}11\PYGZhy{}12 meeting
+* 7556267 corrected date for second meeting
+* 859b63f Documentation for Weekly Working Session 2020\PYGZhy{}11\PYGZhy{}09
+* 9b7188d Added Meeting Notes 2020\PYGZhy{}11\PYGZhy{}05 and updated README
+* f461ecf Initial commit
+\end{Verbatim}

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{SELECT} \PYG{n}{name}\PYG{p}{,} \PYG{n}{price} \PYG{k}{FROM} \PYG{n}{food} \PYG{k}{WHERE} \PYG{n}{price}\PYG{o}{=}\PYG{p}{(}\PYG{k}{SELECT} \PYG{k}{MAX}\PYG{p}{(}\PYG{n}{price}\PYG{p}{)} \PYG{k}{FROM} \PYG{n}{food}\PYG{p}{)}
+\end{Verbatim}

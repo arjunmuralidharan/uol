@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{MerkleBot}\PYG{o}{::}\PYG{n}{MerkleBot}\PYG{p}{(}\PYG{n}{Wallet}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}wallet}\PYG{p}{,} \PYG{n}{OrderBook}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}orders}\PYG{p}{,} \PYG{n}{std}\PYG{o}{::}\PYG{n}{string}\PYG{o}{\PYGZam{}} \PYG{n}{\PYGZus{}currentTime}\PYG{p}{)}
+	\PYG{o}{:} \PYG{n}{wallet}\PYG{p}{\PYGZob{}}\PYG{n}{\PYGZus{}wallet}\PYG{p}{\PYGZcb{},} \PYG{n}{orderBook}\PYG{p}{\PYGZob{}}\PYG{n}{\PYGZus{}orders}\PYG{p}{\PYGZcb{},} \PYG{n}{currentTime}\PYG{p}{\PYGZob{}}\PYG{n}{\PYGZus{}currentTime}\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZob{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

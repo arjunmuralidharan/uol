@@ -1,0 +1,22 @@
+void MerkleBot::generateBidsAsksSalesLog(const OrderBookEntry& order)
+{
+	std::ofstream logFile;
+	if (order.orderType == OrderBookType::ask || order.orderType == OrderBookType::bid)
+	{
+		logFile.open("bidsAsksLog.txt", std::ios::app);
+	}
+	else if (order.orderType == OrderBookType::asksale || order.orderType == OrderBookType::bidsale)
+	{
+		std::ofstream salesLog;
+		logFile.open("sales.txt", std::ios::app);
+	}
+	else
+	{
+		logFile.open("errors.txt", std::ios::app);
+	}
+
+	logFile << order.timestamp << "," << order.product << "," << std::setprecision(5) << order.price << "," << std::setprecision(5) << order.amount << ", "
+			<< order.username << std::endl;
+	logFile.close();
+}
+	

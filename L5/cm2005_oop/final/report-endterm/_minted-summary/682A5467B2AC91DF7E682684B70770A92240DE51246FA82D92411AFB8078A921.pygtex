@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{n}{PlaylistComponent}\PYG{o}{::}\PYG{n}{buttonClicked}\PYG{p}{(}\PYG{n}{Button} \PYG{o}{*}\PYG{n}{button}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+	\PYG{c+c1}{// Convert the buttons component ID to an integer, so we can use it as the index of our track titles array}
+	\PYG{k+kt}{int} \PYG{n}{id} \PYG{o}{=} \PYG{n}{std}\PYG{o}{::}\PYG{n}{stoi}\PYG{p}{(}\PYG{n}{button}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{getComponentID}\PYG{p}{().}\PYG{n}{toStdString}\PYG{p}{());}
+
+	\PYG{c+c1}{// If the left button was clicked, push the track to the left deck}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{button}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{getName}\PYG{p}{()} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}Left\PYGZdq{}}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{deck1}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{loadURL}\PYG{p}{(}\PYG{n}{URL}\PYG{p}{\PYGZob{}}\PYG{n}{File}\PYG{p}{\PYGZob{}}\PYG{n}{trackTitles}\PYG{p}{[}\PYG{n}{id}\PYG{p}{]\PYGZcb{}\PYGZcb{});}
+	\PYG{p}{\PYGZcb{}}
+
+	\PYG{c+c1}{// If the right button was clicked, push the track to the left deck}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{button}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{getName}\PYG{p}{()} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}Right\PYGZdq{}}\PYG{p}{)}
+	\PYG{p}{\PYGZob{}}
+		\PYG{n}{deck2}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{loadURL}\PYG{p}{(}\PYG{n}{URL}\PYG{p}{\PYGZob{}}\PYG{n}{File}\PYG{p}{\PYGZob{}}\PYG{n}{trackTitles}\PYG{p}{[}\PYG{n}{id}\PYG{p}{]\PYGZcb{}\PYGZcb{});}
+	\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

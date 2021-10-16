@@ -1,0 +1,145 @@
+\documentclass[a4paper,11pt]{scrartcl}
+\usepackage[british]{babel}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{venndiagram}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+\usepackage{tikz}
+
+ \geometry{
+ a4paper,
+ left=32mm,
+ right=22mm,
+ top=22mm,
+ }
+
+\newtheorem{theorem}{Theorem}
+
+\title{CM1020: Discrete Mathematics \\ Peer Graded Assignment 1.209}
+\author{Arjun Muralidharan}
+
+\begin{document}
+\maketitle
+\pagebreak
+\tableofcontents
+\listoffigures
+% \listoftables
+\pagebreak
+
+\section{Inclusion-Exclusion Principle for 3 Sets}
+We want to show that \[
+  |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|
+\]
+
+\subsection{Using set operations}
+We can apply the laws of set theory to prove this.
+
+\begin{gather*}
+| A \cup B \cup C| =  |(A \cup B) \cup C| \tag{Associativity} \\
+=  |(A \cup B)| + |C| - |(A \cup B) \cap C|  \tag{Inclusion-Exclusion} \\
+=  |A| + |B| - |(A \cap B)| + |C| -|(A \cup B) \cap C|  \tag{Inclusion-Exclusion} \\
+=  |A| + |B| - |(A \cap B)| + |C| -|(A \cap B) \cup (B \cap C)|  \tag{Distributivity}\\
+= |A| + |B| - |(A \cap B)| + |C| - ( |(A \cap C)| + |(B \cap C)| + |A \cap C \cap B \cap C|) \tag{Inclusion-Exclusion}\\
+= |A| + |B|+ |C| - |(A \cap B)  - |(A \cap C)| - |(B \cap C)| + |A \cap B \cap C| \tag{Commutativity}\\
+\end{gather*}
+\subsection{Using Venn diagrams}
+We will construct this by applying the principle of inclusion-exclusion, which starts by including all elements of given sets and then removing overcounts and returning undercounts. We know that if the sets \(A, B, C\) were disjoint, the cardinality of these sets would be stated as \[
+  |A \cup B \cup C| = |A| + |B| + |C|
+\]
+In this case, the elements of each set are counted only once. However, let us assume that all three sets intersect as shown in \autoref{fig:3sets}.
+\begin{figure}[ht]
+\begin{center}
+\begin{venndiagram3sets}
+\end{venndiagram3sets}
+\caption{3 sets intersecting}\label{fig:3sets}
+\end{center}
+\end{figure}
+
+If we apply the above formula, we would count elements multiple times. Assuming each set has only 1 element, the total count is shown in \autoref{fig:3setsdoublecount}.
+
+\begin{figure}[ht]
+\begin{center}
+\begin{venndiagram3sets}
+[labelOnlyA={1},labelOnlyB={1},labelOnlyC={1}, labelOnlyAB={2},labelOnlyAC={2},labelOnlyBC={2},labelABC={3}, labelNotABC={\(U\)}]
+\end{venndiagram3sets}
+\caption{Overcount of intersecting elements}\label{fig:3setsdoublecount}
+\end{center}
+\end{figure}
+
+Therefore, we need to remove the overcounted elements that occur at the intersections
+of the sets. We construct the following set difference. \[
+    |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C|
+\]
+
+This results in removal of double-counted elements. It also however causes the elements of \( |A \cap B \cap C| \) to be completely removed as shown in \autoref{fig:undercount}
+\begin{figure}[ht]
+\begin{center}
+\begin{venndiagram3sets}
+[labelOnlyA={1},labelOnlyB={1},labelOnlyC={1}, labelOnlyAB={1},labelOnlyAC={1},labelOnlyBC={1},labelABC={0}, labelNotABC={\(U\)}]
+\end{venndiagram3sets}
+\caption{Undercount of \( |A \cap B \cap C| \)}\label{fig:undercount}
+\end{center}
+\end{figure}
+
+We therefore need to ensure that the elements of the intersection \( |A \cap B \cap C| \) are counted and added back.\[
+    |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|
+\]
+
+The venn diagram shows that all elements are thus counted exactly once. This is shown in \autoref{fig:corrected}
+\begin{figure}[ht]
+\begin{center}
+\begin{venndiagram3sets}
+[labelOnlyA={1},labelOnlyB={1},labelOnlyC={1}, labelOnlyAB={1},labelOnlyAC={1},labelOnlyBC={1},labelABC={1}, labelNotABC={\(U\)}]
+\end{venndiagram3sets}
+\caption{Corrected count of all elements}\label{fig:corrected}
+\end{center}
+\end{figure}
+
+\section{Listing Method}
+Let A and B two subsets of the universal set \( U = \{x \mid x \in \mathbb{Z} \textrm{ and } 0 \leq x < 20 \} \). \(A\) is the set of even numbers in \(U\) and \(B\) is the set of odd numbers in \(U\). Therefore we know:
+\begin{gather*}
+U = \{0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19\}\\
+  A = \{ 0,2,4,6,8,10,12,14,16,18 \} \\
+  B = \{ 1,3,5,7,9,11,13,15,17,19\} \\
+  A \cup B = U \\
+  A \cap B = \emptyset
+\end{gather*}
+
+We now show the elements of the following sets using the listing method: \(A \cap \overline{B}, \overline{A \cap B}, \overline{A \cup B}, \overline{A \oplus B}\).
+
+\subsection{\(A \cap \overline{B}\)} The intersection of two sets contains all elements that are in both sets.
+\begin{gather*}
+  A = \{0,2,4,6,8,10,12,14,16,18 \} \\
+  \overline{B} = U - B = A  \\
+  A \cap \overline{B} = A = \{0,2,4,6,8,10,12,14,16,18\}
+\end{gather*}
+
+\subsection{\(\overline{A \cap B}\)} The complement of the intersection of two sets is equal to the union of their complements. The union of two sets contains all the elements in both sets.
+\begin{align*}
+  \overline{A \cap B} &= \overline{A} \cup \overline{B} \tag{De Morgan's Second Law}\\
+  \overline{A} &= B \\
+  \overline{B} &= A \\
+  \overline{A} \cup \overline{B} &= B \cup A = U \\
+U &= \{ 0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19\} \\
+\end{align*}
+
+\subsection{\(\overline{A \cup B}\)} The complement of the union of two sets is equal to the intersection of their complements. The intersection of two sets contains all elements that are in both sets.
+\begin{align*}
+  \overline{A \cup B} &= \overline{A} \cap \overline{B} \tag{De Morgan's First Law}\\
+  \overline{A} &= B \\
+  \overline{B} &= A \\
+  \overline{A} \cap \overline{B} &= B \cap A = \emptyset \\
+\end{align*}
+
+\subsection{\(\overline{A \oplus B}\)} The symmetric difference of two sets contains all elements that are in either of the sets, but \textbf{not} in both.
+\begin{align*}
+  {A \oplus B} &= U\\
+\overline{A \oplus B} = \overline{U} &= \emptyset \\
+\end{align*}
+
+\end{document}

@@ -1,0 +1,40 @@
+<!--begin::Main-->
+<!--begin::Root-->
+<div class="d-flex flex-column flex-root">
+	<!--begin::Page-->
+	<div class="page d-flex flex-row flex-column-fluid">
+		<!--begin::Wrapper-->
+		<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+
+			<!--layout-partial:layout/_header.html-->
+			<%- include('_header.html')%>
+
+			<!--begin::Main-->
+			<div class="d-flex flex-column flex-column-fluid">
+				<!--begin::Toolbar-->
+				<%- include('_toolbar.html')%>		
+				<!--end::Toolbar-->
+
+				<!--begin::Content-->
+				<div class="content fs-6 d-flex flex-column-fluid" id="kt_content">
+
+					<!--layout-partial:layout/content/_default.html-->
+					<%- include('content/_default.html')%>
+				</div>
+				<!--end::Content-->
+			</div>
+			<!--end::Main-->
+
+			<!--layout-partial:layout/_footer.html-->
+			<%- include('_footer.html')%>
+		</div>
+		<!--end::Wrapper-->
+
+		<!--layout-partial:layout/_sidebar.html-->
+		<%- include('_sidebar.html')%>
+	</div>
+	<!--end::Page-->
+</div>
+<!--end::Root-->
+<!--end::Main-->
+		

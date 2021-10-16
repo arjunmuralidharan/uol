@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE} \PYG{k}{TABLE} \PYG{n}{dishes}
+\PYG{p}{(}
+\PYG{n}{id} \PYG{n+nb}{INT} \PYG{n}{AUTO\PYGZus{}INCREMENT}\PYG{p}{,}
+\PYG{n}{name} \PYG{n+nb}{VARCHAR}\PYG{p}{(}\PYG{l+m+mi}{50}\PYG{p}{),}
+\PYG{n}{price} \PYG{n+nb}{DECIMAL}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{n}{unsigned}\PYG{p}{,}
+\PYG{n}{is\PYGZus{}vegetarian} \PYG{n+nb}{BOOLEAN}\PYG{p}{,}
+\PYG{n}{is\PYGZus{}vegan} \PYG{n+nb}{BOOLEAN}\PYG{p}{,}
+\PYG{k}{PRIMARY} \PYG{k}{KEY}\PYG{p}{(}\PYG{n}{id}\PYG{p}{)}
+\PYG{p}{);}
+\end{Verbatim}

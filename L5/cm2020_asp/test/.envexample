@@ -1,0 +1,2 @@
+SLACK_EMAIL = email@domain.com
+SLACK_PASSWORD = password

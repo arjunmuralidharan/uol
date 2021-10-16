@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<title>Political Junkie - a magazine for US politics</title>
+		<!-- CSS -->
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+		/>
+		<link href="css/magazine.css" rel="stylesheet" />
+
+		<!-- Javascript -->
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+			integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+			crossorigin="anonymous"
+		></script>
+
+		<script type="text/javascript">
+			// Initialise the popovers on event card buttons
+			// This relies on jQuery and Popper to change the "data-toggle" attribute on all popover-relevant items
+			$(function () {
+				$('[data-toggle="popover"]').popover();
+			});
+		</script>
+	</head>
+	<body>
+		<!-- Header Logo -->
+		<div class="container">
+			<header class="blog-header py-3">
+				<div class="row flex-nowrap justify-content-between align-items-center">
+					<div class="col text-center">
+						<a class="blog-header-logo text-dark" href="#">Political Junkie</a>
+					</div>
+				</div>
+			</header>
+			<!-- Navigation -->
+			<div class="nav-scroller py-1 mb-2">
+				<nav class="nav d-flex justify-content-between">
+					<a class="p-2 text-muted" href="index.html">Featured</a>
+					<a class="p-2 text-muted" href="blog.html">Blog</a>
+					<a class="p-2 text-muted" href="events.html">Events</a>
+					<a class="p-2 text-muted" href="membership.html">Membership</a>
+					<a class="p-2 text-muted" href="contact.html">Contact</a>
+				</nav>
+			</div>
+			<!-- Event Cards -->
+			<main class="container">
+				<h1 class="my-4">Upcoming Events</h1>
+				<div class="row mb-5">
+					<div class="col">
+						<!-- Event Card -->
+						<div class="card" style="width: 18rem">
+							<!-- Embedded YouTube Livestream -->
+							<iframe
+								width="100%"
+								height="100%"
+								src="https://www.youtube-nocookie.com/embed/wW1lY5jFNcQ"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							></iframe>
+							<div class="card-body">
+								<h5 class="card-title">First Presidential Debate</h5>
+								<p class="card-text">Watch live as Donald Trump takes on Joe Biden.</p>
+								<a
+									href="#"
+									role="button"
+									class="btn btn-primary"
+									data-toggle="popover"
+									title="Mark your calendar"
+									data-content="Because you are not a member, you have to remember the date yourself. Mark September 29th in your calendar."
+									>Remind me</a
+								>
+							</div>
+						</div>
+					</div>
+					<!-- Event Card -->
+					<div class="col">
+						<div class="card" style="width: 18rem">
+							<img src="img/bidentrump.jpg" class="card-img-top" alt="Biden & Trump Face Off" />
+							<div class="card-body">
+								<h5 class="card-title">Post-Debate Roundtable</h5>
+								<p class="card-text">Our editors invite you for a live roundtable discussion after the first debate.</p>
+								<a
+									href="#"
+									class="btn btn-info"
+									data-toggle="popover"
+									title="Members only"
+									data-content="This event is only open to members. See Membership for more information."
+									>Register now</a
+								>
+							</div>
+						</div>
+					</div>
+					<!-- Event Card -->
+					<div class="col">
+						<div class="card" style="width: 18rem">
+							<img src="img/virus.jpg" class="card-img-top" alt="CDC researchers working on the virus" />
+							<div class="card-body">
+								<h5 class="card-title">Coronavirus Panel</h5>
+								<p class="card-text">Join us downtown for an expert panel on how the Coronavirus is affecting our economy.</p>
+								<a
+									href="#"
+									class="btn btn-info"
+									data-toggle="popover"
+									title="Members only"
+									data-content="This event is only open to members. See Membership for more information."
+									>Register now</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<footer class="blog-footer">
+			<p>
+				A web development assignment at
+				<a href="https://www.london.ac.uk/">UoL</a>
+			</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+\section{Proof Techniques}
+\subsection{Terminology}
+\paragraph{Theorem} A \emph{theorem} is a formal statement that can be shown to be true.
+\paragraph{Axiom} An \emph{axiom} is a statement that we assume to be true to 	
+
+\subsection{Proof Methods}\label{sub:proof_methods}
+A proof is a \textbf{valid argument} that shows the truth of a mathematical statement. It uses the \emph{premise}, \emph{axioms}, \emph{theorems} to prove a \emph{conjecture} to be true or false. Most commonly, we prove a statement of the form \[
+	\forall x P(x) \implies Q(x)
+\]
+which is often simplified to omit the universal quantification as \[
+	p \implies q
+\]
+This statement can be proven with various methods.
+\subsubsection{Direct Proof}\label{ssub:direct_proof}
+A \textbf{direct proof} is constructed by \emph{assuming that} \(p\) \emph{is true} and showing that if \(p\) is true, \(q\) is true. This is done by expanding the definition underlying \(p\) and applying it to \(q\).
+
+\subsubsection{Proof by Contrapositive}\label{ssub:proof_by_contrapositive}
+A \textbf{proof by contrapositive} uses the fact that \[
+p \implies q \equiv \neg q \implies \neg p
+\]
+
+to first assume that \( q \) is false. If the contrapositive can be shown to be true, then the original statement is also true.
+\paragraph*{Vacuous Proofs} A proof is \emph{vacuous} or \emph{trivial} if e.g.\ in the statement \( p \implies q \) we can show that \( p \) is false, because \( p \implies q \) must be true if \( p \) is false.
+
+\subsection{Proof by Contradiction}\label{sub:proof_by_contradiction}
+We can show that \( p \) is true if \[
+	\neg p \implies (r \wedge \neg r)	
+\] 
+is true for some proposition \( r \). Because the conclusion is false, the hypothesis \( \neg p \) must be false for the conditional to be true. Therefore, \( p \) is true. This proof works by first assuming \( \neg p \) and then constructing the conditional. We assume that \( p \) is false and then show that this assumption leads to a contradiction, therefore proving that \( p \) is true.
+
+\subsection{Proof by Induction}
+Proof by induction can be used to prove statements that assert that \( P(n) \) is true for all positive integers \( n \), where \( P(n) \) is a propositional function. To prove this, there are two steps.
+
+\paragraph{Basis Step} We verify that \( P(1) \) is true. Note that we cannot just assume that \( P(1) \) is true, we need to show that it indeed is, by other proof methods. Note that the domain of the axiom to be proven may be restricted (e.g. \( k > 3 \)). In this case, the basis step would be \( P(4) \) instead of \( P(1) \).  
+
+\paragraph{Inductive Step} We show that the conditional statement \( P(k) \implies P(k+1) \) is true for all positive integers \( k \). Here, we \emph{assume} that \( P(k) \) is true to show that \( P(k+1) \) is true, leading the conditional to be true.
+
+Proof by induction can be stated as a rule of inference: \[
+( P(1) \wedge \forall k(P(k) \implies P(k+1))) \implies \forall nP(n)
+\]
+
+The general template for proofs by induction is as follows.
+
+\begin{enumerate}
+	\item Express the statement that is to be proved in the form ``for all \(  	n \geq b, P(n) \)'' for a fixed integer \( b \). For statements of the form ``\(   P(n) \) for all positive integers \( n \)'', let \( b = 1\), and for statements of the form ``\( P(n) \) for all non-negative integers \( n \)'', let  \( b = 1 \). For some statements of the form \( P(n) \), such as inequalities, you may need to determine the appropriate value of b by checking the truth values of \( P(n) \)  for small values of n.
+
+	\item 	Write out the words ``Basis Step''. Then show that \( P(b) \) is true, taking care that the correct value of \( b \)  is used. This completes the first part of the proof.
+	
+	
+	\item Write out the words ``Inductive Step'' and state, and clearly identify, the inductive hypothesis, in the form ``Assume that \( P(k) \)  is true for an arbitrary fixed integer \(  k \geq b \).''
+
+	\item  State what needs to be proved under the assumption that the inductive hypothesis is true. That is, write out what \( 	 P(k + 1) \) says.
+	
+	
+	\item Prove the statement \( P(k + 1) \) making use of the assumption \( 	 P(k) \). (Generally, this is the most difficult part of a mathematical induction proof. Decide on the most promising proof strategy and look ahead to see how to use the induction hypothesis to build your proof of the inductive step. Also, be sure that your proof is valid for all integers \( k \)  with \(  k \geq b \), taking care that the proof works for small values of \( k \), including \( k=b \).)
+	
+	\item 	Clearly identify the conclusion of the inductive step, such as by saying ``This completes the inductive step.'' After completing the basis step and the inductive step, state the conclusion, namely, ``By mathematical induction, \( P(n) \)  is true for all integers \( n \)  with \(  n \geq b \)''.
+\end{enumerate}
+
+\subsection{Strong Induction}
+
+When we cannot use induction to easily prove a result, we can consider using \textbf{strong induction}.
+
+To prove that \( P(n) \) is true for all positive integers n, wheren \( P(n) \) is a propositional function, we complete two steps.
+
+\paragraph{Basis Step}We verify that the proposition \( P(1) \) is true.
+
+\paragraph{Inductive Step} We show that the conditional statement \( [P(1) \wedge P(2) \wedge \cdots \wedge P(k)] \implies P(k+1) \) is true for all positive integers \( k \). 

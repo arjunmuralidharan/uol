@@ -1,0 +1,18 @@
+<!--begin::Row-->
+<div class="row g-0 g-xl-5 g-xxl-8 pt-sm-10">
+	<div class="col-xxl-4 my-3 pt-sm-0">
+		<%- include('../partials/widgets/tables/_widget-module-leaderboard.html')%>
+	</div>
+	<div class="col-xxl-8 my-3">
+		<!-- Show module stats if user has submitted a grade -->
+		<% if(moduleStats.userGrade) { %>
+		<div class="row mb-5">
+			<%- include('../partials/widgets/module-stats.html')%>
+		</div>
+		<% } %>
+		<div class="row">
+			<%- include('../partials/widgets/charts/module-leaderboard-histogram.html')%>
+		</div>
+	</div>
+</div>
+<!--end::Row-->

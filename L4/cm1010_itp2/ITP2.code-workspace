@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/arjun/OneDrive/University of London/CM1035_ADS"
+		}
+	],
+	"settings": {
+		"spellright.language": [
+			"en_GB"
+		],
+		"spellright.documentTypes": [
+			"latex",
+			"markdown"
+		]
+	}
+}
