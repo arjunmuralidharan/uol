@@ -1,18 +1,185 @@
 \input{../../Templates/preamble} %Adjust this based on where your Summary is stored
-\title{CMXXXX:TITLE \\ Summary}
+\title{CM3020: Artificial Intelligence \\ Summary}
 \author{Arjun Muralidharan}
 \begin{document}
 \input{../../Templates/cover}
 
-\section{SECTION TITLE}
+\section{Evolving creatures with genetic algorithms}
 \begin{mdframed}
 \textbf{Learning Outcomes}
 \begin{itemize}[label={\checkmark}]
-\item
+    \item Describe and discuss key issues in a range of branches of Artificial Intelligence.
+    \item Select appropriate artificial intelligence algorithms for particular scenarios and evaluate their adequacy and efficiency using appropriate techniques
+    \item Create working computer programs that implement specific artificial intelligence techniques
+    \item Describe how information can be represented in an artificial intelligence system and select appropriate representations for different types of information
 \end{itemize}
 \end{mdframed}
 
-\subsection{}
+\subsection{Introduction to evolution theory}
+
+\subsubsection{Bio-Inspired Computing}
+
+\textbf{Bio-inspired computation} has emerged as one of the most studied branches of AI during the last decades.
+
+\paragraph{Cybernetics (1950s)} The science of control and communication in the animal and the machine. Co-ordination, regulation and control will be its themes, for these are of the greatest biological and practical interest.
+
+\paragraph{Connectionism (1960s)} The perceptron is a minimally constrained ``nerve net'' consisting of logically simplified neural elements, which has been shown to be capable of learning to discriminate and to recognize perceptual patterns. \textit{This is the birth of deep neural networks.}
+
+\paragraph{Artificial Life (1980s)} Simulation of evolution, bio-primordial chemistry, completely artificial complex systems and more. \textit{``Life as it could be''}.
+
+\paragraph{Genetic Algorithms} Procedures that allow you to solve problems with iterative solutions.
+
+\subsubsection{Evolution Theory}
+
+Darwin proposed three generalisations:
+
+\begin{enumerate}
+    \item Variation: no two individuals are identical within a population.
+    \item Hereditary characteristics: the variation expressed as individual characteristics is in heritable from parents to offspring.
+    \item Multiplication and competition: Malthus’s observation --- about population increase where no competition for resources exists —-- means that as resources are always finite, competition must act as a brake on population growth.
+\end{enumerate}
+
+If these forces act, then hereditary variations within a population that allowed an organism to survive were more likely to be passed down. This process is called natural selection.
+
+A \textbf{genotype} encodes the characteristics of the individual. This is expressed in DNA as the strands of the double-helix. A \textbf{phenotype} is the actual individual that manifests in the world. It is the actual expression of the genotype when taking environmental factors into consideration.
+
+\textbf{DNA} is made up of four nucelobases, \textit{adenine (A)}, \textit{guanine (G)}, \textit{cytosine (C)}, and \textit{thymine (T)}. DNA gets converted into proteins that then define how an individual works. These combine with sugars and phosphates to create \textit{nucelotides}, which are the molecules making up DNA.
+
+The nucelotides of an individual then gets mapped to 21 different amino acids, which then form proteins. In 2021, DeepMind was able to model and predict which amino acids get expressed as what proteins (\href{https://deepmind.com/research/open-source/alphafold-protein-structure-database}{AlphaFold}).
+
+The environment applies \textbf{selective pressure} to phenotypes. \textbf{Fit} phenotypes are more likely to reproduce.
+
+\textbf{Fitness landscapes} describe the peaks and thoughs of evoluationary success within a population. 
+
+\begin{itemize}
+    \item An individual within a species is represented as a string of genes that defines its genotype. The string itself has a real number associated with it.
+    \item This number defines the fitness of the string in terms of the phenotype it produces.
+    \item The distribution of fitness values over the space of all genotypes gives the fitness landscape, and all members of the population map onto that landscape according to their fitness value.
+    \item Selection and mutation causes individuals to ``walk'' to the nearest peak.
+\end{itemize}
+
+Simple fitness landscapes only map two traits in relation to each other and can be visualised in a 3D surface graph (with the height being the level of fitness).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=8cm]{fitnesslandscape}
+    \caption{Fitness Landscapes}
+    \label{fig:fitness}
+\end{figure}
+
+\subsection{Artificial Evolution and Genetic Algorithms}
+
+\textbf{Genetic algorithms} are \textit{probabilistic search procedures} designed to work on large spaces involving \textit{states} that can be represented by \textit{strings}.
+
+With regards to evolution theory, probabilistic search represents \textit{selection}, while the states relate to \textit{phenotypes} and the strings are the \textit{genotypes}.
+
+The \textit{search space} is a space of possible solutions to a problem. If we can search the space, we can find a solution.
+
+The space can be represented by the length for a \textit{bit string}, with the possible values being the genotypes, and an actual value for the bit string would be the phenotype.
+
+Each phenotype that is found in the space is given a \textbf{fitness score}. The fitness score is then used to determine the likelihood of this individual being selected for breeding.
+
+An analogy is to map the fitness scores to the angles of a \textbf{roulette wheel}, spinning the wheel and selecting two parents. The fittest invidiuals are more likely to get selected, but it is still possible for others to get selected.
+
+Breeding consists of two steps: \textbf{Mutation} and \textbf{Crossover}.
+
+\paragraph{Crossover} Takes parts of one parent's genome and the other part from the other parent. A basic version is \textit{single point crossover} where the entire sequence up to a digit is taken from parent A, and the rest from parent B. This could be selected at random.
+
+\paragraph{Mutation} Once the crossover is done, the new genotype gets some bits flipped randomly, which represents a mutation. This is then expressed in a new phenotype with crossover and mutation elements.
+
+
+Based on this theory, a canonical form of a \textbf{genetic algorithm (GA)} was formulated:
+
+\begin{enumerate}
+    \item Set $t = 0$
+    \item Initialise chromosome population $P(t)$.
+    \item Evaluate $P(t)$ using fitness criteria
+    \item \textbf{while} termination condition not satisfied \textbf{do} 
+    \item \begin{enumerate}
+        \item Select best individuals from $P(t)$. Let P1(t) be the set of selected chromosomes. Choose individuals from $P_{1}(t)$ to enter mating pool $(MP)$.
+        \item Recombine chromosomes in MP forming populations $P_2$. Mutate chro- mosomes in $P_2$ forming $P_3$.
+        \item Select replacements from $P_3$ and P (t) forming $P (t + 1)$.
+        \item Set $t=t+1$
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Why do genetic algorithms work?}
+
+Genetic algorithms try to find a \textbf{global maximum} of the fitness function in a multi-dimensional space.
+
+\textbf{Hyperplane sampling} is a technique that breaks down a problem into components that can be recombined over and over so we can test different solutions.
+
+\textbf{Schema theorem} says that there are patterns (schemas) like a simple regular expression. For example, we could freeze some bits of the genotype and iterate other bits by defining a schema to use (e.g. 100****1 would use the fixed bits but try out different bits for the *).
+
+\paragraph{Implicit parallelism} takes the population and compares two individuals in sequence, one at a time.
+
+\paragraph{Computational parallelism} applies this to a computing environment, where you can evaluate multiple pairings individuals in parallel computing threads, depending on how many cores your processor has.
+
+\subsubsection{Karl Sims Creatures}
+
+\paragraph{Evolving Morphology} \textit{Dawkin's Biomorphs} express the idea that evolution can create very complicated morphologies over time through the process of iteration. Using small mutations of biomorphs - abstract figures made to look vaguely like creatures in nature, Dawkins clearly showed how the process of evolution can create very complicated organisms if given a long period of time. 
+
+It is presented as a counter-argument to the idea of `intelligent design` - where the complexity of life is said to attest to the existence of a higher creator-being, commonly denoted as `God`.
+
+\paragraph{Sims Creatures} Karl Sims' paper from 1994 describes a system for creating virtual creatures that move and behave in sumulated 3D physical worlds.
+
+\paragraph{Creature morphology} The morphology or genotype is represented as a \textbf{directed graph} where the nodes are similar to joints and the vertices are the movable ``arms'' of the creature.
+
+The graph can contain \textit{multiple connections}, meaning that a node with multiple connections to another node means that the directed node is repeated multiple times.
+
+The graph can also contain \textit{recursion}, so an edge from a node to itself means that the node is connected to another identical node.
+
+\paragraph{Creature neural architecture} Mapping from sensor input to actuator output. The graph as a whole percepts some input and produces an output for that input.
+
+
+\section{Intelligent Agents}
+
+\textit{Summary of Chapter 2 from Russell/Norvig}
+
+In AI, we generally want to build \textit{rational agents}. Rationalaity is defined as acting in a way that achieves the best expected outcome.
+
+An agent is anything that \textit{perceives} its \textit{environment} through \textit{sensots} and takes action upon the environment through \textit{actuators}.
+
+The \textbf{percept sequence} is a history of all percepts of an agent, and the \textbf{agent function} maps any given percept sequence to an action.
+
+\paragraph{Definition of a rational agent} For each possible percept sequence, a rational agent should select an action that is expected to maximize its performance measure, given the evidence provided by the percept sequence and whatever built-in knowlege the agent has.
+
+\textit{Note: Rationality does not mean omniscience, rather, rationality deals with expected performance, not absolute certainty.}
+
+A \textbf{task environment} is defined as consisting of:
+
+\begin{itemize}
+    \item \textbf{Performance Measure:} The desired outcome of our agent.
+    \item \textbf{Environment:} The full, partially or un-observable environment of the agent.
+    \item \textbf{Actuators:} The means by which the agent can act on the environment. 
+    \item \textbf{Sensors:} The means by which the agent can perceive the environment, and store a percept sequence.
+\end{itemize}
+
+\subsection{Properties of Task Environments}
+
+\paragraph{Fully observable vs. partially observable} How much of the environment can a single percept through sensors perceive?
+
+\paragraph{Single-agent vs. multi-agent} How many agents are acting, and are they \textbf{competitive} or \textbf{cooperative} (or neither).
+
+\paragraph{Deterministic vs. non-deterministic} Is the next state of the environment completely determined by the action of the agent? If non-deterministic, is the probability of outcomes known (is it \textit{stochastic})?
+
+\paragraph{Episodic vs. Sequential} Do actions impact future actions?
+
+\paragraph{Static vs. Dynamic} Does the environment change while the agent is deciding on the action?
+
+\paragraph{Discrete vs. continuous} Does the agent need to act on discrete environments (e.g. single objects) or a continuous environment through the flow of time?
+
+\paragraph{Known vs. unknown} How much has the designer of the agent built-in knowledge about the world?
+
+
+\subsection{Agent Programs}
+
+A basic agent program is defined as taking a \textit{percept}, appending this to the \textit{percept history}, looking up an action in a table representing the agent function, and returning the action. The percept history and table are persistent elements of such an agent, and would be programmed as persistent data of an object.
+
+\paragraph{Simple Reflex Agents} These agents select an action based solely on the \textit{current} percept and refer to a set of \textit{condition-action rules} to decide the action. A common problem is running into infinite loops (because the agent doesn't use previous percepts and might try the same thing over and over again), which can be overcome by \textbf{randomization} of actions (e.g. randomly turn left or right as a vacuum).
+ 
+\paragraph{Model-based reflex agents} These agents maintain an \textit{internal state} of the environment to overcome partial observability, by storing a \textit{transition model}, which describes how the actions of the agent impact the environment and how the environment evolves independently, and a \textit{sensor model}, which describes how the current state is reflected in sensors. This agent updates its internal state using the current percept, the current state, the most recent action and the two models. It then checks the state against a set of rules and chooses the action.
+
 
 
 \end{document}
