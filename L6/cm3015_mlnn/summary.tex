@@ -68,7 +68,11 @@ In deep learning, these layered representations are (almost always) learned via 
     \label{fig:dl}
 \end{figure}
 
+The specification of what each layer does is encoded in \textit{weights}, also called the \textit{parametrization} of the layers. These are initially assigned at random.
 
+The \textbf{loss function} or cost function takes the predictions of the agent, compares them to the true targets and generates a \textit{loss score}.
+
+This score is used by the \textbf{optimizer}, which implements a \textbf{Backpropagatgion algorithm} to adjust the weights and improve the model.
 
 \end{document}
 
