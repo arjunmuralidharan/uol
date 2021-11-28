@@ -6,13 +6,13 @@
 
 \section{Evolving creatures with genetic algorithms}
 \begin{mdframed}
-\textbf{Learning Outcomes}
-\begin{itemize}[label={\checkmark}]
-    \item Describe and discuss key issues in a range of branches of Artificial Intelligence.
-    \item Select appropriate artificial intelligence algorithms for particular scenarios and evaluate their adequacy and efficiency using appropriate techniques
-    \item Create working computer programs that implement specific artificial intelligence techniques
-    \item Describe how information can be represented in an artificial intelligence system and select appropriate representations for different types of information
-\end{itemize}
+    \textbf{Learning Outcomes}
+    \begin{itemize}[label={\checkmark}]
+        \item Describe and discuss key issues in a range of branches of Artificial Intelligence.
+        \item Select appropriate artificial intelligence algorithms for particular scenarios and evaluate their adequacy and efficiency using appropriate techniques
+        \item Create working computer programs that implement specific artificial intelligence techniques
+        \item Describe how information can be represented in an artificial intelligence system and select appropriate representations for different types of information
+    \end{itemize}
 \end{mdframed}
 
 \subsection{Introduction to evolution theory}
@@ -49,7 +49,7 @@ The nucelotides of an individual then gets mapped to 21 different amino acids, w
 
 The environment applies \textbf{selective pressure} to phenotypes. \textbf{Fit} phenotypes are more likely to reproduce.
 
-\textbf{Fitness landscapes} describe the peaks and thoughs of evoluationary success within a population. 
+\textbf{Fitness landscapes} describe the peaks and thoughs of evoluationary success within a population.
 
 \begin{itemize}
     \item An individual within a species is represented as a string of genes that defines its genotype. The string itself has a real number associated with it.
@@ -60,9 +60,9 @@ The environment applies \textbf{selective pressure} to phenotypes. \textbf{Fit} 
 
 Simple fitness landscapes only map two traits in relation to each other and can be visualised in a 3D surface graph (with the height being the level of fitness).
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=8cm]{fitnesslandscape}
+    \includegraphics[width=8cm]{fitnesslandscape.png}
     \caption{Fitness Landscapes}
     \label{fig:fitness}
 \end{figure}
@@ -94,13 +94,13 @@ Based on this theory, a canonical form of a \textbf{genetic algorithm (GA)} was 
     \item Set $t = 0$
     \item Initialise chromosome population $P(t)$.
     \item Evaluate $P(t)$ using fitness criteria
-    \item \textbf{while} termination condition not satisfied \textbf{do} 
+    \item \textbf{while} termination condition not satisfied \textbf{do}
     \item \begin{enumerate}
-        \item Select best individuals from $P(t)$. Let P1(t) be the set of selected chromosomes. Choose individuals from $P_{1}(t)$ to enter mating pool $(MP)$.
-        \item Recombine chromosomes in MP forming populations $P_2$. Mutate chro- mosomes in $P_2$ forming $P_3$.
-        \item Select replacements from $P_3$ and P (t) forming $P (t + 1)$.
-        \item Set $t=t+1$
-    \end{enumerate}
+              \item Select best individuals from $P(t)$. Let P1(t) be the set of selected chromosomes. Choose individuals from $P_{1}(t)$ to enter mating pool $(MP)$.
+              \item Recombine chromosomes in MP forming populations $P_2$. Mutate chro- mosomes in $P_2$ forming $P_3$.
+              \item Select replacements from $P_3$ and P (t) forming $P (t + 1)$.
+              \item Set $t=t+1$
+          \end{enumerate}
 \end{enumerate}
 
 \subsubsection{Why do genetic algorithms work?}
@@ -117,7 +117,7 @@ Genetic algorithms try to find a \textbf{global maximum} of the fitness function
 
 \subsubsection{Karl Sims Creatures}
 
-\paragraph{Evolving Morphology} \textit{Dawkin's Biomorphs} express the idea that evolution can create very complicated morphologies over time through the process of iteration. Using small mutations of biomorphs - abstract figures made to look vaguely like creatures in nature, Dawkins clearly showed how the process of evolution can create very complicated organisms if given a long period of time. 
+\paragraph{Evolving Morphology} \textit{Dawkin's Biomorphs} express the idea that evolution can create very complicated morphologies over time through the process of iteration. Using small mutations of biomorphs - abstract figures made to look vaguely like creatures in nature, Dawkins clearly showed how the process of evolution can create very complicated organisms if given a long period of time.
 
 It is presented as a counter-argument to the idea of `intelligent design` - where the complexity of life is said to attest to the existence of a higher creator-being, commonly denoted as `God`.
 
@@ -151,7 +151,7 @@ A \textbf{task environment} is defined as consisting of:
 \begin{itemize}
     \item \textbf{Performance Measure:} The desired outcome of our agent.
     \item \textbf{Environment:} The full, partially or un-observable environment of the agent.
-    \item \textbf{Actuators:} The means by which the agent can act on the environment. 
+    \item \textbf{Actuators:} The means by which the agent can act on the environment.
     \item \textbf{Sensors:} The means by which the agent can perceive the environment, and store a percept sequence.
 \end{itemize}
 
@@ -177,9 +177,36 @@ A \textbf{task environment} is defined as consisting of:
 A basic agent program is defined as taking a \textit{percept}, appending this to the \textit{percept history}, looking up an action in a table representing the agent function, and returning the action. The percept history and table are persistent elements of such an agent, and would be programmed as persistent data of an object.
 
 \paragraph{Simple Reflex Agents} These agents select an action based solely on the \textit{current} percept and refer to a set of \textit{condition-action rules} to decide the action. A common problem is running into infinite loops (because the agent doesn't use previous percepts and might try the same thing over and over again), which can be overcome by \textbf{randomization} of actions (e.g. randomly turn left or right as a vacuum).
- 
+
 \paragraph{Model-based reflex agents} These agents maintain an \textit{internal state} of the environment to overcome partial observability, by storing a \textit{transition model}, which describes how the actions of the agent impact the environment and how the environment evolves independently, and a \textit{sensor model}, which describes how the current state is reflected in sensors. This agent updates its internal state using the current percept, the current state, the most recent action and the two models. It then checks the state against a set of rules and chooses the action.
 
+
+\subsection{Pybullet \& URDF}
+
+Pybullet is a physics engine that can simulate objects in a 3D environment using Python. We also use a file format called the \textbf{unified robot description format} (URDF) to describea ``creature'' in the simulation, a phenotype or specific expression in our evolutionary space.
+
+In creating 3D simulations, it is useful to have \textbf{separate collission and visual geometry}, meaning that complex shapes are simplified when calculating collisions (e.g. a creature is surrounded by an invisible box, and the box is used for detecting collisions). This is done to manage how complex the computations will be, as more complex shapes need more computation to detect ongoing collissions.
+
+\paragraph{URDF} An XML-based filed format for specifying robot models, including their motors and other dynamics. It's useful for programmatically generating models, and easily share models. Pybullet provides some premade models via a \texttt{data} module.
+
+URDF files define \textbf{links} (which are the nodes) and \textbf{joints} which are the edges between the nodes. This expresses a robot as a \textbf{directed graph}.
+
+\begin{listing}
+    \label{lis:URDF}
+    \caption{Basic URDF File}
+    \begin{lstlisting}[language=xml]
+    <?xml version="1.0"?>
+        <robot name="myfirst">
+            <link name="base_link">
+                <visual>
+                    <geometry>
+                        <cylinder length="0.6" radius="0.2"/>
+                    </geometry>
+                </visual>
+            </link>
+        </robot>\end{lstlisting}\end{listing}
+
+Note that in URDF, you need to specify the \textbf{visual} representation separately from the \textbf{collision} representation. If the latter is unspecified, objects will just never collide.
 
 
 \end{document}
