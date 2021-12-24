@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "/Users/arjun/Python/pybullet/bin/python",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./L6",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
+}

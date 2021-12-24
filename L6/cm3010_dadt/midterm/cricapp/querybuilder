@@ -1,0 +1,44 @@
+SELECT kind as Kind, count(kind) as Count from wicket GROUP BY kind ORDER by count(kind) DESC;
+
+
+-- SELECT
+-- 	delivery.bowler as Bowler,
+-- 	sum(delivery.runs) as Runs, count(wicket.ball) as Wickets
+-- from
+-- 	delivery
+-- 	LEFT JOIN wicket ON delivery.match_id = wicket.match_id
+-- 	AND delivery.innings = wicket.innings
+-- 	AND delivery.over = wicket.over
+-- 	AND delivery.ball = wicket.ball
+-- group by
+-- 	delivery.bowler
+-- ORDER by
+-- 	Wickets DESC
+-- LIMIT
+-- 	10 -- SELECT
+	-- 	Team,
+	-- 	sum(matches) as Matches
+	-- FROM
+	-- 	(
+	-- 		(
+	-- 			select
+	-- 				team_A as team,
+	-- 				count(*) as matches
+	-- 			from
+	-- 				`match`
+	-- 			GROUP BY
+	-- 				team_A
+	-- 		)
+	-- 		UNION
+	-- 		(
+	-- 			select
+	-- 				team_B as team,
+	-- 				count(*) as matches
+	-- 			from
+	-- 				`match`
+	-- 			GROUP BY
+	-- 				team_B
+	-- 		)
+	-- 	) T2
+	-- GROUP BY
+	-- 	team ORDER BY Matches DESC;

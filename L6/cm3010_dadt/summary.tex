@@ -121,5 +121,38 @@ A \textbf{graph} is a more general form of tree, where each node can be connecte
 
 More complex forms involve \textbf{blobs}, used for inaccessible data for storage, such as raw media. \textbf{Features} are searchable information derived from blobs. \textbf{Documents} are rich, but not interrelated data structures, for example the musical notation for a piece of music.
 
+\section{Relational Databases}
+
+A \textbf{relation} in the context of databases roughly corresponds to a table. It represents the definition of the table along with the values stored in it. Rules:
+
+\textbf{Everything is a relation}
+
+\begin{itemize}
+    \item All operations use the relational models
+    \item All data is represented and accessed as relations
+    \item Table and database structure is accesses and represented as tables
+\end{itemize}
+
+\textbf{The system is unaffected by its implementation}
+
+\begin{itemize}
+    \item If the hardware changes 
+    \item If the operating system changes 
+    \item If the disks are replaced
+    \item If data is distributed 
+\end{itemize}
+
+The \textit{relational model} is not the same as the \textit{entitiy-relationship model}. An ER model helps model concepts, often as part of relational database design.
+
+\subsection{Drawing Databases}
+
+\paragraph{Entities} A thing we want to model that can be uniquely identified. An entity is drawn using a \textit{box} with a word in it.
+
+\paragraph{Attributes} Information that descrives an aspect of an entity. An attribute is drawn using an \textit{ellipse}, connected by a line to an entity.
+
+\paragraph{Relationshiop} A connection or dependency between two \textit{entitites}. A relationship is drawn as a \textit{rhombus} connecting two entities using lines.
+
+
+
 \end{document}
 
