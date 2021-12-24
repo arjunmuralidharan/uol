@@ -1,6 +1,7 @@
 import os
 import genome
 import sys
+import creature
 import pybullet as p
 
 

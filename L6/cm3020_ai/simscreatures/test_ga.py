@@ -1,24 +1,29 @@
 import unittest
 import population
-import simulation 
-import genome 
-import creature 
+import simulation
+import genome
+import creature
 import numpy as np
+
 
 class TestGA(unittest.TestCase):
     def testBasicGA(self):
-        pop = population.Population(pop_size=10, 
+        pop = population.Population(pop_size=10,
                                     gene_count=3)
-        sim = simulation.ThreadedSim(pool_size=12)
+        sim = simulation.ThreadedSim(pool_size=8)
 
-        for iteration in range(1000):
+        results = []
+
+        for iteration in range(5):
             sim.eval_population(pop, 2400)
-            fits = [cr.get_distance_travelled() 
+            fits = [cr.get_distance_travelled()
                     for cr in pop.creatures]
-            links = [len(cr.get_expanded_links()) 
-                    for cr in pop.creatures]
-            print(iteration, "fittest:", np.round(np.max(fits), 3), 
-                  "mean:", np.round(np.mean(fits), 3), "mean links", np.round(np.mean(links)), "max links", np.round(np.max(links)))       
+            links = [len(cr.get_expanded_links())
+                     for cr in pop.creatures]
+            results.append([iteration, np.round(np.max(fits), 3), np.round(
+                np.mean(fits), 3), np.round(np.mean(links)), np.round(np.max(links))])
+            print(iteration, "fittest:", np.round(np.max(fits), 3),
+                  "mean:", np.round(np.mean(fits), 3), "mean links", np.round(np.mean(links)), "max links", np.round(np.max(links)))
             fit_map = population.Population.get_fitness_map(fits)
             new_creatures = []
             for i in range(len(pop.creatures)):
@@ -44,9 +49,12 @@ class TestGA(unittest.TestCase):
                     filename = "elite_"+str(iteration)+".csv"
                     genome.Genome.to_csv(cr.dna, filename)
                     break
-            
+
             pop.creatures = new_creatures
-                            
+        
+        print(results)
+
         self.assertNotEqual(fits[0], 0)
+
 
 unittest.main()
