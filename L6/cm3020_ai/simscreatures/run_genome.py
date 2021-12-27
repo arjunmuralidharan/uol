@@ -17,9 +17,9 @@ p.setGravity(0, 0, -10)
 #p.setRealTimeSimulation(1)
 
 # generate a random creature
-cr = creature.Creature(gene_count=5)
+cr = creature.Creature(gene_count=3)
 
-dna = genlib.Genome.from_csv('elite_60.csv')
+dna = genlib.Genome.from_csv('./pop_20_gene_7/elite_900.csv')
 cr.update_dna(dna)
 
 # save it to XML

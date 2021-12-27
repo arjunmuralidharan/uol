@@ -16,12 +16,12 @@ class Genome():
     @staticmethod
     def get_gene_spec():
         gene_spec =  {"link-shape":{"scale":1}, 
-            "link-length": {"scale":2},
+            "link-length": {"scale":1},
             "link-radius": {"scale":1},
-            "link-recurrence": {"scale":3},
-            "link-mass": {"scale":1},
-            "joint-type": {"scale":1},
-            "joint-parent":{"scale":1},
+            "link-recurrence": {"scale":1},
+            "link-mass": {"scale":0.5},
+            "joint-type": {"scale":0.5},
+            "joint-parent":{"scale":0.5},
             "joint-axis-xyz": {"scale":1},
             "joint-origin-rpy-1":{"scale":np.pi * 2},
             "joint-origin-rpy-2":{"scale":np.pi * 2},
@@ -29,9 +29,9 @@ class Genome():
             "joint-origin-xyz-1":{"scale":1},
             "joint-origin-xyz-2":{"scale":1},
             "joint-origin-xyz-3":{"scale":1},
-            "control-waveform":{"scale":1},
+            "control-waveform":{"scale":0.5},
             "control-amp":{"scale":0.25},
-            "control-freq":{"scale":1}
+            "control-freq":{"scale":0.5}
             }
         ind = 0
         for key in gene_spec.keys():

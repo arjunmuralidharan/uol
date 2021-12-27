@@ -4,17 +4,18 @@ import simulation
 import genome
 import creature
 import numpy as np
+import pandas as pd
 
 
 class TestGA(unittest.TestCase):
     def testBasicGA(self):
-        pop = population.Population(pop_size=10,
-                                    gene_count=3)
-        sim = simulation.ThreadedSim(pool_size=8)
+        pop = population.Population(pop_size=20,
+                                    gene_count=7)
+        sim = simulation.ThreadedSim(pool_size=4)
 
         results = []
 
-        for iteration in range(5):
+        for iteration in range(1000):
             sim.eval_population(pop, 2400)
             fits = [cr.get_distance_travelled()
                     for cr in pop.creatures]
@@ -51,10 +52,19 @@ class TestGA(unittest.TestCase):
                     break
 
             pop.creatures = new_creatures
-        
-        print(results)
+
+        createPlot(results)
 
         self.assertNotEqual(fits[0], 0)
+
+
+def createPlot(results):
+
+    df = pd.DataFrame.from_records(
+        results, columns=['Iteration', 'Fittest', 'Mean', 'Mean Links', 'Max Links'])
+    df = df.set_index(['Iteration'])
+    myplot = df[['Fittest', 'Mean']].plot(kind="line").get_figure()
+    myplot.savefig('test.png')
 
 
 unittest.main()
