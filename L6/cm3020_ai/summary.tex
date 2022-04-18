@@ -209,5 +209,110 @@ URDF files define \textbf{links} (which are the nodes) and \textbf{joints} which
 Note that in URDF, you need to specify the \textbf{visual} representation separately from the \textbf{collision} representation. If the latter is unspecified, objects will just never collide.
 
 
+\section{Robot Scientist}
+
+\subsection{Discovery Science}
+
+Technology drivers for AI:
+\begin{enumerate}
+	\item Improved hardware
+	\item Improved data availability
+	\item Improved computer software
+\end{enumerate}
+
+AI has seen cycles of hype and disillusionment. This time is different, because it's at the core of large companies like GAFA.
+
+\subsubsection{Scientific Discovery}
+
+\begin{enumerate}
+	\item Scientific Discovery
+	\item Scientific problems are abstract, but involve the real-world.
+	\item Scientific problems are restricted in scope no need to know about "Cabbages and Kings".
+	\item Nature is honest no malicious agents.
+	\item Nature is a worthy object of our study.
+	\item The generation of scientific knowledge is a public good.
+\end{enumerate}
+
+\subsubsection{Legal and ethical issues in robotic science}
+
+\paragraph{Roboethics} The study of ethical issues related to robot design, operation and use. Focus on:
+
+\begin{enumerate}
+	\item Designing robots ethically
+	\item Treating robots, and robots treating people
+	\item Robot rights
+	\item Responsibility if robots cause harm
+	\item Risks of emotional bonds with robots
+	\item Ethical codes
+\end{enumerate}
+
+General issue: Robots replacing humans. AI systems can process large volumes of data, reasoning and parallel tasking.
+
+\begin{enumerate}
+	\item AI systems are better in: processing large volumes of data, reasoning and parallel tasking
+	\item AI systems work 24/7
+	\item humans are better in: high-level planning, making
+	decisions in uncertain non-deterministic and
+	partially observable environments
+	\item Target: human-robot collaboration and co-creation
+	\item AI systems have baises
+\end{enumerate}
+
+\subsection{Rational agents}
+An \textbf{agent}  is a system that perceives its environment through its sensors and acting upon that environment through actuators.
+
+The \textbf{percept sequence} is the complete history of everything the agent has ever perceived.
+
+The agent's behaviour is described by the \textbf{agent function} that maps any given percept sequence to an action. You could tabulate all percept sequences and the resulting actions, which would be infinite unless percept sequences are bounded. If agents act \textit{randomly}, then the tabulation for the same percept sequence would need to be done many times to capture the probability of each action happening.
+
+\paragraph{Example: Vacuum cleaners} Assuming a vacuum cleaner with only two locations to clean, the perecept sequence might consist of the current location and the dirtyness of the current location. If the current location is clean, move to the other location. If it is dirty, start cleaning here. This evaluation of reality is repeated.
+
+A \textbf{rational agent} is one that does the right thing. We evaluate it's behaviour cased on it's \textbf{consequences}.
+
+\paragraph{Rationality} For each possible percept sequence, a rational agent should select an action that is expected to maximize it's performance measure, given the evidence provided by the percept sequence and whatever built-in knowledge the agent has.
+
+\subsubsection{Environments}
+
+An agent operates in a \textbf{task environment} described by the \textbf{performance} measure, \textbf{environment}, \textbf{actuators} and \textbf{sensors} involved in performing a task.
+
+Task environments can be classified in the following dimensions:
+
+\begin{enumerate}
+	\item \textbf{Fully observable vs. partially observable}: Do the sensors have access to the complete state of the environment? 
+	\item \textbf{Single-agent vs. multi-agent}: If multiple agents are involved, are they \textbf{competitive} or \textbf{cooperative}?   
+	\item \textbf{Deterministic vs. non-deterministic}: Is the next state of the environment completely determined by the current state and action executed?
+	\item \textbf{Episodic vs. sequential}: Do the actions taken depend on actions taken in previous "episodes"? Does the current action influence future actions? For example, detecting faulty parts in an assembly line is episodic, driving a car is sequential. 
+	\item \textbf{Static vs. dynamic}: Can the environment change while the agent is deliberating an action?
+	\item \textbf{Discrete vs. continuous}: Are the set of percepts and actions discrete (game of chess) or continuous (driving a car)?
+	\item \textbf{Known vs. unknown} Does the agent have a knowledge representation about the environment? 
+\end{enumerate}
+
+The hardest case is partially observable, multi-agent, nondeterministic, sequential, dynamic, continuous and unknown.
+
+
+
+
+
+
+
+
+
+
+
+
+
+A meta-analysis agent collects information about runs, results, and compares performance of other agents
+
+A collaboration agent supports a team of robot scientists or a team of human and robot scientists
+
+A monitoring agent monitors and records everything what is happening 
+
+An external services agent is an interface for external users
+
+A model agent works with executable computational models and runs simulations
+
+An explanation agent produces explanations about the working of the system and its conclusions
+
+
 \end{document}
 

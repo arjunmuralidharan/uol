@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{START}\PYG{+w}{ }\PYG{k}{TRANSACTION}\PYG{p}{;}
+
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{dots}
+\PYG{k}{INSERT}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{dots}
+\PYG{k}{UPDATE}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{dots}
+
+\PYG{k}{COMMIT}\PYG{p}{;}
+\end{Verbatim}

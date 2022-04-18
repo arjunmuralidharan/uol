@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}
+
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{USER}\PYG{+w}{ }\PYG{n}{Arjun}
+\PYG{+w}{	}\PYG{n}{IDENTIFIED}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}298UFHASD\PYGZsq{}}
+\PYG{+w}{	}\PYG{n}{PASSWORD}\PYG{+w}{ }\PYG{n}{EXPIRE}\PYG{p}{;}
+
+\PYG{k}{GRANT}\PYG{+w}{ }\PYG{k}{SELECT}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{INSERT}
+\PYG{+w}{	}\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{Planets}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Moons}
+\PYG{+w}{	}\PYG{k}{TO}\PYG{+w}{ }\PYG{n}{Arjun}
+\PYG{k}{WITH}\PYG{+w}{ }\PYG{k}{GRANT}\PYG{+w}{ }\PYG{k}{OPTION}\PYG{p}{;}
+
+\PYG{k}{REVOKE}\PYG{+w}{ }\PYG{k}{ALL}
+\PYG{+w}{	}\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{Planets}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Moons}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Arjun}
+\end{Verbatim}

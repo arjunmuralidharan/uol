@@ -1,0 +1,5 @@
+# Polls App
+
+I followed the Django Tutorial and built a basic polling app with a single poll question. 
+
+It can be accessed by going to the /polls path of the root application (http://127.0.0.1:8000/polls/ in most cases).

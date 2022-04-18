@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{START}\PYG{+w}{ }\PYG{k}{TRANSACTION}\PYG{p}{;}
+
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{p}{...}
+\PYG{k}{INSERT}\PYG{+w}{ }\PYG{p}{...}
+\PYG{k}{UPDATE}\PYG{+w}{ }\PYG{p}{...}
+
+\PYG{k}{COMMIT}\PYG{p}{;}
+
+\PYG{k}{DELETE}\PYG{+w}{ }\PYG{p}{...}
+
+\PYG{k}{ROLLBACK}\PYG{p}{;}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Rolls back to after the last commit}
+\end{Verbatim}
